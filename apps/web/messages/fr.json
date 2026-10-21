@@ -112,5 +112,33 @@
       "invited": "Invité",
       "suspended": "Suspendu"
     }
+  },
+  "permissions": {
+    "organization_manage": "Gérer l'organisation",
+    "members_view": "Voir l'équipe",
+    "members_manage": "Gérer les membres",
+    "roles_manage": "Gérer les rôles",
+    "audit_view": "Consulter l'audit",
+    "projects_view": "Voir les projets",
+    "projects_manage": "Gérer les projets",
+    "donors_manage": "Gérer les bailleurs",
+    "grants_manage": "Gérer les conventions",
+    "budgets_manage": "Gérer les budgets",
+    "expenses_create": "Soumettre des dépenses",
+    "expenses_approve": "Approuver des dépenses",
+    "expenses_pay": "Payer des dépenses",
+    "expenses_void": "Annuler des dépenses approuvées"
+  },
+  "subjects": {
+    "organization": "l'organisation",
+    "membership": "une adhésion",
+    "role": "un rôle"
+  },
+  "shell": {
+    "menu": "Menu",
+    "account": "Compte",
+    "switchOrg": "Organisations",
+    "notMember": "Cette organisation n'existe pas ou vous n'y avez pas accès.",
+    "backHome": "Retour à l'accueil"
   }
 }

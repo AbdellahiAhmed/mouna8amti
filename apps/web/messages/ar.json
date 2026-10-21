@@ -112,5 +112,33 @@
       "invited": "مدعو",
       "suspended": "موقوف"
     }
+  },
+  "permissions": {
+    "organization_manage": "إدارة إعدادات المنظمة",
+    "members_view": "عرض الفريق",
+    "members_manage": "إدارة الأعضاء",
+    "roles_manage": "إدارة الأدوار",
+    "audit_view": "عرض سجل التدقيق",
+    "projects_view": "عرض المشاريع",
+    "projects_manage": "إدارة المشاريع",
+    "donors_manage": "إدارة المانحين",
+    "grants_manage": "إدارة اتفاقيات التمويل",
+    "budgets_manage": "إدارة الميزانيات",
+    "expenses_create": "تقديم المصروفات",
+    "expenses_approve": "اعتماد المصروفات",
+    "expenses_pay": "صرف المدفوعات",
+    "expenses_void": "إلغاء المصروفات المعتمدة"
+  },
+  "subjects": {
+    "organization": "المنظمة",
+    "membership": "عضوية",
+    "role": "دور"
+  },
+  "shell": {
+    "menu": "القائمة",
+    "account": "الحساب",
+    "switchOrg": "المنظمات",
+    "notMember": "هذه المنظمة غير موجودة أو لا تملك صلاحية الوصول إليها.",
+    "backHome": "العودة إلى البداية"
   }
 }

@@ -112,5 +112,33 @@
       "invited": "Invited",
       "suspended": "Suspended"
     }
+  },
+  "permissions": {
+    "organization_manage": "Manage organisation",
+    "members_view": "View team",
+    "members_manage": "Manage members",
+    "roles_manage": "Manage roles",
+    "audit_view": "View audit trail",
+    "projects_view": "View projects",
+    "projects_manage": "Manage projects",
+    "donors_manage": "Manage donors",
+    "grants_manage": "Manage grants",
+    "budgets_manage": "Manage budgets",
+    "expenses_create": "Submit expenses",
+    "expenses_approve": "Approve expenses",
+    "expenses_pay": "Pay expenses",
+    "expenses_void": "Void approved expenses"
+  },
+  "subjects": {
+    "organization": "the organisation",
+    "membership": "a membership",
+    "role": "a role"
+  },
+  "shell": {
+    "menu": "Menu",
+    "account": "Account",
+    "switchOrg": "Organisations",
+    "notMember": "This organisation doesn't exist or you don't have access to it.",
+    "backHome": "Back to start"
   }
 }

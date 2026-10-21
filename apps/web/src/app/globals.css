@@ -142,6 +142,13 @@
   --ease-exit: cubic-bezier(0.4, 0, 1, 1);
 }
 
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(-4px);
+  }
+}
+
 @layer base {
   html {
     -webkit-font-smoothing: antialiased;
