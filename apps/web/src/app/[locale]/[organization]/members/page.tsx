@@ -47,8 +47,10 @@ export default function MembersPage() {
                   className="h-[52px] border-t border-hairline-soft transition-colors hover:bg-surface"
                 >
                   <td className="px-5 font-medium text-ink">{member.user?.name}</td>
-                  <td className="px-5 text-slate" dir="ltr">
-                    <span className="block text-start rtl:text-end">{member.user?.email}</span>
+                  <td className="px-5 text-slate">
+                    <span className="inline-block" dir="ltr">
+                      {member.user?.email}
+                    </span>
                   </td>
                   <td className="px-5">
                     <span className="flex flex-wrap gap-1.5">

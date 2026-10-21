@@ -22,8 +22,8 @@ export type NavItem = {
 
 export const PRIMARY_NAV: NavItem[] = [
   { key: "dashboard", href: "", icon: LayoutDashboard },
-  { key: "projects", href: "/projects", icon: FolderKanban, soon: true },
-  { key: "donors", href: "/donors", icon: HandCoins, soon: true },
+  { key: "projects", href: "/projects", icon: FolderKanban, permission: "projects.view" },
+  { key: "donors", href: "/donors", icon: HandCoins, permission: "projects.view" },
   { key: "budgets", href: "/budgets", icon: PieChart, soon: true },
   { key: "expenses", href: "/expenses", icon: ReceiptText, soon: true },
 ];

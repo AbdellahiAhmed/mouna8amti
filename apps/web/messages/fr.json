@@ -140,5 +140,57 @@
     "switchOrg": "Organisations",
     "notMember": "Cette organisation n'existe pas ou vous n'y avez pas accès.",
     "backHome": "Retour à l'accueil"
+  },
+  "projects": {
+    "title": "Projets",
+    "subtitle": "Tous les projets de l'organisation, leurs responsables, périodes et avancement.",
+    "new": "Nouveau projet",
+    "edit": "Modifier le projet",
+    "search": "Rechercher par nom ou code…",
+    "all": "Tous",
+    "code": "Code",
+    "name": "Nom du projet",
+    "manager": "Responsable",
+    "noManager": "Sans responsable",
+    "period": "Période",
+    "progress": "Avancement",
+    "status": "Statut",
+    "description": "Description",
+    "startsOn": "Date de début",
+    "endsOn": "Date de fin",
+    "save": "Enregistrer",
+    "saving": "Enregistrement…",
+    "cancel": "Annuler",
+    "empty": "Aucun projet pour le moment",
+    "emptyHint": "Créez un premier projet pour le relier ensuite aux bailleurs et aux budgets.",
+    "noResults": "Aucun résultat.",
+    "count": "{count, plural, =0 {Aucun projet} one {# projet} other {# projets}}",
+    "statuses": {
+      "draft": "Brouillon",
+      "active": "En cours",
+      "on_hold": "Suspendu",
+      "closed": "Clôturé"
+    }
+  },
+  "donors": {
+    "title": "Bailleurs & financements",
+    "subtitle": "Les partenaires qui financent les projets de l'organisation.",
+    "new": "Nouveau bailleur",
+    "name": "Nom",
+    "type": "Type",
+    "country": "Pays",
+    "contact": "Contact",
+    "contactName": "Nom du contact",
+    "contactEmail": "E-mail du contact",
+    "empty": "Aucun bailleur pour le moment",
+    "emptyHint": "Enregistrez vos bailleurs pour les relier aux conventions et aux projets.",
+    "types": {
+      "multilateral": "Multilatéral",
+      "bilateral": "Bilatéral",
+      "foundation": "Fondation",
+      "government": "Gouvernemental",
+      "private": "Privé",
+      "other": "Autre"
+    }
   }
 }

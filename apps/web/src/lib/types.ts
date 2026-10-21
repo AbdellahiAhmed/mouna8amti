@@ -64,3 +64,28 @@ export interface Paginated<T> {
   data: T[];
   meta?: { current_page?: number; last_page?: number; total?: number; next_cursor?: string | null };
 }
+
+export type ProjectStatus = "draft" | "active" | "on_hold" | "closed";
+
+export interface Project {
+  id: number;
+  code: string;
+  name: string;
+  description: string | null;
+  status: ProjectStatus;
+  progress: number;
+  starts_on: string;
+  ends_on: string;
+  manager?: { membership_id: number; name: string } | null;
+}
+
+export type DonorType = "multilateral" | "bilateral" | "foundation" | "government" | "private" | "other";
+
+export interface Donor {
+  id: number;
+  name: string;
+  type: DonorType;
+  country: string | null;
+  contact_name: string | null;
+  contact_email: string | null;
+}

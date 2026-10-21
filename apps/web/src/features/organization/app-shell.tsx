@@ -55,7 +55,7 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
         <Logo />
       </div>
       <nav className="flex flex-1 flex-col gap-6 overflow-y-auto px-3 py-4">
-        <NavGroup items={PRIMARY_NAV} onNavigate={onNavigate} />
+        <NavGroup items={PRIMARY_NAV.filter((item) => !item.permission || can(item.permission))} onNavigate={onNavigate} />
         {adminItems.length > 0 && (
           <>
             <hr className="mx-3 border-hairline" />

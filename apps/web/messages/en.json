@@ -140,5 +140,57 @@
     "switchOrg": "Organisations",
     "notMember": "This organisation doesn't exist or you don't have access to it.",
     "backHome": "Back to start"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Every project in the organisation, its manager, period and progress.",
+    "new": "New project",
+    "edit": "Edit project",
+    "search": "Search by name or code…",
+    "all": "All",
+    "code": "Code",
+    "name": "Project name",
+    "manager": "Manager",
+    "noManager": "No manager",
+    "period": "Period",
+    "progress": "Progress",
+    "status": "Status",
+    "description": "Description",
+    "startsOn": "Start date",
+    "endsOn": "End date",
+    "save": "Save",
+    "saving": "Saving…",
+    "cancel": "Cancel",
+    "empty": "No projects yet",
+    "emptyHint": "Create a first project, then link it to donors and budgets.",
+    "noResults": "No matching projects.",
+    "count": "{count, plural, =0 {No projects} one {# project} other {# projects}}",
+    "statuses": {
+      "draft": "Draft",
+      "active": "Active",
+      "on_hold": "On hold",
+      "closed": "Closed"
+    }
+  },
+  "donors": {
+    "title": "Donors & grants",
+    "subtitle": "The partners funding the organisation's projects.",
+    "new": "New donor",
+    "name": "Name",
+    "type": "Type",
+    "country": "Country",
+    "contact": "Contact",
+    "contactName": "Contact name",
+    "contactEmail": "Contact email",
+    "empty": "No donors yet",
+    "emptyHint": "Register donors to link them to grant agreements and projects.",
+    "types": {
+      "multilateral": "Multilateral",
+      "bilateral": "Bilateral",
+      "foundation": "Foundation",
+      "government": "Government",
+      "private": "Private",
+      "other": "Other"
+    }
   }
 }
