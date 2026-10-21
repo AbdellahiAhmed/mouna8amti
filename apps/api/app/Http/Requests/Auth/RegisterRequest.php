@@ -2,12 +2,15 @@
 
 namespace App\Http\Requests\Auth;
 
+use App\Http\Requests\Concerns\LocalizesFieldNames;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules\Password;
 
 class RegisterRequest extends FormRequest
 {
+    use LocalizesFieldNames;
+
     /** @return array<string, mixed> */
     public function rules(): array
     {

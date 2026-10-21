@@ -2,11 +2,14 @@
 
 namespace App\Http\Requests\Organizations;
 
+use App\Http\Requests\Concerns\LocalizesFieldNames;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
 class StoreOrganizationRequest extends FormRequest
 {
+    use LocalizesFieldNames;
+
     /** @return array<string, mixed> */
     public function rules(): array
     {

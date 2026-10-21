@@ -7,12 +7,15 @@ use App\Domain\Organizations\Enums\MembershipStatus;
 use App\Domain\Projects\Enums\ProjectStatus;
 use App\Domain\Projects\Models\Project;
 use App\Domain\Tenancy\TenantContext;
+use App\Http\Requests\Concerns\LocalizesFieldNames;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Validation\Rule;
 
 class ProjectRequest extends FormRequest
 {
+    use LocalizesFieldNames;
+
     public function authorize(): bool
     {
         return Gate::allows(Permission::ProjectsManage->value);

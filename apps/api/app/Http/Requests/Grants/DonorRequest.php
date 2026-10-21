@@ -4,12 +4,15 @@ namespace App\Http\Requests\Grants;
 
 use App\Domain\Access\Enums\Permission;
 use App\Domain\Grants\Enums\DonorType;
+use App\Http\Requests\Concerns\LocalizesFieldNames;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Validation\Rule;
 
 class DonorRequest extends FormRequest
 {
+    use LocalizesFieldNames;
+
     public function authorize(): bool
     {
         return Gate::allows(Permission::DonorsManage->value);
