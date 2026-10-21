@@ -3,10 +3,12 @@
 use App\Http\Controllers\Auth\CurrentUserController;
 use App\Http\Controllers\Auth\RegistrationController;
 use App\Http\Controllers\Auth\SessionController;
+use App\Http\Controllers\Grants\DonorController;
 use App\Http\Controllers\Organizations\AuditLogController;
 use App\Http\Controllers\Organizations\MemberController;
 use App\Http\Controllers\Organizations\OrganizationController;
 use App\Http\Controllers\Organizations\RoleController;
+use App\Http\Controllers\Projects\ProjectController;
 use App\Http\Middleware\ActAsDatabaseUser;
 use App\Http\Middleware\ResolveOrganization;
 use Illuminate\Support\Facades\Route;
@@ -31,5 +33,8 @@ Route::middleware(['auth:sanctum', ActAsDatabaseUser::class])->group(function ()
         Route::get('members', [MemberController::class, 'index']);
         Route::get('roles', [RoleController::class, 'index']);
         Route::get('audit-logs', [AuditLogController::class, 'index']);
+
+        Route::apiResource('donors', DonorController::class)->except('show');
+        Route::apiResource('projects', ProjectController::class);
     });
 });
