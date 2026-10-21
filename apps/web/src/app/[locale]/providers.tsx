@@ -9,15 +9,17 @@ import { ApiError } from "@/lib/api";
 export function Providers({ children }: { children: ReactNode }) {
   const [queryClient] = useState(() => {
     // An expired session surfaces as a 401 anywhere; refetching /me lets useRequiredUser redirect to /login.
-    const onError = (error: unknown) => {
-      if (error instanceof ApiError && error.status === 401) {
+    // A 401 from /me itself is that redirect's input; refetching it again would loop forever.
+    const onError = (error: unknown, queryKey?: readonly unknown[]) => {
+      const isCurrentUser = queryKey?.[0] === currentUserKey[0] && queryKey?.[1] === currentUserKey[1];
+      if (error instanceof ApiError && error.status === 401 && !isCurrentUser) {
         void client.invalidateQueries({ queryKey: currentUserKey });
       }
     };
 
     const client: QueryClient = new QueryClient({
-      queryCache: new QueryCache({ onError }),
-      mutationCache: new MutationCache({ onError }),
+      queryCache: new QueryCache({ onError: (error, query) => onError(error, query.queryKey) }),
+      mutationCache: new MutationCache({ onError: (error) => onError(error) }),
       defaultOptions: {
         queries: {
           staleTime: 30_000,
