@@ -77,10 +77,14 @@ Decisions:
 organizations      id, name, slug, legal_name, country, currency, locale, fiscal_year_start_month, logo_path, settings jsonb
 users              id, name, email, password, locale, avatar_path, last_login_at     (global: a user can belong to several orgs)
 memberships        id, organization_id, user_id, status(invited|active|suspended), title
-roles              id, organization_id, key, name jsonb(ar,fr,en), is_system
-permissions        id, key  ("expenses.approve", "budgets.manage", …)              (catalogue defined in code, synced)
-role_permission    role_id, permission_id
-membership_role    membership_id, role_id, project_id NULL                         (NULL = org-wide)
+roles              id, organization_id, key, name jsonb(ar,fr,en), permissions jsonb, is_system
+membership_role    organization_id, membership_id, role_id   (+ project_id NULL with M1 projects: NULL = org-wide)
+```
+
+Permissions are a code-defined enum stored on the role as a jsonb array, with no
+join table (see ADR 0002).
+
+```
 ```
 
 ### Projects & funding
