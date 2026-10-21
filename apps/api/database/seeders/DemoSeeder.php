@@ -10,6 +10,7 @@ use App\Domain\Organizations\Models\Membership;
 use App\Domain\Tenancy\TenantContext;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use RuntimeException;
 
 /**
  * Local demo tenant. Every account shares the password below — development
@@ -30,6 +31,11 @@ class DemoSeeder extends Seeder
 
     public function run(CreateOrganization $createOrganization, TenantContext $tenant): void
     {
+        // Known credentials: a stray `db:seed --force` on a real server must not create them.
+        if (! app()->environment(['local', 'testing'])) {
+            throw new RuntimeException('DemoSeeder only runs in the local or testing environment.');
+        }
+
         $admin = User::query()->firstOrCreate(
             ['email' => 'admin@demo.mouna8amti.test'],
             ['name' => 'الشيخ أحمد', 'password' => self::PASSWORD, 'locale' => 'ar'],
