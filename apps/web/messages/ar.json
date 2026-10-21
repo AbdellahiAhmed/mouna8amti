@@ -99,13 +99,75 @@
     },
     "audit": {
       "title": "سجل التدقيق",
-      "subtitle": "كل تغيير في المنظمة، من قام به ومتى. هذا السجل لا يمكن تعديله أو حذفه.",
-      "created": "أنشأ",
-      "updated": "عدّل",
-      "deleted": "حذف",
+      "subtitle": "كل تغيير في المنظمة: من قام به، ومتى، وماذا تغيّر بالضبط. لا يمكن تعديل هذا السجل أو حذفه.",
       "system": "النظام",
       "empty": "لا توجد أحداث بعد.",
-      "forbidden": "ليست لديك صلاحية عرض سجل التدقيق."
+      "emptyFiltered": "لا توجد أحداث من هذا النوع.",
+      "forbidden": "ليست لديك صلاحية عرض سجل التدقيق.",
+      "loadMore": "عرض أحداث أقدم",
+      "loadingMore": "جارٍ التحميل…",
+      "today": "اليوم",
+      "yesterday": "أمس",
+      "unnamed": "عنصر محذوف",
+      "filters": {
+        "all": "الكل",
+        "project": "المشاريع",
+        "donor": "المانحون",
+        "membership": "الفريق",
+        "role": "الأدوار",
+        "organization": "المنظمة"
+      },
+      "sentences": {
+        "organization": {
+          "created": "تم إنشاء المنظمة <b>{label}</b> بواسطة <b>{actor}</b>",
+          "updated": "تم تعديل إعدادات المنظمة بواسطة <b>{actor}</b>",
+          "deleted": "تم حذف المنظمة بواسطة <b>{actor}</b>"
+        },
+        "membership": {
+          "created": "تمت إضافة <b>{label}</b> إلى الفريق بواسطة <b>{actor}</b>",
+          "updated": "تم تعديل عضوية <b>{label}</b> بواسطة <b>{actor}</b>",
+          "deleted": "تمت إزالة <b>{label}</b> من الفريق بواسطة <b>{actor}</b>"
+        },
+        "role": {
+          "created": "تم إنشاء الدور <b>{label}</b> بواسطة <b>{actor}</b>",
+          "updated": "تم تعديل الدور <b>{label}</b> بواسطة <b>{actor}</b>",
+          "deleted": "تم حذف الدور <b>{label}</b> بواسطة <b>{actor}</b>"
+        },
+        "project": {
+          "created": "تم إنشاء المشروع <b>{label}</b> بواسطة <b>{actor}</b>",
+          "updated": "تم تعديل المشروع <b>{label}</b> بواسطة <b>{actor}</b>",
+          "deleted": "تم حذف المشروع <b>{label}</b> بواسطة <b>{actor}</b>"
+        },
+        "donor": {
+          "created": "تمت إضافة الجهة المانحة <b>{label}</b> بواسطة <b>{actor}</b>",
+          "updated": "تم تعديل الجهة المانحة <b>{label}</b> بواسطة <b>{actor}</b>",
+          "deleted": "تم حذف الجهة المانحة <b>{label}</b> بواسطة <b>{actor}</b>"
+        }
+      },
+      "fields": {
+        "name": "الاسم",
+        "code": "الرمز",
+        "description": "الوصف",
+        "status": "الحالة",
+        "progress": "نسبة الإنجاز",
+        "starts_on": "تاريخ البداية",
+        "ends_on": "تاريخ النهاية",
+        "manager": "المسؤول",
+        "type": "النوع",
+        "country": "البلد",
+        "contact_name": "جهة الاتصال",
+        "contact_email": "البريد الإلكتروني",
+        "title": "المسمى الوظيفي",
+        "permissions": "الصلاحيات",
+        "legal_name": "الاسم القانوني",
+        "currency": "العملة",
+        "locale": "اللغة",
+        "fiscal_year_start_month": "بداية السنة المالية",
+        "logo_path": "الشعار"
+      },
+      "granted": "منح",
+      "revoked": "سحب",
+      "empty_value": "—"
     },
     "status": {
       "active": "نشط",
@@ -128,11 +190,6 @@
     "expenses_approve": "اعتماد المصروفات",
     "expenses_pay": "صرف المدفوعات",
     "expenses_void": "إلغاء المصروفات المعتمدة"
-  },
-  "subjects": {
-    "organization": "المنظمة",
-    "membership": "عضوية",
-    "role": "دور"
   },
   "shell": {
     "menu": "القائمة",

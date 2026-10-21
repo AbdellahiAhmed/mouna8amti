@@ -99,13 +99,75 @@
     },
     "audit": {
       "title": "Audit trail",
-      "subtitle": "Every change, who made it and when. This trail can't be edited or deleted.",
-      "created": "created",
-      "updated": "updated",
-      "deleted": "deleted",
-      "system": "System",
+      "subtitle": "Every change in the organisation: who made it, when, and exactly what changed. This trail can't be edited or deleted.",
+      "system": "The system",
       "empty": "No events yet.",
-      "forbidden": "You don't have permission to view the audit trail."
+      "emptyFiltered": "No events of this kind.",
+      "forbidden": "You don't have permission to view the audit trail.",
+      "loadMore": "Show older events",
+      "loadingMore": "Loading…",
+      "today": "Today",
+      "yesterday": "Yesterday",
+      "unnamed": "deleted item",
+      "filters": {
+        "all": "All",
+        "project": "Projects",
+        "donor": "Donors",
+        "membership": "Team",
+        "role": "Roles",
+        "organization": "Organisation"
+      },
+      "sentences": {
+        "organization": {
+          "created": "<b>{actor}</b> created the organisation <b>{label}</b>",
+          "updated": "<b>{actor}</b> updated the organisation settings",
+          "deleted": "<b>{actor}</b> deleted the organisation"
+        },
+        "membership": {
+          "created": "<b>{actor}</b> added <b>{label}</b> to the team",
+          "updated": "<b>{actor}</b> updated <b>{label}</b>'s membership",
+          "deleted": "<b>{actor}</b> removed <b>{label}</b> from the team"
+        },
+        "role": {
+          "created": "<b>{actor}</b> created the role <b>{label}</b>",
+          "updated": "<b>{actor}</b> updated the role <b>{label}</b>",
+          "deleted": "<b>{actor}</b> deleted the role <b>{label}</b>"
+        },
+        "project": {
+          "created": "<b>{actor}</b> created the project <b>{label}</b>",
+          "updated": "<b>{actor}</b> updated the project <b>{label}</b>",
+          "deleted": "<b>{actor}</b> deleted the project <b>{label}</b>"
+        },
+        "donor": {
+          "created": "<b>{actor}</b> added the donor <b>{label}</b>",
+          "updated": "<b>{actor}</b> updated the donor <b>{label}</b>",
+          "deleted": "<b>{actor}</b> deleted the donor <b>{label}</b>"
+        }
+      },
+      "fields": {
+        "name": "Name",
+        "code": "Code",
+        "description": "Description",
+        "status": "Status",
+        "progress": "Progress",
+        "starts_on": "Start",
+        "ends_on": "End",
+        "manager": "Manager",
+        "type": "Type",
+        "country": "Country",
+        "contact_name": "Contact",
+        "contact_email": "Email",
+        "title": "Job title",
+        "permissions": "Permissions",
+        "legal_name": "Legal name",
+        "currency": "Currency",
+        "locale": "Language",
+        "fiscal_year_start_month": "Fiscal year start",
+        "logo_path": "Logo"
+      },
+      "granted": "Granted",
+      "revoked": "Revoked",
+      "empty_value": "—"
     },
     "status": {
       "active": "Active",
@@ -128,11 +190,6 @@
     "expenses_approve": "Approve expenses",
     "expenses_pay": "Pay expenses",
     "expenses_void": "Void approved expenses"
-  },
-  "subjects": {
-    "organization": "the organisation",
-    "membership": "a membership",
-    "role": "a role"
   },
   "shell": {
     "menu": "Menu",

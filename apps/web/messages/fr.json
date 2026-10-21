@@ -99,13 +99,75 @@
     },
     "audit": {
       "title": "Journal d'audit",
-      "subtitle": "Chaque modification, qui l'a faite et quand. Ce journal ne peut être ni modifié ni supprimé.",
-      "created": "a créé",
-      "updated": "a modifié",
-      "deleted": "a supprimé",
-      "system": "Système",
+      "subtitle": "Chaque modification de l'organisation : qui, quand, et ce qui a changé exactement. Ce journal ne peut être ni modifié ni supprimé.",
+      "system": "Le système",
       "empty": "Aucun événement pour le moment.",
-      "forbidden": "Vous n'avez pas la permission de consulter le journal d'audit."
+      "emptyFiltered": "Aucun événement de ce type.",
+      "forbidden": "Vous n'avez pas la permission de consulter le journal d'audit.",
+      "loadMore": "Afficher les événements plus anciens",
+      "loadingMore": "Chargement…",
+      "today": "Aujourd'hui",
+      "yesterday": "Hier",
+      "unnamed": "élément supprimé",
+      "filters": {
+        "all": "Tout",
+        "project": "Projets",
+        "donor": "Bailleurs",
+        "membership": "Équipe",
+        "role": "Rôles",
+        "organization": "Organisation"
+      },
+      "sentences": {
+        "organization": {
+          "created": "<b>{actor}</b> a créé l'organisation <b>{label}</b>",
+          "updated": "<b>{actor}</b> a modifié les paramètres de l'organisation",
+          "deleted": "<b>{actor}</b> a supprimé l'organisation"
+        },
+        "membership": {
+          "created": "<b>{actor}</b> a ajouté <b>{label}</b> à l'équipe",
+          "updated": "<b>{actor}</b> a modifié l'adhésion de <b>{label}</b>",
+          "deleted": "<b>{actor}</b> a retiré <b>{label}</b> de l'équipe"
+        },
+        "role": {
+          "created": "<b>{actor}</b> a créé le rôle <b>{label}</b>",
+          "updated": "<b>{actor}</b> a modifié le rôle <b>{label}</b>",
+          "deleted": "<b>{actor}</b> a supprimé le rôle <b>{label}</b>"
+        },
+        "project": {
+          "created": "<b>{actor}</b> a créé le projet <b>{label}</b>",
+          "updated": "<b>{actor}</b> a modifié le projet <b>{label}</b>",
+          "deleted": "<b>{actor}</b> a supprimé le projet <b>{label}</b>"
+        },
+        "donor": {
+          "created": "<b>{actor}</b> a ajouté le bailleur <b>{label}</b>",
+          "updated": "<b>{actor}</b> a modifié le bailleur <b>{label}</b>",
+          "deleted": "<b>{actor}</b> a supprimé le bailleur <b>{label}</b>"
+        }
+      },
+      "fields": {
+        "name": "Nom",
+        "code": "Code",
+        "description": "Description",
+        "status": "Statut",
+        "progress": "Avancement",
+        "starts_on": "Début",
+        "ends_on": "Fin",
+        "manager": "Responsable",
+        "type": "Type",
+        "country": "Pays",
+        "contact_name": "Contact",
+        "contact_email": "E-mail",
+        "title": "Fonction",
+        "permissions": "Permissions",
+        "legal_name": "Raison sociale",
+        "currency": "Devise",
+        "locale": "Langue",
+        "fiscal_year_start_month": "Début d'exercice",
+        "logo_path": "Logo"
+      },
+      "granted": "Accordé",
+      "revoked": "Retiré",
+      "empty_value": "—"
     },
     "status": {
       "active": "Actif",
@@ -128,11 +190,6 @@
     "expenses_approve": "Approuver des dépenses",
     "expenses_pay": "Payer des dépenses",
     "expenses_void": "Annuler des dépenses approuvées"
-  },
-  "subjects": {
-    "organization": "l'organisation",
-    "membership": "une adhésion",
-    "role": "un rôle"
   },
   "shell": {
     "menu": "Menu",

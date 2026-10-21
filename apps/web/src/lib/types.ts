@@ -45,14 +45,20 @@ export interface User {
   memberships?: Membership[];
 }
 
+export type AuditSubjectType = "organization" | "membership" | "role" | "project" | "donor";
+
+export interface AuditChange {
+  field: string;
+  old: unknown;
+  new: unknown;
+}
+
 export interface AuditLog {
   id: number;
   event: "created" | "updated" | "deleted";
-  subject: { type: string; id: number };
+  subject: { type: AuditSubjectType; id: number; label: string | null };
   actor: { id: number; name: string } | null;
-  old_values: Record<string, unknown> | null;
-  new_values: Record<string, unknown> | null;
-  ip: string | null;
+  changes: AuditChange[];
   created_at: string;
 }
 
