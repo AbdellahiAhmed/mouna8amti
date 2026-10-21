@@ -3,5 +3,114 @@
     "brand": "Mouna8amti",
     "title": "Mouna8amti — La plateforme de gestion des organisations",
     "description": "Projets, financements, budgets et dépenses réunis dans une plateforme transparente et auditable."
+  },
+  "common": {
+    "continue": "Continuer",
+    "back": "Retour",
+    "loading": "Chargement…",
+    "retry": "Réessayer",
+    "language": "Langue",
+    "signOut": "Se déconnecter",
+    "errorTitle": "Impossible de charger les données",
+    "networkError": "Serveur injoignable. Vérifiez votre connexion puis réessayez.",
+    "serverError": "Une erreur inattendue est survenue. Réessayez dans un instant.",
+    "tooMany": "Trop de tentatives. Patientez une minute puis réessayez."
+  },
+  "auth": {
+    "panelEyebrow": "La plateforme des organisations et projets financés",
+    "panelTitle": "Chaque ouguiya de financement, à sa juste place.",
+    "panelBody": "Projets, bailleurs, budgets et dépenses au même endroit, avec un circuit d'approbation clair et un journal d'audit inaltérable.",
+    "panelCardLabel": "Reste à consommer",
+    "panelCardProject": "Projet Éducation de base",
+    "loginTitle": "Bon retour",
+    "loginSubtitle": "Connectez-vous pour suivre l'activité de votre organisation.",
+    "registerTitle": "Créez votre compte",
+    "registerSubtitle": "Deux minutes, et votre organisation est prête.",
+    "name": "Nom complet",
+    "email": "Adresse e-mail",
+    "password": "Mot de passe",
+    "passwordConfirmation": "Confirmer le mot de passe",
+    "passwordHint": "10 caractères minimum, avec des lettres et des chiffres.",
+    "remember": "Se souvenir de moi sur cet appareil",
+    "signIn": "Se connecter",
+    "signingIn": "Connexion…",
+    "createAccount": "Créer le compte",
+    "creatingAccount": "Création…",
+    "noAccount": "Pas encore de compte ?",
+    "haveAccount": "Déjà un compte ?",
+    "registerLink": "Créer un compte",
+    "loginLink": "Se connecter"
+  },
+  "onboarding": {
+    "title": "Configurons votre organisation",
+    "subtitle": "Ces informations fixent la devise, la langue et le début d'exercice de tous vos rapports.",
+    "stepIdentity": "Identité",
+    "stepSettings": "Paramètres financiers",
+    "stepReview": "Vérification",
+    "name": "Nom de l'organisation",
+    "namePlaceholder": "Association Espoir pour le développement",
+    "legalName": "Raison sociale (facultatif)",
+    "country": "Pays",
+    "currency": "Devise",
+    "locale": "Langue de l'organisation",
+    "fiscalStart": "Début de l'exercice",
+    "currencyHint": "Une seule devise pour toute l'organisation : budgets et dépenses y sont enregistrés.",
+    "reviewHint": "Nous créerons l'organisation avec sept rôles prêts à l'emploi, et vous en serez l'administrateur.",
+    "create": "Créer l'organisation",
+    "creating": "Création…"
+  },
+  "app": {
+    "nav": {
+      "dashboard": "Tableau de bord",
+      "projects": "Projets",
+      "donors": "Bailleurs & financements",
+      "budgets": "Budgets",
+      "expenses": "Dépenses",
+      "members": "Équipe",
+      "roles": "Rôles & permissions",
+      "audit": "Journal d'audit",
+      "soon": "Bientôt"
+    },
+    "dashboard": {
+      "greeting": "Bonjour {name}",
+      "subtitle": "Voici le point de départ de {organization}.",
+      "checklistTitle": "Premiers pas",
+      "stepOrg": "Créer l'organisation",
+      "stepTeam": "Inviter l'équipe",
+      "stepProject": "Créer un premier projet",
+      "stepBudget": "Préparer un premier budget",
+      "done": "Fait",
+      "next": "Ensuite"
+    },
+    "members": {
+      "title": "Équipe",
+      "subtitle": "Les personnes qui travaillent dans l'organisation et leurs rôles.",
+      "name": "Nom",
+      "email": "E-mail",
+      "roles": "Rôles",
+      "status": "Statut",
+      "empty": "Aucun membre pour le moment."
+    },
+    "roles": {
+      "title": "Rôles & permissions",
+      "subtitle": "Chaque rôle définit ce que ses titulaires peuvent voir et faire.",
+      "system": "Rôle système",
+      "permissionsCount": "{count, plural, =0 {Aucune permission} one {# permission} other {# permissions}}"
+    },
+    "audit": {
+      "title": "Journal d'audit",
+      "subtitle": "Chaque modification, qui l'a faite et quand. Ce journal ne peut être ni modifié ni supprimé.",
+      "created": "a créé",
+      "updated": "a modifié",
+      "deleted": "a supprimé",
+      "system": "Système",
+      "empty": "Aucun événement pour le moment.",
+      "forbidden": "Vous n'avez pas la permission de consulter le journal d'audit."
+    },
+    "status": {
+      "active": "Actif",
+      "invited": "Invité",
+      "suspended": "Suspendu"
+    }
   }
 }

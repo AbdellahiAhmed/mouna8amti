@@ -3,5 +3,114 @@
     "brand": "Mouna8amti",
     "title": "Mouna8amti — The operating system for organisations",
     "description": "Projects, grants, budgets and expenses in one transparent, auditable platform."
+  },
+  "common": {
+    "continue": "Continue",
+    "back": "Back",
+    "loading": "Loading…",
+    "retry": "Try again",
+    "language": "Language",
+    "signOut": "Sign out",
+    "errorTitle": "Couldn't load this data",
+    "networkError": "Can't reach the server. Check your connection and try again.",
+    "serverError": "Something unexpected happened. Please try again shortly.",
+    "tooMany": "Too many attempts. Wait a minute and try again."
+  },
+  "auth": {
+    "panelEyebrow": "The platform for NGOs and funded programmes",
+    "panelTitle": "Every unit of funding, exactly where it belongs.",
+    "panelBody": "Projects, donors, budgets and expenses in one place, with a clear approval path and an audit trail that can't be erased.",
+    "panelCardLabel": "Budget remaining",
+    "panelCardProject": "Basic Education Project",
+    "loginTitle": "Welcome back",
+    "loginSubtitle": "Sign in to follow your organisation's work.",
+    "registerTitle": "Create your account",
+    "registerSubtitle": "Two minutes, and your organisation is ready.",
+    "name": "Full name",
+    "email": "Email address",
+    "password": "Password",
+    "passwordConfirmation": "Confirm password",
+    "passwordHint": "At least 10 characters, with letters and numbers.",
+    "remember": "Remember me on this device",
+    "signIn": "Sign in",
+    "signingIn": "Signing in…",
+    "createAccount": "Create account",
+    "creatingAccount": "Creating account…",
+    "noAccount": "No account yet?",
+    "haveAccount": "Already have an account?",
+    "registerLink": "Create one",
+    "loginLink": "Sign in"
+  },
+  "onboarding": {
+    "title": "Let's set up your organisation",
+    "subtitle": "These settings define the currency, language and fiscal year used across every report.",
+    "stepIdentity": "Identity",
+    "stepSettings": "Financial settings",
+    "stepReview": "Review",
+    "name": "Organisation name",
+    "namePlaceholder": "Hope Development Association",
+    "legalName": "Legal name (optional)",
+    "country": "Country",
+    "currency": "Currency",
+    "locale": "Organisation language",
+    "fiscalStart": "Fiscal year starts in",
+    "currencyHint": "One currency for the whole organisation; budgets and expenses are recorded in it.",
+    "reviewHint": "We'll create the organisation with seven ready-made roles, and make you its administrator.",
+    "create": "Create organisation",
+    "creating": "Creating…"
+  },
+  "app": {
+    "nav": {
+      "dashboard": "Dashboard",
+      "projects": "Projects",
+      "donors": "Donors & grants",
+      "budgets": "Budgets",
+      "expenses": "Expenses",
+      "members": "Team",
+      "roles": "Roles & permissions",
+      "audit": "Audit trail",
+      "soon": "Soon"
+    },
+    "dashboard": {
+      "greeting": "Hello {name}",
+      "subtitle": "This is where {organization} starts.",
+      "checklistTitle": "Getting started",
+      "stepOrg": "Create the organisation",
+      "stepTeam": "Invite your team",
+      "stepProject": "Create a first project",
+      "stepBudget": "Prepare a first budget",
+      "done": "Done",
+      "next": "Next"
+    },
+    "members": {
+      "title": "Team",
+      "subtitle": "The people working inside the organisation and their roles.",
+      "name": "Name",
+      "email": "Email",
+      "roles": "Roles",
+      "status": "Status",
+      "empty": "No members yet."
+    },
+    "roles": {
+      "title": "Roles & permissions",
+      "subtitle": "Each role defines what its holders can see and do.",
+      "system": "System role",
+      "permissionsCount": "{count, plural, =0 {No permissions} one {# permission} other {# permissions}}"
+    },
+    "audit": {
+      "title": "Audit trail",
+      "subtitle": "Every change, who made it and when. This trail can't be edited or deleted.",
+      "created": "created",
+      "updated": "updated",
+      "deleted": "deleted",
+      "system": "System",
+      "empty": "No events yet.",
+      "forbidden": "You don't have permission to view the audit trail."
+    },
+    "status": {
+      "active": "Active",
+      "invited": "Invited",
+      "suspended": "Suspended"
+    }
   }
 }
