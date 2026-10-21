@@ -37,6 +37,8 @@ services:
   queue:
     <<: *api
     command: ["php", "artisan", "queue:work", "--tries=3", "--backoff=10"]
+    healthcheck:
+      disable: true
     depends_on:
       api:
         condition: service_healthy
