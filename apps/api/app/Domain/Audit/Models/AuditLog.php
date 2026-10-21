@@ -6,6 +6,7 @@ use App\Domain\Tenancy\BelongsToOrganization;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
 
 /**
@@ -42,5 +43,11 @@ class AuditLog extends Model
     public function actor(): BelongsTo
     {
         return $this->belongsTo(User::class, 'actor_id');
+    }
+
+    /** @return MorphTo<Model, $this> */
+    public function auditable(): MorphTo
+    {
+        return $this->morphTo();
     }
 }

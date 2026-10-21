@@ -41,3 +41,28 @@ it('is append-only at the database level', function () {
 
     AuditLog::query()->firstOrFail()->update(['event' => 'tampered']);
 })->throws(QueryException::class, 'append-only');
+
+it('serves a readable trail: named subjects and business fields only', function () {
+    $organization = createOrganization();
+    $founder = founderOf($organization);
+    $base = "/api/orgs/{$organization->slug}";
+
+    $id = $this->actingAs($founder)->postJson("{$base}/projects", [
+        'code' => 'EDU', 'name' => 'Education', 'starts_on' => '2026-01-01', 'ends_on' => '2026-12-31',
+        'status' => 'draft', 'progress' => 0,
+    ])->json('data.id');
+    $this->actingAs($founder)->putJson("{$base}/projects/{$id}", [
+        'code' => 'EDU', 'name' => 'Education', 'starts_on' => '2026-01-01', 'ends_on' => '2026-12-31',
+        'status' => 'active', 'progress' => 10,
+    ]);
+
+    $entry = $this->actingAs($founder)->getJson("{$base}/audit-logs?subject=project")
+        ->assertOk()
+        ->assertJsonCount(2, 'data')
+        ->json('data.0');
+
+    expect($entry['subject']['label'])->toBe('Education')
+        ->and($entry['actor']['name'])->toBe($founder->name)
+        ->and(collect($entry['changes'])->pluck('field')->all())->toBe(['status', 'progress'])
+        ->and($entry['changes'][0])->toMatchArray(['old' => 'draft', 'new' => 'active']);
+});
