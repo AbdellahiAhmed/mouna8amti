@@ -34,12 +34,17 @@ services:
       start_period: 60s
 
   # Waits for a healthy api so it never races the entrypoint's composer install.
+  # depends_on replaces (not merges with) the anchor's, so the data stores are listed again.
   queue:
     <<: *api
     command: ["php", "artisan", "queue:work", "--tries=3", "--backoff=10"]
     healthcheck:
       disable: true
     depends_on:
+      pgsql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
       api:
         condition: service_healthy
 
