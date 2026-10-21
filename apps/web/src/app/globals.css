@@ -1,26 +1,189 @@
 @import "tailwindcss";
 
+/* Tokens mirror DESIGN.md at the repo root — change them there first. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #0f766e;
+  --primary-hover: #0d6961;
+  --primary-pressed: #0b5952;
+  --primary-soft: #e3f2ef;
+  --on-primary: #ffffff;
+  --gold: #c8a24a;
+  --gold-soft: #f6eedb;
+
+  --canvas: #ffffff;
+  --surface: #fafaf9;
+  --surface-sunken: #f6f5f4;
+  --hairline-soft: #ede9e4;
+  --hairline: #e5e3df;
+  --hairline-strong: #c8c4be;
+  --ink: #1a1a1a;
+  --charcoal: #37352f;
+  --slate: #5d5b54;
+  --steel: #787671;
+  --stone: #a4a097;
+
+  --success: #1a7f37;
+  --success-soft: #dcf3e3;
+  --warning: #b45309;
+  --warning-soft: #fdf0dc;
+  --danger: #c92a2a;
+  --danger-soft: #fde4e4;
+  --info: #0b6bcb;
+  --info-soft: #dcecfa;
+
+  --shadow-float: 0 1px 2px rgb(15 15 15 / 0.04), 0 8px 24px -6px rgb(15 15 15 / 0.12);
+  color-scheme: light;
+}
+
+.dark {
+  --primary: #2fb3a3;
+  --primary-hover: #3cc4b4;
+  --primary-pressed: #26988b;
+  --primary-soft: #14302c;
+  --on-primary: #06201d;
+  --gold: #d9b864;
+  --gold-soft: #2e2716;
+
+  --canvas: #1f1f1e;
+  --surface: #171716;
+  --surface-sunken: #141413;
+  --hairline-soft: #262625;
+  --hairline: #2f2f2d;
+  --hairline-strong: #45443f;
+  --ink: #f5f4f0;
+  --charcoal: #e3e1db;
+  --slate: #b5b2aa;
+  --steel: #8f8c84;
+  --stone: #66645e;
+
+  --success-soft: #16301f;
+  --warning-soft: #33240f;
+  --danger-soft: #3a1717;
+  --info-soft: #132b45;
+
+  --shadow-float: 0 1px 2px rgb(0 0 0 / 0.3), 0 12px 32px -8px rgb(0 0 0 / 0.6);
+  color-scheme: dark;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-pressed: var(--primary-pressed);
+  --color-primary-soft: var(--primary-soft);
+  --color-on-primary: var(--on-primary);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surface-sunken: var(--surface-sunken);
+  --color-hairline-soft: var(--hairline-soft);
+  --color-hairline: var(--hairline);
+  --color-hairline-strong: var(--hairline-strong);
+  --color-ink: var(--ink);
+  --color-charcoal: var(--charcoal);
+  --color-slate: var(--slate);
+  --color-steel: var(--steel);
+  --color-stone: var(--stone);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+  --color-tint-peach: #ffe8d4;
+  --color-tint-rose: #fde0ec;
+  --color-tint-mint: #d9f3e1;
+  --color-tint-lavender: #e6e0f5;
+  --color-tint-sky: #dcecfa;
+  --color-tint-yellow: #fef7d6;
+  --color-tint-gray: #f0eeec;
+
+  --font-display: var(--font-readex), var(--font-plex), system-ui, sans-serif;
+  --font-sans: var(--font-plex), system-ui, sans-serif;
+
+  --text-display-xl: 3.5rem;
+  --text-display-xl--line-height: 1.08;
+  --text-display-lg: 2.75rem;
+  --text-display-lg--line-height: 1.1;
+  --text-h1: 2.125rem;
+  --text-h1--line-height: 1.2;
+  --text-h2: 1.625rem;
+  --text-h2--line-height: 1.25;
+  --text-h3: 1.25rem;
+  --text-h3--line-height: 1.35;
+  --text-h4: 1.125rem;
+  --text-h4--line-height: 1.4;
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.6;
+  --text-body: 1rem;
+  --text-body--line-height: 1.55;
+  --text-table: 0.9375rem;
+  --text-table--line-height: 1.45;
+  --text-label: 0.875rem;
+  --text-label--line-height: 1.4;
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.4;
+
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  --shadow-float: var(--shadow-float);
+
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-emphasized: cubic-bezier(0.3, 0, 0, 1.15);
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply bg-surface font-sans text-body text-charcoal;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-ink;
+    font-weight: 600;
+  }
+
+  /* Arabic needs taller lines and must never be tracked (it breaks the joins). */
+  :lang(ar) body {
+    line-height: 1.7;
+  }
+
+  :lang(ar) :is(h1, h2, h3, h4, [class*="tracking-"]) {
+    letter-spacing: 0 !important;
+    line-height: 1.4;
+  }
+
+  ::selection {
+    background: var(--primary-soft);
+    color: var(--ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 120ms !important;
+      transition-duration: 120ms !important;
+    }
+  }
 }
