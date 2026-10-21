@@ -48,6 +48,7 @@ export async function api<T>(path: string, init: RequestInit & { json?: unknown 
   const method = (init.method ?? "GET").toUpperCase();
   const headers = new Headers(init.headers);
   headers.set("Accept", "application/json");
+  headers.set("Accept-Language", document.documentElement.lang || "ar");
 
   if (MUTATING.has(method)) {
     await ensureCsrfCookie();

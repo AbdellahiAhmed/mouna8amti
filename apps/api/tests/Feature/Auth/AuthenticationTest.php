@@ -85,3 +85,10 @@ it('logs out', function () {
 
     $this->assertGuest('web');
 });
+
+it('answers validation errors in the language the client asks for', function () {
+    spa()->withHeader('Accept-Language', 'fr')
+        ->postJson('/api/auth/login', [])
+        ->assertUnprocessable()
+        ->assertJsonPath('errors.email.0', fn (string $message) => str_contains($message, 'obligatoire'));
+});
