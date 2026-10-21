@@ -1,27 +1,25 @@
 ---
 version: 1.0
-name: Mouna8amti
+name: MNT
 description: >
   A calm, trustworthy operating system for NGOs. Notion's warm product chassis
   (warm neutrals, hairlines instead of shadows, pastel category tints) governed
   by Apple's discipline (one interactive colour, receding chrome, tight display
   headlines, a single elevation shadow, press-to-scale micro-interaction).
-  Signature: deep "Mizan" teal, a sparing sand-gold highlight, an 8-point
-  geometric star, and Arabic-first typography that is generous, never small.
+  Signature: one clear Lapis blue, the MNT ligature mark, and Arabic-first
+  typography that is generous, never small.
 derived_from:
   - notion   # getdesign.md/notion — VoltAgent/awesome-design-md (MIT)
   - apple    # getdesign.md/apple  — VoltAgent/awesome-design-md (MIT)
 
 colors:
   # Brand
-  primary: "#0f766e"            # Mizan teal — the ONLY interactive colour
-  primary-hover: "#0d6961"
-  primary-pressed: "#0b5952"
-  primary-soft: "#e3f2ef"       # selected rows, active nav background
+  primary: "#2b4fe8"            # Lapis — the brand colour and the ONLY interactive colour (6.2:1 on white)
+  primary-hover: "#2343d6"
+  primary-pressed: "#1d39bc"
+  primary-soft: "#e9edfd"       # selected rows, active nav background
   on-primary: "#ffffff"
-  gold: "#c8a24a"               # highlight only: focus of premium moments, star motif
-  gold-soft: "#f6eedb"
-  night: "#0b1716"              # Apple-style dark tile: auth & landing brand panels only
+  night: "#0a1033"              # Apple-style dark tile, lapis night: auth & landing brand panels only
   # Neutrals (Notion warm scale)
   canvas: "#ffffff"             # cards, tables, dialogs
   surface: "#fafaf9"            # app background
@@ -53,13 +51,11 @@ colors:
   tint-gray: "#f0eeec"
 
 colors-dark:
-  primary: "#2fb3a3"
-  primary-hover: "#3cc4b4"
-  primary-pressed: "#26988b"
-  primary-soft: "#14302c"
-  on-primary: "#06201d"
-  gold: "#d9b864"
-  gold-soft: "#2e2716"
+  primary: "#7088ff"
+  primary-hover: "#8a9dff"
+  primary-pressed: "#5a74f5"
+  primary-soft: "#182150"
+  on-primary: "#0a1033"
   canvas: "#1f1f1e"
   surface: "#171716"
   surface-sunken: "#141413"
@@ -136,14 +132,14 @@ components:
   topbar:           { height: 64px, bg: "surface @ 80% + blur", border-bottom: hairline-soft }
   dialog:           { bg: canvas, radius: lg, shadow: float, max-width: 560px }
   command-palette:  { bg: canvas, radius: lg, shadow: float, width: 640px }
-  budget-bar:       { height: 8px, radius: pill, track: surface-sunken, consumed: primary, committed: gold, over: danger }
+  budget-bar:       { height: 8px, radius: pill, track: surface-sunken, consumed: primary, committed: "primary @ 35%", over: danger }
 ---
 
-# Mouna8amti design system
+# MNT design system
 
 ## Overview
 
-Mouna8amti handles other people's money: grants from donors, spent by NGOs
+MNT (منظمتي) handles other people's money: grants from donors, spent by NGOs
 on behalf of communities. The interface has one job: make that money **legible
 and trustworthy**. The visual language says "calm, exact, accountable" the
 moment the page loads.
@@ -159,11 +155,13 @@ pressable element answers with a small scale.
 
 Our **signature** sits on top of both:
 
-- Mizan teal (`#0f766e`) is the colour of action and of balance.
-- Sand gold (`#c8a24a`) is used sparingly: the logo star, the "committed"
-  segment of a budget bar, premium empty states.
-- An 8-point geometric star echoes the "8" in Mouna8amti. It appears only on
-  the login, onboarding, empty states and PDF watermarks.
+- **One colour, Lapis `#2b4fe8`** — the outremer of Islamic manuscripts and
+  tilework: the trust that blue carries in finance, and the protection and
+  truth it carries across the Arab world. No second brand colour, no gradient.
+- **The MNT ligature** (see `docs/brand/README.md`): M, N and T share their
+  stems — one connected block, the idea of an organisation that holds together.
+- An 8-point geometric lattice, used sparingly as texture on brand surfaces
+  (login, onboarding, empty states).
 - Arabic is a first-class citizen with its own line-height and minimum size.
 
 ## Principles
@@ -197,7 +195,7 @@ Our **signature** sits on top of both:
 | Headings & figures | `ink` |
 | Body | `charcoal` |
 | Secondary / meta | `slate`, `steel` |
-| Clickable | `primary` |
+| Clickable, brand | `primary` (Lapis) |
 | Selected / active | `primary-soft` background + `primary` text |
 | Category chips (budget categories, donor types, project tags) | `tint-*` background + `charcoal` text |
 
@@ -257,8 +255,8 @@ crossfade.
   page.
 
 **Don't**
-- Don't introduce a second action colour, a gradient background on a work
-  screen, or glassmorphism cards.
+- Don't introduce a second brand or action colour, a gradient, or
+  glassmorphism cards.
 - Don't put a shadow on a card or a button.
 - Don't use font sizes under 13 px, or track Arabic text.
 - Don't use `left`/`right` in CSS, or icons that point in a fixed direction.

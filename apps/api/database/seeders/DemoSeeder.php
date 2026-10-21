@@ -22,15 +22,15 @@ use RuntimeException;
  */
 class DemoSeeder extends Seeder
 {
-    public const PASSWORD = 'Mouna8amti-demo-2026';
+    public const PASSWORD = 'MntDemo-2026';
 
     /** @var array<string, array{name: string, role: SystemRole, title: string}> */
     private const TEAM = [
-        'director@demo.mouna8amti.test' => ['name' => 'محمد الأمين', 'role' => SystemRole::Director, 'title' => 'المدير التنفيذي'],
-        'accountant@demo.mouna8amti.test' => ['name' => 'سيدي محمد', 'role' => SystemRole::Accountant, 'title' => 'محاسب'],
-        'coordinator@demo.mouna8amti.test' => ['name' => 'فاطمة بنت أحمد', 'role' => SystemRole::ProjectCoordinator, 'title' => 'منسقة المشاريع'],
-        'hr@demo.mouna8amti.test' => ['name' => 'مريم عبد الله', 'role' => SystemRole::HrOfficer, 'title' => 'مسؤولة الموارد البشرية'],
-        'donor@demo.mouna8amti.test' => ['name' => 'Claire Martin', 'role' => SystemRole::DonorViewer, 'title' => 'Chargée de programme'],
+        'director@demo.mnt.test' => ['name' => 'محمد الأمين', 'role' => SystemRole::Director, 'title' => 'المدير التنفيذي'],
+        'accountant@demo.mnt.test' => ['name' => 'سيدي محمد', 'role' => SystemRole::Accountant, 'title' => 'محاسب'],
+        'coordinator@demo.mnt.test' => ['name' => 'فاطمة بنت أحمد', 'role' => SystemRole::ProjectCoordinator, 'title' => 'منسقة المشاريع'],
+        'hr@demo.mnt.test' => ['name' => 'مريم عبد الله', 'role' => SystemRole::HrOfficer, 'title' => 'مسؤولة الموارد البشرية'],
+        'donor@demo.mnt.test' => ['name' => 'Claire Martin', 'role' => SystemRole::DonorViewer, 'title' => 'Chargée de programme'],
     ];
 
     public function run(CreateOrganization $createOrganization, TenantContext $tenant): void
@@ -41,7 +41,7 @@ class DemoSeeder extends Seeder
         }
 
         $admin = User::query()->firstOrCreate(
-            ['email' => 'admin@demo.mouna8amti.test'],
+            ['email' => 'admin@demo.mnt.test'],
             ['name' => 'الشيخ أحمد', 'password' => self::PASSWORD, 'locale' => 'ar'],
         );
 
@@ -91,7 +91,7 @@ class DemoSeeder extends Seeder
         }
 
         $coordinatorSeat = Membership::query()
-            ->whereHas('user', fn ($q) => $q->where('email', 'coordinator@demo.mouna8amti.test'))
+            ->whereHas('user', fn ($q) => $q->where('email', 'coordinator@demo.mnt.test'))
             ->value('id');
 
         foreach ([
