@@ -7,6 +7,8 @@ const apiUrl = process.env.API_INTERNAL_URL ?? "http://localhost:8000";
 
 const nextConfig: NextConfig = {
   output: "standalone",
+  // Bind mounts from macOS/Windows into Docker don't deliver file events; compose sets this to poll.
+  watchOptions: process.env.NEXT_WATCH_POLL_MS ? { pollIntervalMs: Number(process.env.NEXT_WATCH_POLL_MS) } : undefined,
   turbopack: {
     rules: {
       "*.css": {
