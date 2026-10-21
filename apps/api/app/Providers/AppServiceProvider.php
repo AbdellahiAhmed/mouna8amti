@@ -3,8 +3,12 @@
 namespace App\Providers;
 
 use App\Domain\Access\Enums\Permission;
+use App\Domain\Access\Models\Role;
+use App\Domain\Organizations\Models\Membership;
+use App\Domain\Organizations\Models\Organization;
 use App\Domain\Tenancy\TenantContext;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 
@@ -21,6 +25,13 @@ class AppServiceProvider extends ServiceProvider
         // would make missing-attribute checks fire on perfectly valid models.
         Model::preventLazyLoading(! $this->app->isProduction());
         Model::preventSilentlyDiscardingAttributes(! $this->app->isProduction());
+
+        // Stable public names in audit_logs and API payloads instead of PHP class names.
+        Relation::enforceMorphMap([
+            'organization' => Organization::class,
+            'membership' => Membership::class,
+            'role' => Role::class,
+        ]);
 
         // Every Permission value is a Gate ability, answered by the current membership.
         Gate::before(function (mixed $user, string $ability): ?bool {
