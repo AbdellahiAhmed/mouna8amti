@@ -34,3 +34,11 @@ it('gives the admin every permission in the catalogue', function () {
     expect(array_map(fn (Permission $p) => $p->value, SystemRole::Admin->permissions()))
         ->toBe(Permission::values());
 });
+
+it('hides the team directory from donor viewers', function () {
+    $organization = createOrganization();
+    $viewer = addMember($organization, SystemRole::DonorViewer);
+
+    $this->actingAs($viewer)->getJson("/api/orgs/{$organization->slug}/members")->assertForbidden();
+    $this->actingAs($viewer)->getJson("/api/orgs/{$organization->slug}/roles")->assertForbidden();
+});

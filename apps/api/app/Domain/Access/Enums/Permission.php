@@ -9,6 +9,7 @@ namespace App\Domain\Access\Enums;
 enum Permission: string
 {
     case OrganizationManage = 'organization.manage';
+    case MembersView = 'members.view';
     case MembersManage = 'members.manage';
     case RolesManage = 'roles.manage';
     case AuditView = 'audit.view';

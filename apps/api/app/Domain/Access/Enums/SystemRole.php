@@ -37,12 +37,13 @@ enum SystemRole: string
     {
         return match ($this) {
             self::Admin => P::cases(),
-            self::Director => [P::AuditView, P::ProjectsView, P::ProjectsManage, P::DonorsManage, P::GrantsManage,
+            self::Director => [P::MembersView, P::AuditView, P::ProjectsView, P::ProjectsManage, P::DonorsManage, P::GrantsManage,
                 P::BudgetsManage, P::ExpensesCreate, P::ExpensesApprove, P::ExpensesVoid],
-            self::Accountant => [P::ProjectsView, P::GrantsManage, P::BudgetsManage, P::ExpensesCreate,
+            self::Accountant => [P::MembersView, P::ProjectsView, P::GrantsManage, P::BudgetsManage, P::ExpensesCreate,
                 P::ExpensesApprove, P::ExpensesPay],
-            self::ProjectCoordinator => [P::ProjectsView, P::ProjectsManage, P::ExpensesCreate, P::ExpensesApprove],
-            self::HrOfficer, self::Logistician => [P::ProjectsView, P::ExpensesCreate],
+            self::ProjectCoordinator => [P::MembersView, P::ProjectsView, P::ProjectsManage, P::ExpensesCreate, P::ExpensesApprove],
+            self::HrOfficer => [P::MembersView, P::ProjectsView, P::ExpensesCreate],
+            self::Logistician => [P::ProjectsView, P::ExpensesCreate],
             self::DonorViewer => [P::ProjectsView],
         };
     }
