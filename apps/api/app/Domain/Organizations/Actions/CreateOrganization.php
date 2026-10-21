@@ -26,7 +26,7 @@ final class CreateOrganization
     public function handle(User $founder, array $attributes): Organization
     {
         return DB::transaction(function () use ($founder, $attributes): Organization {
-            $organization = new Organization([...$attributes, 'slug' => $this->uniqueSlug($attributes['name'])]);
+            $organization = new Organization([...$attributes, 'slug' => $this->uniqueSlug($attributes['legal_name'] ?? $attributes['name'])]);
 
             // Saved quietly: the audit row needs the tenant context, which needs the id.
             $organization->saveQuietly();
@@ -60,10 +60,11 @@ final class CreateOrganization
         });
     }
 
+    /** Prefers the (usually Latin) legal name: Arabic names transliterate poorly or to nothing. */
     private function uniqueSlug(string $name): string
     {
-        // Arabic names transliterate poorly or to nothing; a random suffix keeps slugs unique and unguessable.
-        $base = Str::limit(Str::slug($name), 40, '') ?: 'org';
+        // The random suffix keeps slugs unique and unguessable.
+        $base = rtrim(Str::limit(Str::slug($name), 40, ''), '-') ?: 'org';
 
         do {
             $slug = $base.'-'.Str::lower(Str::random(5));
