@@ -133,7 +133,7 @@ function Entry({ entry, index, isLast }: { entry: AuditLog; index: number; isLas
           </span>
         ) : (
           <span className="grid size-10 place-items-center rounded-full bg-surface-sunken">
-            <LogoMark className="size-6" />
+            <LogoMark className="h-3.5" />
           </span>
         )}
         <span className={cn("absolute -bottom-1 -end-1 grid size-5 place-items-center rounded-full ring-2 ring-canvas", className)}>

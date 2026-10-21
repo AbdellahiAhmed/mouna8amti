@@ -91,7 +91,7 @@ function NavGroup({ items, onNavigate }: { items: NavItem[]; onNavigate?: () => 
             <Icon aria-hidden className="relative size-[1.125rem] shrink-0" />
             <span className="relative flex-1">{t(item.key)}</span>
             {item.soon && (
-              <span className="relative rounded-full bg-gold-soft px-2 py-0.5 text-caption text-[#8a6d22] dark:text-gold">
+              <span className="relative rounded-full bg-surface px-2 py-0.5 text-caption text-steel">
                 {t("soon")}
               </span>
             )}

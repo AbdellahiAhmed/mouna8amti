@@ -4,14 +4,12 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --primary: #0f766e;
-  --primary-hover: #0d6961;
-  --primary-pressed: #0b5952;
-  --primary-soft: #e3f2ef;
+  --primary: #2b4fe8;
+  --primary-hover: #2343d6;
+  --primary-pressed: #1d39bc;
+  --primary-soft: #e9edfd;
   --on-primary: #ffffff;
-  --gold: #c8a24a;
-  --gold-soft: #f6eedb;
-  --night: #0b1716;
+  --night: #0a1033;
 
   --canvas: #ffffff;
   --surface: #fafaf9;
@@ -39,13 +37,11 @@
 }
 
 .dark {
-  --primary: #2fb3a3;
-  --primary-hover: #3cc4b4;
-  --primary-pressed: #26988b;
-  --primary-soft: #14302c;
-  --on-primary: #06201d;
-  --gold: #d9b864;
-  --gold-soft: #2e2716;
+  --primary: #7088ff;
+  --primary-hover: #8a9dff;
+  --primary-pressed: #5a74f5;
+  --primary-soft: #182150;
+  --on-primary: #0a1033;
 
   --canvas: #1f1f1e;
   --surface: #171716;
@@ -74,8 +70,6 @@
   --color-primary-pressed: var(--primary-pressed);
   --color-primary-soft: var(--primary-soft);
   --color-on-primary: var(--on-primary);
-  --color-gold: var(--gold);
-  --color-gold-soft: var(--gold-soft);
   --color-night: var(--night);
   --color-canvas: var(--canvas);
   --color-surface: var(--surface);

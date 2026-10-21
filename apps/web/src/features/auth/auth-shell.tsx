@@ -49,7 +49,7 @@ function BrandPanel() {
         transition={{ duration: 0.6, delay: 0.15, ease }}
         className="relative max-w-xl"
       >
-        <p className="text-label font-medium text-gold">{t("panelEyebrow")}</p>
+        <p className="text-label font-medium text-[#9fb0ff]">{t("panelEyebrow")}</p>
         <h2 className="mt-4 text-display-lg tracking-[-0.8px] text-white">{t("panelTitle")}</h2>
         <p className="mt-5 text-body-lg text-white/70">{t("panelBody")}</p>
       </motion.div>
@@ -74,7 +74,7 @@ function BrandPanel() {
             transition={{ duration: 1.2, delay: 0.7, ease: [0.3, 0, 0, 1.15] }}
           />
           <motion.span
-            className="bg-gold"
+            className="bg-primary/35"
             initial={{ width: 0 }}
             animate={{ width: "12%" }}
             transition={{ duration: 0.8, delay: 1.5, ease }}

@@ -10,10 +10,10 @@ export function PageLoader() {
   return (
     <div role="status" className="grid min-h-dvh place-items-center">
       <motion.div
-        animate={{ rotate: 45, scale: [1, 0.92, 1] }}
-        transition={{ duration: 1.4, ease: [0.2, 0, 0, 1], repeat: Infinity, repeatType: "reverse" }}
+        animate={{ opacity: [0.35, 1, 0.35], scale: [0.96, 1, 0.96] }}
+        transition={{ duration: 1.6, ease: [0.2, 0, 0, 1], repeat: Infinity }}
       >
-        <LogoMark className="size-12" />
+        <LogoMark className="h-10" />
       </motion.div>
       <span className="sr-only">{t("loading")}</span>
     </div>

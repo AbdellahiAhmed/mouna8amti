@@ -26,7 +26,7 @@ export function StarField({ className }: { className?: string }) {
 
       <motion.svg
         viewBox="0 0 100 100"
-        className="absolute -end-40 -top-40 size-[34rem] text-gold/15"
+        className="absolute -end-40 -top-40 size-[34rem] text-white/10"
         animate={{ rotate: 360 }}
         transition={{ duration: 180, ease: "linear", repeat: Infinity }}
       >
