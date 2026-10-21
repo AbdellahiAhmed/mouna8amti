@@ -21,6 +21,7 @@ colors:
   on-primary: "#ffffff"
   gold: "#c8a24a"               # highlight only: focus of premium moments, star motif
   gold-soft: "#f6eedb"
+  night: "#0b1716"              # Apple-style dark tile: auth & landing brand panels only
   # Neutrals (Notion warm scale)
   canvas: "#ffffff"             # cards, tables, dialogs
   surface: "#fafaf9"            # app background

@@ -5,6 +5,7 @@ import { IBM_Plex_Sans_Arabic, Readex_Pro } from "next/font/google";
 import { notFound } from "next/navigation";
 import { directionOf, routing } from "@/i18n/routing";
 import "../globals.css";
+import { Providers } from "./providers";
 
 const readex = Readex_Pro({
   subsets: ["arabic", "latin"],
@@ -38,7 +39,9 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
   return (
     <html lang={locale} dir={directionOf(locale)} className={`${readex.variable} ${plex.variable}`}>
       <body className="min-h-dvh">
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          <Providers>{children}</Providers>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

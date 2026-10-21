@@ -11,6 +11,7 @@
   --on-primary: #ffffff;
   --gold: #c8a24a;
   --gold-soft: #f6eedb;
+  --night: #0b1716;
 
   --canvas: #ffffff;
   --surface: #fafaf9;
@@ -75,6 +76,7 @@
   --color-on-primary: var(--on-primary);
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
+  --color-night: var(--night);
   --color-canvas: var(--canvas);
   --color-surface: var(--surface);
   --color-surface-sunken: var(--surface-sunken);
