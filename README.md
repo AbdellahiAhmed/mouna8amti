@@ -29,7 +29,8 @@ NGOs in Mauritania and the wider region run grants worth millions on spreadsheet
 | 7 system roles + permission catalogue, permission-aware UI | ✅ |
 | Append-only audit trail (DB trigger blocks updates/deletes) | ✅ |
 | Arabic (RTL) / French / English UI and API validation messages | ✅ |
-| Projects, donors & grants, budgets, expenses, approval engine | 🚧 Milestone 1, next |
+| Project registry (status filter, search, manager, progress) and donor directory | ✅ |
+| Grant agreements, budget lines, expenses with % allocation, approval engine | 🚧 Milestone 1, next |
 | Double-entry accounting, procurement, HR, assets, donor portal, reports | 🗺 Milestones 2–4 |
 
 The full product design lives in [`docs/specs`](docs/specs/2026-10-21-mouna8amti-design.md).
