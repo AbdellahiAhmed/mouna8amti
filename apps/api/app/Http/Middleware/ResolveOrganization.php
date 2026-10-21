@@ -25,6 +25,7 @@ final class ResolveOrganization
     {
         /** @var User $user */
         $user = $request->user();
+        $this->tenant->actAs($user);
         $parameter = $request->route('organization');
 
         $organization = $parameter instanceof Organization

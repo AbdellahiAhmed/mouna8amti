@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\ResolveOrganization;
 use App\Http\Middleware\SetLocaleFromRequest;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Auth\AuthenticationException;
@@ -8,6 +9,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\HttpKernel\Exception\ConflictHttpException;
@@ -25,6 +27,8 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->statefulApi();
         $middleware->api(prepend: [SetLocaleFromRequest::class]);
+        // Enter the tenant before route-model binding, or RLS hides every bound model (404).
+        $middleware->prependToPriorityList(before: SubstituteBindings::class, prepend: ResolveOrganization::class);
         // An authenticated user hitting a guest route gets JSON, not a redirect to "/home".
         $middleware->redirectUsersTo(fn () => null);
     })
