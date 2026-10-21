@@ -1,0 +1,25 @@
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies & builds
+node_modules/
+vendor/
+.next/
+dist/
+coverage/
+playwright-report/
+test-results/
+
+# Local reference material (third-party brochure, not ours to publish)
+/*.pdf
+
+# Tooling output
+graphify-out/
