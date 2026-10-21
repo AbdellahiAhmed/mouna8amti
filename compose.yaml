@@ -1,0 +1,92 @@
+name: mouna8amti
+
+x-api: &api
+  build:
+    context: ./apps/api
+    target: dev
+  volumes:
+    - ./apps/api:/app
+  environment:
+    DB_CONNECTION: pgsql
+    DB_HOST: pgsql
+    DB_PORT: 5432
+    DB_DATABASE: mouna8amti
+    DB_USERNAME: mouna8amti
+    DB_PASSWORD: secret
+    REDIS_HOST: redis
+    MAIL_HOST: mailpit
+    MAIL_PORT: 1025
+  depends_on:
+    pgsql:
+      condition: service_healthy
+    redis:
+      condition: service_healthy
+
+services:
+  api:
+    <<: *api
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8000/up"]
+      interval: 5s
+      retries: 30
+      start_period: 60s
+
+  # Waits for a healthy api so it never races the entrypoint's composer install.
+  queue:
+    <<: *api
+    command: ["php", "artisan", "queue:work", "--tries=3", "--backoff=10"]
+    depends_on:
+      api:
+        condition: service_healthy
+
+  web:
+    build:
+      context: ./apps/web
+      target: dev
+    ports:
+      - "3000:3000"
+    environment:
+      API_INTERNAL_URL: http://api:8000
+      WATCHPACK_POLLING: "true"
+    volumes:
+      - ./apps/web:/app
+      - web_node_modules:/app/node_modules
+      - web_next:/app/.next
+    depends_on:
+      - api
+
+  pgsql:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgsql_data:/var/lib/postgresql/data
+      - ./docker/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres", "-d", "mouna8amti"]
+      interval: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      retries: 10
+
+  mailpit:
+    image: axllent/mailpit:latest
+    ports:
+      - "8025:8025"
+
+volumes:
+  pgsql_data:
+  redis_data:
+  web_node_modules:
+  web_next:
