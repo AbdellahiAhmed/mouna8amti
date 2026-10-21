@@ -22,6 +22,9 @@
         <env name="CACHE_STORE" value="array" force="true"/>
         <env name="DB_CONNECTION" value="pgsql" force="true"/>
         <env name="DB_DATABASE" value="mouna8amti_testing" force="true"/>
+        <!-- Laravel reads $_SERVER first, where container env vars live; <env> alone does not override them. -->
+        <server name="DB_DATABASE" value="mouna8amti_testing" force="true"/>
+        <server name="APP_ENV" value="testing" force="true"/>
         <env name="DB_URL" value="" force="true"/>
         <env name="MAIL_MAILER" value="array" force="true"/>
         <env name="QUEUE_CONNECTION" value="sync" force="true"/>
