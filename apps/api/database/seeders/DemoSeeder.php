@@ -52,7 +52,7 @@ class DemoSeeder extends Seeder
             return; // Already seeded.
         }
 
-        $createOrganization->handle($admin, [
+        $organization = $createOrganization->handle($admin, [
             'name' => 'منظمة الأمل للتنمية',
             'legal_name' => 'Association Al Amal pour le Développement',
             'country' => 'MR',
@@ -60,6 +60,8 @@ class DemoSeeder extends Seeder
             'locale' => 'ar',
             'fiscal_year_start_month' => 1,
         ]);
+        // Stable, readable demo URLs (/ar/al-amal) instead of the generated slug.
+        $organization->forceFill(['slug' => 'al-amal'])->saveQuietly();
 
         foreach (self::TEAM as $email => $member) {
             $user = User::query()->create([
@@ -160,8 +162,8 @@ class DemoSeeder extends Seeder
                 $months[] = $m->copy();
             }
             foreach ($this->split($p[9], count($months)) as $i => $amount) {
-                $line = $lines[$code][$i % 3];
-                $chain->approved($p['model'], [[$line, 100]], "{$line->name} — ".self::MONTHS[$months[$i]->month - 1], $amount, $months[$i]->day(12)->toDateString());
+                // Spread across the lines in their budget shares, so no line runs over.
+                $chain->approved($p['model'], $this->lines($lines[$code], [[0, 40], [1, 45], [2, 15]]), self::HISTORY[$i % count(self::HISTORY)].' — '.self::MONTHS[$months[$i]->month - 1], $amount, $months[$i]->day(12)->toDateString());
             }
         }
 
@@ -190,6 +192,8 @@ class DemoSeeder extends Seeder
         $chain->submitted($projects['WMN']['model'], $this->lines($lines['WMN'], [[2, 100]]), 'إيجار مقر التدريب', 70_000, '2026-10-21', 'عقارات الرمال');
         $chain->rejected($projects['HLT']['model'], $this->lines($lines['HLT'], [[2, 100]]), 'إطعام المشاركين في الحملة', 35_000, '2026-10-10', 'الفاتورة غير مختومة من المورد.');
     }
+
+    private const HISTORY = ['مصاريف التشغيل الشهرية', 'رواتب الفريق وأنشطة الميدان', 'تنفيذ أنشطة المشروع'];
 
     private const MONTHS = ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'];
 
