@@ -465,6 +465,28 @@
       "chartNote": "En {month}, nous avons reçu {received} et dépensé {spent} ; le solde est de {balance}.",
       "tableView": "Voir les chiffres en tableau",
       "month": "Mois"
+    },
+    "donors": {
+      "title": "Bailleurs & financements",
+      "subtitle": "Qui nous a promis de l'argent, ce qui est arrivé, ce que nous attendons.",
+      "new": "Nouveau bailleur",
+      "empty": "Aucun bailleur pour l'instant",
+      "emptyHint": "Ajoutez les organismes qui financent vos projets, puis leurs subventions et tranches.",
+      "summary": "Les bailleurs nous ont promis <b>{promised} {unit}</b>. Nous avons reçu <b>{received}</b> et attendons encore <b>{left}</b>.",
+      "receivedShare": "{percent} % du financement est arrivé",
+      "nextTranche": "Prochaine tranche : {date}",
+      "promised": "Promis",
+      "received": "Reçu",
+      "left": "Restant",
+      "funds": "{count, plural, =0 {ne finance aucun projet} one {finance un projet} other {finance # projets}}",
+      "line": "Reçu <b>{received}</b> sur {promised}",
+      "projects": "Projets :",
+      "next": "Prochaine tranche",
+      "nextValue": "{amount} {unit} — prévue le {date}",
+      "nothingLeft": "Rien — montant reçu en totalité",
+      "withoutGrant": "Bailleurs sans subvention enregistrée",
+      "addGrant": "Enregistrer une subvention",
+      "edit": "Modifier le bailleur"
     }
   }
 }

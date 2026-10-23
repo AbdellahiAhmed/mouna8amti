@@ -465,6 +465,28 @@
       "chartNote": "In {month} we received {received} and spent {spent}; the balance is now {balance}.",
       "tableView": "Show the figures as a table",
       "month": "Month"
+    },
+    "donors": {
+      "title": "Donors & funding",
+      "subtitle": "Who promised us money, how much arrived, and what we are waiting for.",
+      "new": "New donor",
+      "empty": "No donors yet",
+      "emptyHint": "Add the organisations that fund your projects, then record their grants and tranches.",
+      "summary": "Donors promised us <b>{promised} {unit}</b>. We received <b>{received}</b> and are waiting for <b>{left}</b>.",
+      "receivedShare": "{percent}% of the funding has arrived",
+      "nextTranche": "Next tranche: {date}",
+      "promised": "Promised",
+      "received": "Received",
+      "left": "Left",
+      "funds": "{count, plural, =0 {funds no project} one {funds one project} other {funds # projects}}",
+      "line": "Received <b>{received}</b> of {promised}",
+      "projects": "Projects:",
+      "next": "Next tranche",
+      "nextValue": "{amount} {unit} — expected on {date}",
+      "nothingLeft": "Nothing — fully received",
+      "withoutGrant": "Donors without a recorded grant",
+      "addGrant": "Record a grant",
+      "edit": "Edit donor"
     }
   }
 }

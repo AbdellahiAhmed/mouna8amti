@@ -465,6 +465,28 @@
       "chartNote": "في {month} استلمنا {received} وصرفنا {spent}، وأصبح الرصيد {balance}.",
       "tableView": "عرض الأرقام في جدول",
       "month": "الشهر"
+    },
+    "donors": {
+      "title": "المانحون والتمويل",
+      "subtitle": "من وعدنا بالمال، كم وصل، وما الذي ننتظره.",
+      "new": "مانح جديد",
+      "empty": "لا يوجد مانحون بعد",
+      "emptyHint": "أضف الجهات التي تموّل مشاريعك، ثم سجّل منحها ودفعاتها.",
+      "summary": "وعدنا المانحون بـ <b>{promised} {unit}</b>. وصلنا منها <b>{received}</b>، وننتظر <b>{left}</b>.",
+      "receivedShare": "وصل {percent}% من التمويل",
+      "nextTranche": "الدفعة القادمة: {date}",
+      "promised": "الموعود",
+      "received": "المستلم",
+      "left": "المتبقي",
+      "funds": "{count, plural, =0 {لا يموّل أي مشروع} one {يموّل مشروعًا واحدًا} two {يموّل مشروعين} few {يموّل # مشاريع} other {يموّل # مشروعًا}}",
+      "line": "استلمنا <b>{received}</b> من {promised}",
+      "projects": "المشاريع:",
+      "next": "الدفعة القادمة",
+      "nextValue": "{amount} {unit} — متوقعة في {date}",
+      "nothingLeft": "لا شيء — استلمنا المبلغ كاملًا",
+      "withoutGrant": "مانحون بلا منح مسجلة",
+      "addGrant": "تسجيل منحة",
+      "edit": "تعديل المانح"
     }
   }
 }

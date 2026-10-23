@@ -92,3 +92,9 @@ export function useDates() {
     day: (value: string) => day.format(parse(value)),
   };
 }
+
+/** First meaningful letter: "الاتحاد الأوروبي" → "ا" would repeat on every Arabic name, so skip the article. */
+export function initialOf(name: string) {
+  const word = name.trim().split(/\s+/)[0] ?? "";
+  return (word.startsWith("ال") && word.length > 3 ? word[2] : word[0]) ?? "";
+}
