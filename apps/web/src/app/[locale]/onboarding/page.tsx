@@ -6,6 +6,7 @@ import { StarField } from "@/components/brand/star-field";
 import { LocaleSwitcher } from "@/components/locale-switcher";
 import { PageLoader } from "@/components/ui/page-loader";
 import { useRequiredUser } from "@/features/auth/use-required-user";
+import { PendingInvitations } from "@/features/auth/pending-invitations";
 import { OnboardingWizard } from "@/features/onboarding/onboarding-wizard";
 
 export default function OnboardingPage() {
@@ -24,6 +25,9 @@ export default function OnboardingPage() {
       </header>
 
       <div className="relative mx-auto max-w-xl py-16">
+        <div className="mb-10">
+          <PendingInvitations user={user} />
+        </div>
         <h1 className="text-h1 tracking-[-0.5px]">{t("title")}</h1>
         <p className="mt-2 text-body-lg text-slate">{t("subtitle")}</p>
         <div className="mt-10">

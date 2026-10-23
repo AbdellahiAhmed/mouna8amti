@@ -33,11 +33,19 @@ class MemberInvited extends Notification implements ShouldQueue
             ? "{$base}/login"
             : "{$base}/invitation?".http_build_query(['token' => $this->token, 'email' => $notifiable->email]);
 
+        // Names are typed by other people: escape them so they cannot inject Markdown links into the mail.
+        $organization = self::plain($this->organization->name);
+
         return (new MailMessage)
-            ->subject(__('You have been invited to :organization', ['organization' => $this->organization->name], $locale))
-            ->greeting(__('Hello :name,', ['name' => $notifiable->name], $locale))
-            ->line(__(':organization added you to its team on MNT.', ['organization' => $this->organization->name], $locale))
+            ->subject(__('You have been invited to :organization', ['organization' => $this->organization->name], $locale)) // Plain-text header: no Markdown.
+            ->greeting(__('Hello :name,', ['name' => self::plain($notifiable->name)], $locale))
+            ->line(__(':organization invited you to join its team on MNT.', ['organization' => $organization], $locale))
             ->action($this->token === null ? __('Sign in', [], $locale) : __('Choose my password', [], $locale), $url)
             ->line($this->token === null ? '' : __('This link is valid for 7 days.', [], $locale));
+    }
+
+    private static function plain(string $value): string
+    {
+        return (string) preg_replace('/([\\\\`*_{}\[\]()<>#+\-.!|~])/', '\\\\$1', $value);
     }
 }

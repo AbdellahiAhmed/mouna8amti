@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\CurrentUserController;
 use App\Http\Controllers\Auth\InvitationController;
+use App\Http\Controllers\Auth\MembershipInvitationController;
 use App\Http\Controllers\Auth\RegistrationController;
 use App\Http\Controllers\Auth\SessionController;
 use App\Http\Controllers\Budgets\BudgetLineController;
@@ -23,12 +24,14 @@ Route::prefix('auth')->group(function () {
     Route::middleware('guest')->group(function () {
         Route::post('register', [RegistrationController::class, 'store'])->middleware('throttle:10,1');
         Route::post('login', [SessionController::class, 'store']);
-        Route::post('invitations/accept', [InvitationController::class, 'store'])->middleware('throttle:10,1');
+        Route::post('invitations/password', [InvitationController::class, 'store'])->middleware('throttle:10,1');
     });
 
     Route::middleware('auth:sanctum')->group(function () {
         Route::post('logout', [SessionController::class, 'destroy']);
         Route::get('me', [CurrentUserController::class, 'show'])->middleware(ActAsDatabaseUser::class);
+        Route::post('invitations/{membership}/accept', [MembershipInvitationController::class, 'accept'])->whereNumber('membership')->middleware(ActAsDatabaseUser::class);
+        Route::post('invitations/{membership}/decline', [MembershipInvitationController::class, 'decline'])->whereNumber('membership')->middleware(ActAsDatabaseUser::class);
     });
 });
 

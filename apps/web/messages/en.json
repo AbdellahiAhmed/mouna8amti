@@ -35,7 +35,16 @@
     "haveAccount": "Already have an account?",
     "registerLink": "Create one",
     "loginLink": "Sign in",
-    "tagline": "One simple place for projects, funding and expenses"
+    "tagline": "One simple place for projects, funding and expenses",
+    "invitation": {
+      "title": "Join your team",
+      "subtitle": "Choose a password, then you will go straight to your organisation.",
+      "join": "Join",
+      "joining": "Joining…",
+      "pending": "<b>{organization}</b> invited you to join its team.",
+      "accept": "Accept",
+      "decline": "Decline"
+    }
   },
   "onboarding": {
     "title": "Let's set up your organisation",
@@ -177,7 +186,8 @@
     "expenses_create": "Submit expenses",
     "expenses_approve": "Approve expenses",
     "expenses_pay": "Pay expenses",
-    "expenses_void": "Void approved expenses"
+    "expenses_void": "Void approved expenses",
+    "expenses_review": "Review expenses"
   },
   "shell": {
     "menu": "Menu",
@@ -487,6 +497,50 @@
       "withoutGrant": "Donors without a recorded grant",
       "addGrant": "Record a grant",
       "edit": "Edit donor"
+    },
+    "team": {
+      "title": "Team",
+      "subtitle": "{count, plural, one {One person works} other {# people work}} in the organisation, each with a clear role.",
+      "subtitleLoading": "Who works in the organisation, and what each person does.",
+      "invite": "Invite a member",
+      "empty": "No members yet",
+      "chainEyebrow": "How an expense gets approved",
+      "chainBody": "Every expense goes through three different people before it counts. Nobody can approve an expense they submitted.",
+      "stepSubmit": "Submits the expense",
+      "stepReview": "Checks the invoice",
+      "stepApprove": "Gives final approval",
+      "nobody": "Not assigned yet",
+      "you": "You",
+      "canDo": "What they can do",
+      "about": {
+        "admin": "Runs the organisation on the platform: team, roles and settings.",
+        "director": "Sees everything in the organisation and gives final approval on expenses.",
+        "accountant": "Checks every expense and its invoice before it reaches the director.",
+        "project_coordinator": "Follows activities in the field and submits expenses with their invoices.",
+        "hr_officer": "Manages staff files and prepares payroll every month.",
+        "logistician": "Handles purchasing and transport, and submits their expenses.",
+        "donor_viewer": "Donor representative: views projects without changing anything."
+      },
+      "abilities": {
+        "expenses_approve": "Final approval",
+        "expenses_review": "Review expenses",
+        "expenses_create": "Submitting expenses",
+        "projects_manage": "Managing projects",
+        "budgets_manage": "Budgets",
+        "grants_manage": "Grants and tranches",
+        "members_manage": "Managing the team",
+        "audit_view": "Audit trail",
+        "projects_view": "Viewing projects"
+      },
+      "inviteTitle": "Invite a new member",
+      "inviteHint": "They will get an e-mail with a link to choose a password. They have no access before that.",
+      "name": "Full name",
+      "email": "E-mail",
+      "role": "Role",
+      "jobTitle": "Job title",
+      "cancel": "Cancel",
+      "send": "Send invitation",
+      "sending": "Sending…"
     }
   }
 }

@@ -7,6 +7,7 @@ import { Dialog, DropdownMenu } from "radix-ui";
 import { useState, type ReactNode } from "react";
 import { Logo } from "@/components/brand/logo";
 import { LocaleSwitcher } from "@/components/locale-switcher";
+import { PendingInvitations } from "@/features/auth/pending-invitations";
 import { useLogout } from "@/features/auth/queries";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/cn";
@@ -24,6 +25,7 @@ const menuItemClass =
 export function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const isRtl = useLocale() === "ar";
+  const { user } = useOrganization();
 
   return (
     <div className="min-h-dvh lg:grid lg:grid-cols-[17rem_minmax(0,1fr)] print:block">
@@ -42,6 +44,9 @@ export function AppShell({ children }: { children: ReactNode }) {
             transition={{ duration: 0.22, ease }}
             className="mx-auto w-full max-w-[76rem] flex-1 px-4 pb-28 pt-6 sm:px-8 lg:px-12 lg:pb-16 lg:pt-10"
           >
+            <div className="mb-6 empty:hidden">
+              <PendingInvitations user={user} />
+            </div>
             {children}
           </motion.main>
         </AnimatePresence>

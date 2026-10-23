@@ -19,7 +19,9 @@ class CurrentUserController extends Controller
         $user->load(['memberships' => fn (HasMany $query) => $query
             ->where('status', MembershipStatus::Active)
             ->with(['organization', 'roles'])
-            ->oldest()]);
+            ->oldest(),
+            'invitations' => fn (HasMany $query) => $query->where('status', MembershipStatus::Invited)->with('organization')->latest(),
+        ]);
 
         return new UserResource($user);
     }

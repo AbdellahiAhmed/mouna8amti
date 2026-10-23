@@ -35,7 +35,16 @@
     "haveAccount": "Déjà un compte ?",
     "registerLink": "Créer un compte",
     "loginLink": "Se connecter",
-    "tagline": "Une plateforme simple pour gérer projets, financements et dépenses"
+    "tagline": "Une plateforme simple pour gérer projets, financements et dépenses",
+    "invitation": {
+      "title": "Rejoignez votre équipe",
+      "subtitle": "Choisissez un mot de passe : vous entrerez ensuite directement dans votre organisation.",
+      "join": "Rejoindre",
+      "joining": "Connexion…",
+      "pending": "<b>{organization}</b> vous invite à rejoindre son équipe.",
+      "accept": "Accepter",
+      "decline": "Refuser"
+    }
   },
   "onboarding": {
     "title": "Configurons votre organisation",
@@ -177,7 +186,8 @@
     "expenses_create": "Soumettre des dépenses",
     "expenses_approve": "Approuver des dépenses",
     "expenses_pay": "Payer des dépenses",
-    "expenses_void": "Annuler des dépenses approuvées"
+    "expenses_void": "Annuler des dépenses approuvées",
+    "expenses_review": "Vérifier les dépenses"
   },
   "shell": {
     "menu": "Menu",
@@ -487,6 +497,50 @@
       "withoutGrant": "Bailleurs sans subvention enregistrée",
       "addGrant": "Enregistrer une subvention",
       "edit": "Modifier le bailleur"
+    },
+    "team": {
+      "title": "Équipe",
+      "subtitle": "{count, plural, one {Une personne travaille} other {# personnes travaillent}} dans l'organisation, chacune avec un rôle clair.",
+      "subtitleLoading": "Qui travaille dans l'organisation, et le rôle de chacun.",
+      "invite": "Inviter un membre",
+      "empty": "Aucun membre pour l'instant",
+      "chainEyebrow": "Comment une dépense est approuvée",
+      "chainBody": "Chaque dépense passe par trois personnes différentes avant d'être comptée. Personne ne peut approuver une dépense qu'il a lui-même soumise.",
+      "stepSubmit": "Soumet la dépense",
+      "stepReview": "Vérifie la facture",
+      "stepApprove": "Donne l'accord final",
+      "nobody": "Pas encore désigné",
+      "you": "Vous",
+      "canDo": "Ce qu'il peut faire",
+      "about": {
+        "admin": "Administre l'organisation sur la plateforme : équipe, rôles et paramètres.",
+        "director": "Voit tout dans l'organisation et donne l'accord final sur les dépenses.",
+        "accountant": "Vérifie chaque dépense et sa facture avant qu'elle n'arrive au directeur.",
+        "project_coordinator": "Suit les activités sur le terrain et soumet les dépenses avec leurs factures.",
+        "hr_officer": "Gère les dossiers du personnel et prépare la paie chaque mois.",
+        "logistician": "S'occupe des achats et du transport, et en soumet les dépenses.",
+        "donor_viewer": "Représentant du bailleur : consulte les projets sans rien modifier."
+      },
+      "abilities": {
+        "expenses_approve": "Accord final",
+        "expenses_review": "Vérifier les dépenses",
+        "expenses_create": "Soumission des dépenses",
+        "projects_manage": "Gestion des projets",
+        "budgets_manage": "Budgets",
+        "grants_manage": "Subventions et tranches",
+        "members_manage": "Gestion de l'équipe",
+        "audit_view": "Journal d'audit",
+        "projects_view": "Consultation des projets"
+      },
+      "inviteTitle": "Inviter un nouveau membre",
+      "inviteHint": "Il recevra un e-mail avec un lien pour choisir son mot de passe. Il n'a aucun droit avant cela.",
+      "name": "Nom complet",
+      "email": "Adresse e-mail",
+      "role": "Rôle",
+      "jobTitle": "Fonction",
+      "cancel": "Annuler",
+      "send": "Envoyer l'invitation",
+      "sending": "Envoi…"
     }
   }
 }

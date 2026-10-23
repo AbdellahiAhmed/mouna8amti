@@ -2,9 +2,6 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Domain\Organizations\Enums\MembershipStatus;
-use App\Domain\Organizations\Models\Membership;
-use App\Domain\Tenancy\TenantContext;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
 use App\Models\User;
@@ -14,10 +11,10 @@ use Illuminate\Support\Facades\Password;
 use Illuminate\Validation\Rules\Password as PasswordRule;
 use Illuminate\Validation\ValidationException;
 
-/** A newcomer opens the e-mailed link, chooses a password, and their invited seats become active. */
+/** A newcomer opens the e-mailed link and chooses a password; each seat is then accepted on its own. */
 class InvitationController extends Controller
 {
-    public function store(Request $request, TenantContext $tenant): UserResource
+    public function store(Request $request): UserResource
     {
         $credentials = $request->validate([
             'token' => ['required', 'string'],
@@ -39,14 +36,6 @@ class InvitationController extends Controller
 
         Auth::guard('web')->login($accepted);
         $request->session()->regenerate();
-
-        // RLS writes need each seat's organisation as the tenant, so activate them one by one.
-        $tenant->actAs($accepted);
-        foreach (Membership::query()->where('user_id', $accepted->id)->where('status', MembershipStatus::Invited)->get() as $seat) {
-            $tenant->enter($seat->organization()->firstOrFail());
-            $seat->update(['status' => MembershipStatus::Active]);
-        }
-        $tenant->forget();
 
         return new UserResource($accepted);
     }

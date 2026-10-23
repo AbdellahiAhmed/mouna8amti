@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Domain\Organizations\Enums\MembershipStatus;
 use App\Domain\Organizations\Models\Membership;
 use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -46,5 +47,11 @@ class User extends Authenticatable
     {
         // Memberships span tenants by design; RLS still limits them to this user's rows.
         return $this->hasMany(Membership::class)->withoutGlobalScope('organization');
+    }
+
+    /** @return HasMany<Membership, $this> Seats offered to this user and not yet accepted. */
+    public function invitations(): HasMany
+    {
+        return $this->memberships()->where('status', MembershipStatus::Invited);
     }
 }

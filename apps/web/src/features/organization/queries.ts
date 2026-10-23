@@ -1,8 +1,8 @@
 "use client";
 
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { api } from "@/lib/api";
-import type { Membership, Paginated, Role } from "@/lib/types";
+import type { Membership, Paginated, Resource, Role } from "@/lib/types";
 import { useOrganization } from "./organization-context";
 
 function useOrgPath() {
@@ -22,5 +22,16 @@ export function useRoles() {
   return useQuery({
     queryKey: [base, "roles"],
     queryFn: () => api<{ data: Role[] }>(`${base}/roles`).then((r) => r.data),
+  });
+}
+
+export type InviteInput = { name: string; email: string; title: string | null; role_id: number };
+
+export function useInviteMember() {
+  const base = useOrgPath();
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: (input: InviteInput) => api<Resource<Membership>>(`${base}/members`, { method: "POST", json: input }),
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: [base, "members"] }),
   });
 }

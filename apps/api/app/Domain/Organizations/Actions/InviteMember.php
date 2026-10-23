@@ -13,9 +13,9 @@ use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 
 /**
- * Gives a person a seat in the current organisation. Someone who already has an
- * account is added directly; a newcomer gets an "invited" seat, which grants no
- * permission until they set a password from the e-mailed link.
+ * Offers a person a seat in the current organisation. The seat stays "invited"
+ * (no access) until the person accepts it themselves after signing in; a
+ * newcomer first sets a password from the e-mailed link.
  */
 final class InviteMember
 {
@@ -41,7 +41,7 @@ final class InviteMember
 
             $membership = Membership::query()->create([
                 'user_id' => $user->id,
-                'status' => $isNew ? MembershipStatus::Invited : MembershipStatus::Active,
+                'status' => MembershipStatus::Invited,
                 'title' => $data['title'] ?? null,
             ]);
             $membership->assignRoles([$data['role_id']]);

@@ -43,6 +43,8 @@ export interface User {
   locale: Locale;
   avatar_url: string | null;
   memberships?: Membership[];
+  /** Seats offered to this user, waiting for them to accept. */
+  invitations?: { id: number; title: string | null; organization: { name: string; slug: string } }[];
 }
 
 export type AuditSubjectType = "organization" | "membership" | "role" | "project" | "donor";

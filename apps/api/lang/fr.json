@@ -238,9 +238,9 @@
     "This person is already a member of the organisation.": "Cette personne fait déjà partie de l'organisation.",
     "You have been invited to :organization": "Invitation à rejoindre :organization",
     "Hello :name,": "Bonjour :name,",
-    ":organization added you to its team on MNT.": ":organization vous a ajouté à son équipe sur MNT.",
     "Sign in": "Se connecter",
     "Choose my password": "Choisir mon mot de passe",
     "This link is valid for 7 days.": "Ce lien est valable 7 jours.",
-    "This invitation link is invalid or has expired.": "Ce lien d'invitation est invalide ou a expiré."
+    "This invitation link is invalid or has expired.": "Ce lien d'invitation est invalide ou a expiré.",
+    ":organization invited you to join its team on MNT.": ":organization vous invite à rejoindre son équipe sur MNT."
 }
