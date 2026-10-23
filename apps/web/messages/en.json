@@ -216,7 +216,8 @@
       "active": "Active",
       "on_hold": "On hold",
       "closed": "Closed"
-    }
+    },
+    "location": "Location"
   },
   "donors": {
     "title": "Donors & grants",
@@ -285,6 +286,82 @@
       "recentTitle": "Latest expenses",
       "allExpenses": "All expenses",
       "noExpenses": "No expenses recorded yet."
+    },
+    "projects": {
+      "title": "Projects",
+      "subtitle": "For each project: who funds it, how much we spent, how much is left.",
+      "new": "New project",
+      "empty": "No projects yet",
+      "emptyHint": "Create a first project, then link it to a donor and a budget.",
+      "count": "Projects",
+      "totalBudget": "Total budgets",
+      "filter": "Filter by status",
+      "all": "All",
+      "legendSpent": "Spent",
+      "legendLeft": "Left",
+      "fundedBy": "Funded by {donors}",
+      "story": "Spent <b>{spent}</b> of {budget} — <b>{left}</b> left",
+      "storyClosed": "Spent <b>{spent}</b> of {budget} — project completed",
+      "progress": "Progress"
+    },
+    "project": {
+      "manager": "Coordinator: {name}",
+      "edit": "Edit project",
+      "progressLabel": "complete",
+      "story": "The project is <b>{progress}%</b> complete. Its budget is <b>{budget}</b> {unit}: we spent <b>{spent}</b> and <b>{left}</b> is left.",
+      "storyClosed": "The project is completed. Budget of <b>{budget}</b> {unit}, of which <b>{spent}</b> was spent.",
+      "budget": "Budget",
+      "spent": "Spent",
+      "left": "Left",
+      "fundingTitle": "Where the money came from",
+      "addGrant": "Grant",
+      "editGrant": "Edit grant",
+      "noGrants": "No grant recorded for this project.",
+      "promised": "Promised {amount} {unit}",
+      "received": "Received <b>{amount}</b> in {count, plural, =0 {no payments} one {one payment} other {# payments}}",
+      "trancheN": "Tranche {n}",
+      "trancheAwaited": "Tranche {n} — not received yet",
+      "expected": "expected on {date}",
+      "spendingTitle": "Where the money went",
+      "editBudget": "Lines",
+      "spendingOf": "of {amount} spent",
+      "noLines": "No budget lines yet.",
+      "ofLine": "of {amount} · {percent}%",
+      "expensesTitle": "Latest expenses",
+      "allExpenses": "All",
+      "noExpenses": "No expenses for this project yet.",
+      "approvedBy": "Approved by {name}"
+    },
+    "grants": {
+      "new": "New grant",
+      "edit": "Edit grant",
+      "hint": "What the donor promised for this project, and when each payment is due.",
+      "donor": "Donor",
+      "project": "Project",
+      "amount": "Grant amount",
+      "reference": "Agreement no.",
+      "signedOn": "Signed on",
+      "tranches": "Tranches",
+      "noTranches": "No tranches. Add the date of the first payment.",
+      "trancheAmount": "Amount",
+      "expectedOn": "Expected on",
+      "receivedOn": "Received on",
+      "removeTranche": "Remove tranche",
+      "addTranche": "Add a tranche",
+      "cancel": "Cancel",
+      "save": "Save",
+      "saving": "Saving…"
+    },
+    "budget": {
+      "editTitle": "Budget lines",
+      "editHint": "Split the project budget into lines. Expenses are charged to these lines.",
+      "name": "Line name",
+      "newLine": "New line…",
+      "amount": "Planned amount",
+      "save": "Save line",
+      "add": "Add line",
+      "remove": "Delete line",
+      "total": "Total budget:"
     }
   }
 }

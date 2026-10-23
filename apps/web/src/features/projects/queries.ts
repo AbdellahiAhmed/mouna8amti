@@ -11,6 +11,7 @@ export type ProjectInput = {
   code: string;
   name: string;
   description: string | null;
+  location: string | null;
   manager_membership_id: number | null;
   starts_on: string;
   ends_on: string;
@@ -36,6 +37,11 @@ export function useProjects(filters: ProjectFilters) {
   });
 }
 
+export function useProject(id: number) {
+  const path = `${useProjectsPath()}/${id}`;
+  return useQuery({ queryKey: [path], queryFn: () => api<Resource<Project>>(path) });
+}
+
 export function useSaveProject(projectId?: number) {
   const path = useProjectsPath();
   const queryClient = useQueryClient();
@@ -46,6 +52,7 @@ export function useSaveProject(projectId?: number) {
         method: projectId ? "PUT" : "POST",
         json: input,
       }),
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: [path] }),
+    // Prefix match: the list, this project's page and the dashboard all read projects.
+    onSuccess: () => queryClient.invalidateQueries({ predicate: (q) => String(q.queryKey[0]).startsWith(path.replace(/\/projects$/, "")) }),
   });
 }

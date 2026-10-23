@@ -51,6 +51,7 @@ function ProjectForm({ project, onDone }: { project?: Project; onDone: () => voi
         code: String(form.get("code")).trim(),
         name: String(form.get("name")).trim(),
         description: String(form.get("description") ?? "").trim() || null,
+        location: String(form.get("location") ?? "").trim() || null,
         manager_membership_id: manager ? Number(manager) : null,
         starts_on: String(form.get("starts_on")),
         ends_on: String(form.get("ends_on")),
@@ -73,6 +74,10 @@ function ProjectForm({ project, onDone }: { project?: Project; onDone: () => voi
           <Input name="name" defaultValue={project?.name} required />
         </Field>
       </div>
+
+      <Field label={t("location")} error={fieldError("location")}>
+        <Input name="location" defaultValue={project?.location ?? ""} maxLength={120} />
+      </Field>
 
       <Field label={t("manager")} error={fieldError("manager_membership_id")}>
         {/* Remounted once members load: an uncontrolled default must match an option that exists. */}

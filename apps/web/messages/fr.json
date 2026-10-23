@@ -216,7 +216,8 @@
       "active": "En cours",
       "on_hold": "Suspendu",
       "closed": "Clôturé"
-    }
+    },
+    "location": "Lieu"
   },
   "donors": {
     "title": "Bailleurs & financements",
@@ -285,6 +286,82 @@
       "recentTitle": "Dernières dépenses",
       "allExpenses": "Toutes les dépenses",
       "noExpenses": "Aucune dépense enregistrée pour l'instant."
+    },
+    "projects": {
+      "title": "Projets",
+      "subtitle": "Pour chaque projet : qui le finance, combien nous avons dépensé, combien il reste.",
+      "new": "Nouveau projet",
+      "empty": "Aucun projet pour l'instant",
+      "emptyHint": "Créez un premier projet, puis reliez-le à un bailleur et à un budget.",
+      "count": "Projets",
+      "totalBudget": "Total des budgets",
+      "filter": "Filtrer par statut",
+      "all": "Tous",
+      "legendSpent": "Dépensé",
+      "legendLeft": "Restant",
+      "fundedBy": "Financé par {donors}",
+      "story": "Dépensé <b>{spent}</b> sur {budget} — reste <b>{left}</b>",
+      "storyClosed": "Dépensé <b>{spent}</b> sur {budget} — projet terminé",
+      "progress": "Avancement"
+    },
+    "project": {
+      "manager": "Coordination : {name}",
+      "edit": "Modifier le projet",
+      "progressLabel": "réalisé",
+      "story": "Le projet est réalisé à <b>{progress} %</b>. Son budget est de <b>{budget}</b> {unit} : nous avons dépensé <b>{spent}</b>, il reste <b>{left}</b>.",
+      "storyClosed": "Le projet est terminé. Budget de <b>{budget}</b> {unit}, dont <b>{spent}</b> dépensés.",
+      "budget": "Budget",
+      "spent": "Dépensé",
+      "left": "Reste",
+      "fundingTitle": "D'où vient l'argent",
+      "addGrant": "Subvention",
+      "editGrant": "Modifier la subvention",
+      "noGrants": "Aucune subvention enregistrée pour ce projet.",
+      "promised": "A promis {amount} {unit}",
+      "received": "Reçu <b>{amount}</b> en {count, plural, =0 {aucun versement} one {un versement} other {# versements}}",
+      "trancheN": "Tranche {n}",
+      "trancheAwaited": "Tranche {n} — pas encore reçue",
+      "expected": "prévue le {date}",
+      "spendingTitle": "Où est allé l'argent",
+      "editBudget": "Lignes",
+      "spendingOf": "sur {amount} dépensés",
+      "noLines": "Aucune ligne budgétaire pour l'instant.",
+      "ofLine": "sur {amount} · {percent} %",
+      "expensesTitle": "Dernières dépenses",
+      "allExpenses": "Tout voir",
+      "noExpenses": "Aucune dépense pour ce projet.",
+      "approvedBy": "Approuvée par {name}"
+    },
+    "grants": {
+      "new": "Nouvelle subvention",
+      "edit": "Modifier la subvention",
+      "hint": "Ce que le bailleur a promis pour ce projet, et le calendrier des versements.",
+      "donor": "Bailleur",
+      "project": "Projet",
+      "amount": "Montant",
+      "reference": "N° de convention",
+      "signedOn": "Date de signature",
+      "tranches": "Tranches",
+      "noTranches": "Aucune tranche. Ajoutez la date du premier versement.",
+      "trancheAmount": "Montant",
+      "expectedOn": "Date prévue",
+      "receivedOn": "Reçue le",
+      "removeTranche": "Supprimer la tranche",
+      "addTranche": "Ajouter une tranche",
+      "cancel": "Annuler",
+      "save": "Enregistrer",
+      "saving": "Enregistrement…"
+    },
+    "budget": {
+      "editTitle": "Lignes budgétaires",
+      "editHint": "Répartissez le budget du projet en lignes. Les dépenses sont imputées sur ces lignes.",
+      "name": "Nom de la ligne",
+      "newLine": "Nouvelle ligne…",
+      "amount": "Montant prévu",
+      "save": "Enregistrer la ligne",
+      "add": "Ajouter la ligne",
+      "remove": "Supprimer la ligne",
+      "total": "Budget total :"
     }
   }
 }

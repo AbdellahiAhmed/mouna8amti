@@ -216,7 +216,8 @@
       "active": "قيد التنفيذ",
       "on_hold": "معلّق",
       "closed": "مكتمل"
-    }
+    },
+    "location": "المكان"
   },
   "donors": {
     "title": "المانحون والتمويل",
@@ -285,6 +286,82 @@
       "recentTitle": "آخر المصروفات",
       "allExpenses": "كل المصروفات",
       "noExpenses": "لم تُسجَّل أي مصروفات بعد."
+    },
+    "projects": {
+      "title": "المشاريع",
+      "subtitle": "كل مشروع: من يموّله، كم صرفنا، وكم بقي.",
+      "new": "مشروع جديد",
+      "empty": "لا توجد مشاريع بعد",
+      "emptyHint": "أنشئ أول مشروع، ثم اربطه بمانح وميزانية.",
+      "count": "عدد المشاريع",
+      "totalBudget": "إجمالي الميزانيات",
+      "filter": "تصفية حسب الحالة",
+      "all": "الكل",
+      "legendSpent": "المصروف",
+      "legendLeft": "المتبقي",
+      "fundedBy": "الممول: {donors}",
+      "story": "صرفنا <b>{spent}</b> من {budget} — بقي <b>{left}</b>",
+      "storyClosed": "صرفنا <b>{spent}</b> من {budget} — اكتمل المشروع",
+      "progress": "الإنجاز"
+    },
+    "project": {
+      "manager": "المنسق: {name}",
+      "edit": "تعديل المشروع",
+      "progressLabel": "من الإنجاز",
+      "story": "المشروع اكتمل بنسبة <b>{progress}%</b>. ميزانيته <b>{budget}</b> {unit}، صرفنا <b>{spent}</b>، وبقي <b>{left}</b>.",
+      "storyClosed": "اكتمل المشروع. ميزانيته <b>{budget}</b> {unit}، وصرفنا منها <b>{spent}</b>.",
+      "budget": "الميزانية",
+      "spent": "صرفنا",
+      "left": "بقي",
+      "fundingTitle": "من أين جاء المال",
+      "addGrant": "منحة",
+      "editGrant": "تعديل المنحة",
+      "noGrants": "لم تُسجَّل أي منحة لهذا المشروع.",
+      "promised": "وعد بـ {amount} {unit}",
+      "received": "استلمنا <b>{amount}</b> على {count, plural, =0 {أي دفعة} one {دفعة واحدة} two {دفعتين} few {# دفعات} other {# دفعة}}",
+      "trancheN": "الدفعة {n}",
+      "trancheAwaited": "الدفعة {n} — لم تصل بعد",
+      "expected": "متوقعة في {date}",
+      "spendingTitle": "أين ذهب المال",
+      "editBudget": "البنود",
+      "spendingOf": "من أصل {amount} مصروفة",
+      "noLines": "لا توجد بنود ميزانية بعد.",
+      "ofLine": "من {amount} · {percent}%",
+      "expensesTitle": "آخر المصروفات",
+      "allExpenses": "الكل",
+      "noExpenses": "لا توجد مصروفات لهذا المشروع بعد.",
+      "approvedBy": "وافق: {name}"
+    },
+    "grants": {
+      "new": "منحة جديدة",
+      "edit": "تعديل المنحة",
+      "hint": "ما وعد به المانح لهذا المشروع، ومواعيد دفعاته.",
+      "donor": "الجهة المانحة",
+      "project": "المشروع",
+      "amount": "مبلغ المنحة",
+      "reference": "رقم الاتفاقية",
+      "signedOn": "تاريخ التوقيع",
+      "tranches": "الدفعات",
+      "noTranches": "لا توجد دفعات. أضف موعد الدفعة الأولى.",
+      "trancheAmount": "المبلغ",
+      "expectedOn": "الموعد المتوقع",
+      "receivedOn": "تاريخ الاستلام",
+      "removeTranche": "حذف الدفعة",
+      "addTranche": "إضافة دفعة",
+      "cancel": "إلغاء",
+      "save": "حفظ",
+      "saving": "جارٍ الحفظ…"
+    },
+    "budget": {
+      "editTitle": "بنود الميزانية",
+      "editHint": "قسّم ميزانية المشروع على بنود. تُوزَّع المصروفات على هذه البنود.",
+      "name": "اسم البند",
+      "newLine": "بند جديد…",
+      "amount": "المبلغ المخطط",
+      "save": "حفظ البند",
+      "add": "إضافة البند",
+      "remove": "حذف البند",
+      "total": "مجموع الميزانية:"
     }
   }
 }
