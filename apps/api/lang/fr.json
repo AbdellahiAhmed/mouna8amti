@@ -233,5 +233,6 @@
     "The tranches add up to more than the grant amount.": "La somme des tranches dépasse le montant de la subvention.",
     "The budget line shares must add up to 100%.": "La répartition entre lignes budgétaires doit totaliser 100 %.",
     "Every budget line must belong to the selected project.": "Chaque ligne budgétaire doit appartenir au projet choisi.",
-    "This budget line already carries expenses and cannot be deleted.": "Cette ligne porte déjà des dépenses et ne peut pas être supprimée."
+    "This budget line already carries expenses and cannot be deleted.": "Cette ligne porte déjà des dépenses et ne peut pas être supprimée.",
+    "This expense can no longer be changed.": "Cette dépense ne peut plus être modifiée."
 }

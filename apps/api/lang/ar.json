@@ -233,5 +233,6 @@
     "The tranches add up to more than the grant amount.": "مجموع الدفعات يتجاوز مبلغ المنحة.",
     "The budget line shares must add up to 100%.": "يجب أن يكون مجموع حصص بنود الميزانية 100%.",
     "Every budget line must belong to the selected project.": "يجب أن تتبع كل بنود الميزانية المشروع المختار.",
-    "This budget line already carries expenses and cannot be deleted.": "هذا البند عليه مصروفات ولا يمكن حذفه."
+    "This budget line already carries expenses and cannot be deleted.": "هذا البند عليه مصروفات ولا يمكن حذفه.",
+    "This expense can no longer be changed.": "لم يعد بالإمكان تعديل هذا المصروف."
 }

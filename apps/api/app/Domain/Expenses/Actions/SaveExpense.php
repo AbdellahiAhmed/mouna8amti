@@ -11,6 +11,7 @@ use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Symfony\Component\HttpKernel\Exception\ConflictHttpException;
 
 /**
  * Records a new expense, or corrects one that nobody has reviewed yet.
@@ -27,41 +28,63 @@ final class SaveExpense
         $stored = $attachment ? $this->store($attachment, $submitter->organization_id) : null;
         $previous = $expense?->attachment_path;
 
-        $expense = DB::transaction(function () use ($submitter, $data, $attachment, $stored, $expense): Expense {
-            $fields = [
-                'project_id' => $data['project_id'],
-                'description' => $data['description'],
-                'payee' => $data['payee'] ?? null,
-                'amount' => $data['amount'],
-                'spent_on' => $data['spent_on'],
-                ...($stored ? ['attachment_path' => $stored, 'attachment_name' => $attachment->getClientOriginalName()] : []),
-            ];
+        try {
+            $expense = DB::transaction(function () use ($submitter, $data, $attachment, $stored, $expense): Expense {
+                $fields = [
+                    'project_id' => $data['project_id'],
+                    'description' => $data['description'],
+                    'payee' => $data['payee'] ?? null,
+                    'amount' => $data['amount'],
+                    'spent_on' => $data['spent_on'],
+                    ...($stored ? ['attachment_path' => $stored, 'attachment_name' => $attachment->getClientOriginalName()] : []),
+                ];
 
-            if ($expense === null) {
-                // Serialises numbering per organisation: the next sequence is read under this lock.
-                Organization::query()->whereKey($submitter->organization_id)->lockForUpdate()->first();
+                if ($expense === null) {
+                    // Serialises numbering per organisation: the next sequence is read under this lock.
+                    Organization::query()->whereKey($submitter->organization_id)->lockForUpdate()->first();
 
-                $expense = Expense::query()->create([
-                    ...$fields,
-                    'sequence' => (int) Expense::query()->max('sequence') + 1,
-                    'status' => ExpenseStatus::Submitted,
-                    'submitted_by' => $submitter->id,
-                ]);
-            } else {
-                $expense->update($fields);
-                $expense->allocations()->delete();
+                    $expense = Expense::query()->create([
+                        ...$fields,
+                        'sequence' => (int) Expense::query()->max('sequence') + 1,
+                        'status' => ExpenseStatus::Submitted,
+                        'submitted_by' => $submitter->id,
+                    ]);
+                } else {
+                    // Re-checked under the lock: a review landing mid-edit must not see its figures change.
+                    $expense = self::lockEditable($expense, $submitter);
+                    $expense->update($fields);
+                    $expense->allocations()->delete();
+                }
+
+                $expense->allocations()->createMany($data['allocations']);
+
+                return $expense;
+            });
+        } catch (\Throwable $e) {
+            if ($stored) {
+                Storage::disk(self::DISK)->delete($stored);
             }
 
-            $expense->allocations()->createMany($data['allocations']);
-
-            return $expense;
-        });
+            throw $e;
+        }
 
         if ($stored && $previous) {
             Storage::disk(self::DISK)->delete($previous);
         }
 
         return $expense;
+    }
+
+    /** The row, locked, if it is still the submitter's own unreviewed expense; 409 otherwise. */
+    public static function lockEditable(Expense $expense, Membership $submitter): Expense
+    {
+        $locked = Expense::query()->lockForUpdate()->findOrFail($expense->id);
+
+        if ($locked->submitted_by !== $submitter->id || $locked->status !== ExpenseStatus::Submitted) {
+            throw new ConflictHttpException(__('This expense can no longer be changed.'));
+        }
+
+        return $locked;
     }
 
     private function store(UploadedFile $file, int $organizationId): string

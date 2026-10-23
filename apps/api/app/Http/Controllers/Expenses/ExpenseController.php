@@ -16,6 +16,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Response;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Storage;
 use Symfony\Component\HttpFoundation\StreamedResponse;
@@ -71,8 +72,12 @@ class ExpenseController extends Controller
     public function destroy(string $organization, Expense $expense): Response
     {
         $this->ensureEditable($expense);
-        $path = $expense->attachment_path;
-        $expense->delete();
+        $path = DB::transaction(function () use ($expense): ?string {
+            $locked = SaveExpense::lockEditable($expense, $this->membership());
+            $locked->delete();
+
+            return $locked->attachment_path;
+        });
 
         if ($path !== null) {
             Storage::disk(SaveExpense::DISK)->delete($path);
