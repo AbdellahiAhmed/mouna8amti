@@ -2,6 +2,7 @@
 
 import {
   ArrowLeft,
+  FileText,
   Bell,
   FolderKanban,
   Gauge,
@@ -216,6 +217,8 @@ function Stat({
 function Attention({ data }: { data: Dashboard }) {
   const t = useTranslations("finance.dashboard");
   const money = useMoney();
+  const dates = useDates();
+  const now = useNow();
   const { organization } = useOrganization();
   const base = `/${organization.slug}`;
   const waiting = data.awaiting_me.review + data.awaiting_me.approve;
@@ -240,6 +243,23 @@ function Attention({ data }: { data: Dashboard }) {
         amount: money.amount(data.totals.pending.amount),
         unit: money.unit,
       }),
+    });
+  }
+  for (const report of data.reports_due) {
+    const days = Math.max(
+      0,
+      Math.round((Date.parse(report.due_on) - now.getTime()) / 86_400_000),
+    );
+    items.push({
+      key: `report-${report.id}`,
+      icon: <FileText />,
+      href: `${base}/donors`,
+      cta: t("openDonors"),
+      title: t("reportDue", {
+        donor: report.donor,
+        date: dates.dayMonth(report.due_on),
+      }),
+      detail: t("reportDetail", { title: report.title, days }),
     });
   }
   for (const project of data.projects) {

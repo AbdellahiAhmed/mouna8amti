@@ -295,7 +295,10 @@
       "projectOnHold": "متوقف حاليًا — صُرف {percent}% من الميزانية",
       "recentTitle": "آخر المصروفات",
       "allExpenses": "كل المصروفات",
-      "noExpenses": "لم تُسجَّل أي مصروفات بعد."
+      "noExpenses": "لم تُسجَّل أي مصروفات بعد.",
+      "reportDue": "تقرير {donor} مطلوب قبل {date}",
+      "reportDetail": "{title} · {days, plural, =0 {اليوم} one {بقي يوم واحد} two {بقي يومان} few {بقي # أيام} other {بقي # يومًا}}",
+      "openDonors": "افتح المانحين"
     },
     "projects": {
       "title": "المشاريع",
@@ -577,6 +580,35 @@
       "cancel": "إلغاء",
       "save": "حفظ",
       "saving": "جارٍ الحفظ…"
+    },
+    "activities": {
+      "title": "الأنشطة",
+      "progress": "{done} من {total} تمّت",
+      "empty": "لم تُسجَّل أنشطة لهذا المشروع بعد.",
+      "doneOn": "تمّ في {date}",
+      "dueOn": "قبل {date}",
+      "done": "تم",
+      "left": "متبقٍ",
+      "remove": "حذف النشاط",
+      "placeholder": "نشاط جديد، مثال: تدريب 20 معلمًا",
+      "add": "إضافة"
+    },
+    "donorReports": {
+      "title": "التقارير المطلوبة للمانحين",
+      "add": "تقرير",
+      "empty": "لا توجد تقارير مطلوبة مسجلة.",
+      "sentOn": "أُرسل في {date}",
+      "dueOn": "قبل {date}",
+      "sent": "أُرسل",
+      "pending": "لم يُرسل",
+      "markSent": "أُرسل",
+      "addTitle": "تقرير مطلوب لمانح",
+      "grant": "المنحة",
+      "reportTitle": "عنوان التقرير",
+      "titleHint": "مثال: التقرير المرحلي الثاني",
+      "deadline": "آخر موعد",
+      "cancel": "إلغاء",
+      "save": "حفظ"
     }
   }
 }

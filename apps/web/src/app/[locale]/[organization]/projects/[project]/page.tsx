@@ -11,6 +11,7 @@ import { GrantFormDialog } from "@/features/finance/grant-form-dialog";
 import { useBudgetLines, useExpenses, useGrants } from "@/features/finance/queries";
 import { Bar, Card, CardHead, ExpensePill, ProjectPill, useDates } from "@/features/finance/ui";
 import { useOrganization } from "@/features/organization/organization-context";
+import { ActivitiesCard } from "@/features/projects/activities-card";
 import { ProjectFormDialog } from "@/features/projects/project-form-dialog";
 import { useProject } from "@/features/projects/queries";
 import { Link } from "@/i18n/navigation";
@@ -115,6 +116,8 @@ function ProjectStory({ project }: { project: Project }) {
           </div>
         </div>
       </Card>
+
+      <ActivitiesCard projectId={project.id} />
 
       <div className="grid grid-cols-[repeat(auto-fit,minmax(min(27rem,100%),1fr))] gap-6">
         <Funding project={project} />

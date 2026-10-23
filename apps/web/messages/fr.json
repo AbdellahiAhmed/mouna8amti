@@ -295,7 +295,10 @@
       "projectOnHold": "Suspendu — {percent} % du budget dépensé",
       "recentTitle": "Dernières dépenses",
       "allExpenses": "Toutes les dépenses",
-      "noExpenses": "Aucune dépense enregistrée pour l'instant."
+      "noExpenses": "Aucune dépense enregistrée pour l'instant.",
+      "reportDue": "Rapport pour {donor} attendu avant le {date}",
+      "reportDetail": "{title} · {days, plural, =0 {aujourd'hui} one {encore # jour} other {encore # jours}}",
+      "openDonors": "Voir les bailleurs"
     },
     "projects": {
       "title": "Projets",
@@ -577,6 +580,35 @@
       "cancel": "Annuler",
       "save": "Enregistrer",
       "saving": "Enregistrement…"
+    },
+    "activities": {
+      "title": "Activités",
+      "progress": "{done} sur {total} réalisées",
+      "empty": "Aucune activité enregistrée pour ce projet.",
+      "doneOn": "réalisée le {date}",
+      "dueOn": "avant le {date}",
+      "done": "Fait",
+      "left": "À faire",
+      "remove": "Supprimer l'activité",
+      "placeholder": "Nouvelle activité, ex. : former 20 enseignants",
+      "add": "Ajouter"
+    },
+    "donorReports": {
+      "title": "Rapports dus aux bailleurs",
+      "add": "Rapport",
+      "empty": "Aucun rapport attendu n'est enregistré.",
+      "sentOn": "envoyé le {date}",
+      "dueOn": "avant le {date}",
+      "sent": "Envoyé",
+      "pending": "Non envoyé",
+      "markSent": "Envoyé",
+      "addTitle": "Rapport dû à un bailleur",
+      "grant": "Subvention",
+      "reportTitle": "Titre du rapport",
+      "titleHint": "Ex. : deuxième rapport intermédiaire",
+      "deadline": "Échéance",
+      "cancel": "Annuler",
+      "save": "Enregistrer"
     }
   }
 }

@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { EmptyState, ErrorState, Skeleton } from "@/components/ui/states";
 import { DonorFormDialog } from "@/features/donors/donor-form-dialog";
 import { useDonors } from "@/features/donors/queries";
+import { DonorReportsCard } from "@/features/finance/donor-reports-card";
 import { GrantFormDialog } from "@/features/finance/grant-form-dialog";
 import { Bar, Card, initialOf, useDates } from "@/features/finance/ui";
 import { useOrganization } from "@/features/organization/organization-context";
@@ -123,6 +124,8 @@ function DonorBoard({ donors, onEdit, onAddGrant }: { donors: Donor[]; onEdit: (
           <DonorCard key={donor.id} donor={donor} index={index} onEdit={onEdit} onAddGrant={onAddGrant} />
         ))}
       </div>
+
+      <DonorReportsCard donors={donors} />
 
       {others.length > 0 && (
         <Card>

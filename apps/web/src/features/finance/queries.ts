@@ -4,7 +4,9 @@ import { keepPreviousData, useMutation, useQuery, useQueryClient } from "@tansta
 import { useOrganization } from "@/features/organization/organization-context";
 import { api } from "@/lib/api";
 import type {
+  Activity,
   BudgetLine,
+  DonorReport,
   Dashboard,
   Expense,
   ExpenseStatus,
@@ -180,6 +182,55 @@ export function useDeleteBudgetLine() {
   const invalidate = useInvalidateOrganization();
   return useMutation({
     mutationFn: (lineId: number) => api<void>(`${base}/budget-lines/${lineId}`, { method: "DELETE" }),
+    onSuccess: invalidate,
+  });
+}
+
+export function useActivities(projectId: number) {
+  const path = `${useBase()}/projects/${projectId}/activities`;
+  return useQuery({ queryKey: [path], queryFn: () => api<Paginated<Activity>>(path) });
+}
+
+export type ActivityInput = { title: string; due_on: string | null; done_on: string | null };
+
+export function useSaveActivity(projectId: number) {
+  const base = useBase();
+  const invalidate = useInvalidateOrganization();
+  return useMutation({
+    mutationFn: ({ id, ...input }: ActivityInput & { id?: number }) =>
+      api<Resource<Activity>>(id ? `${base}/activities/${id}` : `${base}/projects/${projectId}/activities`, {
+        method: id ? "PUT" : "POST",
+        json: input,
+      }),
+    onSuccess: invalidate,
+  });
+}
+
+export function useDeleteActivity() {
+  const base = useBase();
+  const invalidate = useInvalidateOrganization();
+  return useMutation({
+    mutationFn: (id: number) => api<void>(`${base}/activities/${id}`, { method: "DELETE" }),
+    onSuccess: invalidate,
+  });
+}
+
+export function useDonorReports() {
+  const path = `${useBase()}/donor-reports`;
+  return useQuery({ queryKey: [path], queryFn: () => api<Paginated<DonorReport>>(path) });
+}
+
+export type DonorReportInput = { title: string; due_on: string; submitted_on: string | null };
+
+export function useSaveDonorReport() {
+  const base = useBase();
+  const invalidate = useInvalidateOrganization();
+  return useMutation({
+    mutationFn: ({ id, grantId, ...input }: DonorReportInput & { id?: number; grantId?: number }) =>
+      api<Resource<DonorReport>>(id ? `${base}/donor-reports/${id}` : `${base}/grants/${grantId}/donor-reports`, {
+        method: id ? "PUT" : "POST",
+        json: input,
+      }),
     onSuccess: invalidate,
   });
 }

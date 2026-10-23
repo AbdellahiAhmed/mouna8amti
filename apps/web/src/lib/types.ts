@@ -171,6 +171,7 @@ export interface Dashboard {
     pending: { count: number; amount: number };
   };
   awaiting_me: { review: number; approve: number };
+  reports_due: { id: number; title: string; due_on: string; donor: string }[];
   projects: Project[];
   recent_expenses: Expense[];
 }
@@ -183,4 +184,22 @@ export interface MonthlyReport {
   rejected_count: number;
   balance_at_end: number;
   series: { month: string; received: number; spent: number }[];
+}
+
+export interface Activity {
+  id: number;
+  project_id: number;
+  title: string;
+  due_on: string | null;
+  done_on: string | null;
+}
+
+export interface DonorReport {
+  id: number;
+  grant_id: number;
+  title: string;
+  due_on: string;
+  submitted_on: string | null;
+  donor?: { id: number; name: string } | null;
+  project?: { id: number; name: string } | null;
 }

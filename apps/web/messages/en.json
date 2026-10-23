@@ -295,7 +295,10 @@
       "projectOnHold": "On hold — {percent}% of the budget spent",
       "recentTitle": "Latest expenses",
       "allExpenses": "All expenses",
-      "noExpenses": "No expenses recorded yet."
+      "noExpenses": "No expenses recorded yet.",
+      "reportDue": "{donor} report due by {date}",
+      "reportDetail": "{title} · {days, plural, =0 {today} one {# day left} other {# days left}}",
+      "openDonors": "Open donors"
     },
     "projects": {
       "title": "Projects",
@@ -577,6 +580,35 @@
       "cancel": "Cancel",
       "save": "Save",
       "saving": "Saving…"
+    },
+    "activities": {
+      "title": "Activities",
+      "progress": "{done} of {total} done",
+      "empty": "No activities recorded for this project yet.",
+      "doneOn": "done on {date}",
+      "dueOn": "due by {date}",
+      "done": "Done",
+      "left": "To do",
+      "remove": "Delete activity",
+      "placeholder": "New activity, e.g. train 20 teachers",
+      "add": "Add"
+    },
+    "donorReports": {
+      "title": "Reports owed to donors",
+      "add": "Report",
+      "empty": "No reports due are recorded.",
+      "sentOn": "sent on {date}",
+      "dueOn": "due by {date}",
+      "sent": "Sent",
+      "pending": "Not sent",
+      "markSent": "Mark sent",
+      "addTitle": "Report owed to a donor",
+      "grant": "Grant",
+      "reportTitle": "Report title",
+      "titleHint": "e.g. Second interim report",
+      "deadline": "Deadline",
+      "cancel": "Cancel",
+      "save": "Save"
     }
   }
 }
