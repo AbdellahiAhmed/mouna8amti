@@ -4,24 +4,26 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --primary: #2b4fe8;
-  --primary-hover: #2343d6;
-  --primary-pressed: #1d39bc;
-  --primary-soft: #e9edfd;
+  --primary: #0e5a44;
+  --primary-hover: #0a3d2f;
+  --primary-pressed: #08332a;
+  --primary-soft: #e6f2ec;
   --on-primary: #ffffff;
-  --night: #0a1033;
+  --night: #0a3d2f;
+  --brand-bar: #157a5c;
+  --mist: #f3f9f6;
 
   --canvas: #ffffff;
-  --surface: #fafaf9;
-  --surface-sunken: #f6f5f4;
-  --hairline-soft: #ede9e4;
-  --hairline: #e5e3df;
-  --hairline-strong: #c8c4be;
-  --ink: #1a1a1a;
-  --charcoal: #37352f;
-  --slate: #5d5b54;
-  --steel: #787671;
-  --stone: #a4a097;
+  --surface: #f6f5f1;
+  --surface-sunken: #f4f3ef;
+  --hairline-soft: #eeece6;
+  --hairline: #e8e5de;
+  --hairline-strong: #dedbd3;
+  --ink: #1b1d1a;
+  --charcoal: #3d3f3a;
+  --slate: #6b675e;
+  --steel: #8a867d;
+  --stone: #a9a59b;
 
   --success: #1a7f37;
   --success-soft: #dcf3e3;
@@ -37,11 +39,11 @@
 }
 
 .dark {
-  --primary: #7088ff;
-  --primary-hover: #8a9dff;
-  --primary-pressed: #5a74f5;
-  --primary-soft: #182150;
-  --on-primary: #0a1033;
+  --primary: #5fbf9f;
+  --primary-hover: #7ccdb1;
+  --primary-pressed: #4aa888;
+  --primary-soft: #12302a;
+  --on-primary: #06231b;
 
   --canvas: #1f1f1e;
   --surface: #171716;
@@ -71,6 +73,8 @@
   --color-primary-soft: var(--primary-soft);
   --color-on-primary: var(--on-primary);
   --color-night: var(--night);
+  --color-brand-bar: var(--brand-bar);
+  --color-mist: var(--mist);
   --color-canvas: var(--canvas);
   --color-surface: var(--surface);
   --color-surface-sunken: var(--surface-sunken);

@@ -9,7 +9,7 @@ import { cn } from "@/lib/cn";
 export function EmptyState({ title, children }: { title: string; children?: ReactNode }) {
   return (
     <div className="flex flex-col items-center rounded-md border border-dashed border-hairline-strong bg-canvas px-6 py-16 text-center">
-      <LogoMark className="h-9 opacity-25" />
+      <LogoMark className="size-11 opacity-30" />
       <p className="mt-5 font-display text-h4 text-ink">{title}</p>
       {children && <div className="mt-2 max-w-md text-body text-slate">{children}</div>}
     </div>

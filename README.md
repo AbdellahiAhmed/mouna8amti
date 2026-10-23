@@ -108,7 +108,7 @@ The tests cover the risks that matter most: cross-tenant reads and writes (throu
 
 ## Design
 
-[`DESIGN.md`](DESIGN.md) is the source of truth for colours, type, spacing and motion. It starts from Notion's warm product chassis and Apple's discipline (one colour, a single elevation shadow, press-to-scale feedback), adapted for Arabic. Body text is never smaller than 16 px, and Arabic text gets taller line-height and is never letter-spaced. The identity is **MNT**, the short form of منظمتي: a ligature where M, N and T share their stems, in one clear Lapis blue (`#2B4FE8`). See the [brand guide](docs/brand/README.md).
+[`DESIGN.md`](DESIGN.md) is the source of truth for colours, type, spacing and motion. It starts from Notion's warm product chassis and Apple's discipline (one colour, a single elevation shadow, press-to-scale feedback), adapted for Arabic. Body text is never smaller than 16 px, and Arabic text gets taller line-height and is never letter-spaced. The identity is **MNT**, the short form of منظمتي: a tile monogram where M, N and T are drawn as one stroke, in one deep green (`#0E5A44`). See the [brand guide](docs/brand/README.md).
 
 ## Roadmap
 

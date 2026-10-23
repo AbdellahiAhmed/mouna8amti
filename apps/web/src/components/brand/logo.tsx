@@ -1,24 +1,33 @@
 import { cn } from "@/lib/cn";
 
-// MNT ligature: M, N and T share their stems — one connected block. Source: docs/brand/kit/mnt-symbol.svg.
-const MNT_PATH =
-  "M22.00 46.00 L52.00 46.00 L52.00 210.00 L22.00 210.00 Z M100.00 46.00 L130.00 46.00 L130.00 210.00 L100.00 210.00 Z M178.00 46.00 L208.00 46.00 L208.00 210.00 L178.00 210.00 Z M22.00 46.00 L52.00 46.00 L76.00 135.57 L100.00 46.00 L130.00 46.00 L91.00 191.55 L61.00 191.55 Z M100.00 46.00 L130.00 46.00 L208.00 210.00 L178.00 210.00 Z M155.00 46.00 L231.00 46.00 L231.00 76.00 L155.00 76.00 Z";
+// The MNT monogram drawn as one stroke inside a rounded tile (validated Claude Design concept).
+const MONOGRAM = "M8 26V10l5 7 5-7v16M18 10l7 16V10M21.5 10h7";
 
-export function LogoMark({ className }: { className?: string }) {
+/** `tone="light"` draws a white tile with a green monogram, for dark backgrounds. */
+export function LogoMark({ className, tone = "brand" }: { className?: string; tone?: "brand" | "light" }) {
   return (
-    <svg viewBox="22 46 209 164" aria-hidden="true" className={cn("h-7 w-auto fill-primary", className)}>
-      <path d={MNT_PATH} />
+    <svg viewBox="0 0 36 36" aria-hidden="true" className={cn("size-9 shrink-0", className)}>
+      <rect width="36" height="36" rx="10" className={tone === "light" ? "fill-white" : "fill-primary"} />
+      <path
+        d={MONOGRAM}
+        fill="none"
+        strokeWidth="2.6"
+        strokeLinecap="square"
+        strokeLinejoin="miter"
+        className={tone === "light" ? "stroke-night" : "stroke-white"}
+      />
     </svg>
   );
 }
 
-/** Horizontal lockup: the MNT mark with its full Arabic name, منظمتي. */
-export function Logo({ className }: { className?: string }) {
+export function Logo({ className, tone = "brand" }: { className?: string; tone?: "brand" | "light" }) {
   return (
-    <span className={cn("inline-flex items-center gap-3", className)} aria-label="MNT — منظمتي">
-      <LogoMark />
-      <span aria-hidden className="h-5 w-px bg-hairline-strong" />
-      <span aria-hidden className="font-display text-h4 font-medium text-ink" lang="ar">
+    <span className={cn("inline-flex items-center gap-3", className)} aria-label="منظمتي">
+      <LogoMark tone={tone} />
+      <span
+        aria-hidden
+        className={cn("font-display text-[1.3rem] font-semibold leading-tight", tone === "light" ? "text-white" : "text-night")}
+      >
         منظمتي
       </span>
     </span>

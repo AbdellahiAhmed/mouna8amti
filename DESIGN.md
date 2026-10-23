@@ -6,7 +6,7 @@ description: >
   (warm neutrals, hairlines instead of shadows, pastel category tints) governed
   by Apple's discipline (one interactive colour, receding chrome, tight display
   headlines, a single elevation shadow, press-to-scale micro-interaction).
-  Signature: one clear Lapis blue, the MNT ligature mark, and Arabic-first
+  Signature: one deep green, the MNT tile monogram, and Arabic-first
   typography that is generous, never small.
 derived_from:
   - notion   # getdesign.md/notion — VoltAgent/awesome-design-md (MIT)
@@ -14,24 +14,24 @@ derived_from:
 
 colors:
   # Brand
-  primary: "#2b4fe8"            # Lapis — the brand colour and the ONLY interactive colour (6.2:1 on white)
-  primary-hover: "#2343d6"
-  primary-pressed: "#1d39bc"
-  primary-soft: "#e9edfd"       # selected rows, active nav background
+  primary: "#0e5a44"            # Deep green — the brand colour and the ONLY interactive colour (8.2:1 on white)
+  primary-hover: "#0a3d2f"
+  primary-pressed: "#08332a"
+  primary-soft: "#e6f2ec"       # selected rows, active nav background
   on-primary: "#ffffff"
-  night: "#0a1033"              # Apple-style dark tile, lapis night: auth & landing brand panels only
+  night: "#0a3d2f"              # Night green: auth & brand panels only
   # Neutrals (Notion warm scale)
   canvas: "#ffffff"             # cards, tables, dialogs
-  surface: "#fafaf9"            # app background
-  surface-sunken: "#f6f5f4"     # sidebar, table header, inputs at rest
-  hairline-soft: "#ede9e4"
-  hairline: "#e5e3df"
-  hairline-strong: "#c8c4be"
-  ink: "#1a1a1a"                # headings, figures
-  charcoal: "#37352f"           # body
-  slate: "#5d5b54"              # secondary text
-  steel: "#787671"              # captions, placeholders
-  stone: "#a4a097"              # disabled
+  surface: "#f6f5f1"            # app background
+  surface-sunken: "#f4f3ef"     # sidebar, table header, inputs at rest
+  hairline-soft: "#eeece6"
+  hairline: "#e8e5de"
+  hairline-strong: "#dedbd3"
+  ink: "#1b1d1a"                # headings, figures
+  charcoal: "#3d3f3a"           # body
+  slate: "#6b675e"              # secondary text
+  steel: "#8a867d"              # captions, placeholders
+  stone: "#a9a59b"              # disabled
   # Semantic
   success: "#1a7f37"
   success-soft: "#dcf3e3"
@@ -155,13 +155,12 @@ pressable element answers with a small scale.
 
 Our **signature** sits on top of both:
 
-- **One colour, Lapis `#2b4fe8`** — the outremer of Islamic manuscripts and
-  tilework: the trust that blue carries in finance, and the protection and
-  truth it carries across the Arab world. No second brand colour, no gradient.
-- **The MNT ligature** (see `docs/brand/README.md`): M, N and T share their
-  stems — one connected block, the idea of an organisation that holds together.
-- An 8-point geometric lattice, used sparingly as texture on brand surfaces
-  (login, onboarding, empty states).
+- **One colour, deep green `#0e5a44`** (night `#0a3d2f`), taken from the
+  validated Claude Design reference. No second brand colour, no gradient.
+- **The MNT tile monogram** (`docs/brand/mnt-tile/`): M, N and T drawn as one
+  stroke inside a rounded tile.
+- Topographic contour lines, used sparingly as texture on brand surfaces
+  (login, hero cards).
 - Arabic is a first-class citizen with its own line-height and minimum size.
 
 ## Principles
@@ -195,7 +194,7 @@ Our **signature** sits on top of both:
 | Headings & figures | `ink` |
 | Body | `charcoal` |
 | Secondary / meta | `slate`, `steel` |
-| Clickable, brand | `primary` (Lapis) |
+| Clickable, brand | `primary` (deep green) |
 | Selected / active | `primary-soft` background + `primary` text |
 | Category chips (budget categories, donor types, project tags) | `tint-*` background + `charcoal` text |
 

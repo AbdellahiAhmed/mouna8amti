@@ -13,7 +13,7 @@ export function PageLoader() {
         animate={{ opacity: [0.35, 1, 0.35], scale: [0.96, 1, 0.96] }}
         transition={{ duration: 1.6, ease: [0.2, 0, 0, 1], repeat: Infinity }}
       >
-        <LogoMark className="h-10" />
+        <LogoMark className="size-12" />
       </motion.div>
       <span className="sr-only">{t("loading")}</span>
     </div>
