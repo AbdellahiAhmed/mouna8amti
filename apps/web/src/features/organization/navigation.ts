@@ -26,7 +26,7 @@ export const PRIMARY_NAV: NavItem[] = [
   { key: "dashboard", href: "", icon: LayoutDashboard },
   { key: "projects", href: "/projects", icon: FolderKanban, permission: "projects.view" },
   { key: "donors", href: "/donors", icon: HandCoins, permission: "projects.view" },
-  { key: "expenses", href: "/expenses", icon: ReceiptText, soon: true },
+  { key: "expenses", href: "/expenses", icon: ReceiptText, permission: "projects.view" },
   { key: "reports", href: "/reports", icon: BarChart3, soon: true },
   { key: "members", href: "/members", icon: Users, permission: "members.view" },
   { key: "settings", href: "/settings", icon: Settings, soon: true },
