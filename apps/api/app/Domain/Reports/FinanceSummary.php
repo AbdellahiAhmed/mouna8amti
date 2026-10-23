@@ -5,6 +5,7 @@ namespace App\Domain\Reports;
 use App\Domain\Access\Enums\Permission;
 use App\Domain\Expenses\Enums\ExpenseStatus;
 use App\Domain\Expenses\Models\Expense;
+use App\Domain\Grants\Models\DonorReport;
 use App\Domain\Grants\Models\Grant;
 use App\Domain\Grants\Models\GrantTranche;
 use App\Domain\Organizations\Models\Membership;
@@ -36,6 +37,13 @@ final class FinanceSummary
                 'pending' => ['count' => (clone $pending)->count(), 'amount' => (int) (clone $pending)->sum('amount')],
             ],
             'awaiting_me' => $this->awaiting($viewer),
+            'reports_due' => DonorReport::query()
+                ->with('grant.donor')
+                ->whereNull('submitted_on')
+                ->where('due_on', '<=', now()->addDays(45))
+                ->orderBy('due_on')
+                ->get()
+                ->map(fn (DonorReport $r) => ['id' => $r->id, 'title' => $r->title, 'due_on' => $r->due_on->toDateString(), 'donor' => $r->grant->donor->name]),
             'projects' => Project::query()->withFinancials()->orderBy('status')->orderBy('code')->get(),
             'recent_expenses' => Expense::query()
                 ->with(['project', 'submitter.user'])

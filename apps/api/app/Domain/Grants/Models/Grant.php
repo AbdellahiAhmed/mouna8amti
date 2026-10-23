@@ -56,6 +56,12 @@ class Grant extends Model
         return $this->hasMany(GrantTranche::class)->orderBy('expected_on')->orderBy('id');
     }
 
+    /** @return HasMany<DonorReport, $this> */
+    public function reports(): HasMany
+    {
+        return $this->hasMany(DonorReport::class)->orderBy('due_on');
+    }
+
     /**
      * Replaces the tranche schedule: rows with a known id are updated, new rows
      * created, and rows missing from the list removed.

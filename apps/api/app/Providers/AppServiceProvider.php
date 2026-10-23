@@ -7,10 +7,12 @@ use App\Domain\Access\Models\Role;
 use App\Domain\Budgets\Models\BudgetLine;
 use App\Domain\Expenses\Models\Expense;
 use App\Domain\Grants\Models\Donor;
+use App\Domain\Grants\Models\DonorReport;
 use App\Domain\Grants\Models\Grant;
 use App\Domain\Organizations\Models\Membership;
 use App\Domain\Organizations\Models\Organization;
 use App\Domain\Projects\Models\Project;
+use App\Domain\Projects\Models\ProjectActivity;
 use App\Domain\Tenancy\TenantContext;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\Relation;
@@ -41,6 +43,8 @@ class AppServiceProvider extends ServiceProvider
             'grant' => Grant::class,
             'budget_line' => BudgetLine::class,
             'expense' => Expense::class,
+            'activity' => ProjectActivity::class,
+            'donor_report' => DonorReport::class,
         ]);
 
         // Every Permission value is a Gate ability, answered by the current membership.

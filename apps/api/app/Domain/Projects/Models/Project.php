@@ -73,6 +73,12 @@ class Project extends Model
         return $this->hasMany(BudgetLine::class)->orderBy('id');
     }
 
+    /** @return HasMany<ProjectActivity, $this> */
+    public function activities(): HasMany
+    {
+        return $this->hasMany(ProjectActivity::class)->orderByRaw('due_on NULLS LAST')->orderBy('id');
+    }
+
     /** @return HasMany<Expense, $this> */
     public function expenses(): HasMany
     {

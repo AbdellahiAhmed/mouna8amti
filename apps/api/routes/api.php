@@ -10,11 +10,13 @@ use App\Http\Controllers\Budgets\BudgetLineController;
 use App\Http\Controllers\Expenses\ExpenseController;
 use App\Http\Controllers\Expenses\ExpenseDecisionController;
 use App\Http\Controllers\Grants\DonorController;
+use App\Http\Controllers\Grants\DonorReportController;
 use App\Http\Controllers\Grants\GrantController;
 use App\Http\Controllers\Organizations\AuditLogController;
 use App\Http\Controllers\Organizations\MemberController;
 use App\Http\Controllers\Organizations\OrganizationController;
 use App\Http\Controllers\Organizations\RoleController;
+use App\Http\Controllers\Projects\ActivityController;
 use App\Http\Controllers\Projects\ProjectController;
 use App\Http\Controllers\Reports\ReportController;
 use App\Http\Middleware\ActAsDatabaseUser;
@@ -53,6 +55,9 @@ Route::middleware(['auth:sanctum', ActAsDatabaseUser::class])->group(function ()
         Route::apiResource('projects', ProjectController::class);
         Route::apiResource('grants', GrantController::class)->except('show');
         Route::apiResource('projects.budget-lines', BudgetLineController::class)->shallow()->except('show');
+        Route::apiResource('projects.activities', ActivityController::class)->shallow()->except('show');
+        Route::get('donor-reports', [DonorReportController::class, 'index']);
+        Route::apiResource('grants.donor-reports', DonorReportController::class)->shallow()->only(['store', 'update', 'destroy'])->parameters(['donor-reports' => 'report']);
 
         Route::apiResource('expenses', ExpenseController::class);
         Route::get('expenses/{expense}/attachment', [ExpenseController::class, 'attachment']);
