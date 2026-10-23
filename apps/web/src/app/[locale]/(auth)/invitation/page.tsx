@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { Suspense } from "react";
 import { AuthShell } from "@/features/auth/auth-shell";
 import { InvitationForm } from "@/features/auth/invitation-form";
 
@@ -13,7 +14,10 @@ export default async function InvitationPage() {
 
   return (
     <AuthShell title={t("title")} subtitle={t("subtitle")}>
-      <InvitationForm />
+      {/* The form reads the token from the URL, which only exists at request time. */}
+      <Suspense>
+        <InvitationForm />
+      </Suspense>
     </AuthShell>
   );
 }
