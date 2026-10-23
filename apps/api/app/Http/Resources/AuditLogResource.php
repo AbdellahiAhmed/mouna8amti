@@ -50,7 +50,7 @@ class AuditLogResource extends JsonResource
             $subject instanceof Role => $this->localized($subject->name),
             $subject instanceof Expense => $subject->number(),
             $subject instanceof Grant => $subject->reference ?? $subject->donor->name,
-            $subject !== null => $this->stringOrNull($subject->getAttribute('name') ?? $subject->getAttribute('title')),
+            $subject !== null => $this->stringOrNull($subject->getAttribute('name') ?? $subject->getAttribute('title') ?? $subject->getAttribute('full_name')),
             // Hard- or soft-deleted subjects: fall back to the name captured in the trail.
             default => $this->localized($this->old_values['name'] ?? $this->old_values['title'] ?? $this->new_values['name'] ?? $this->new_values['title'] ?? null),
         };

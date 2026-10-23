@@ -9,6 +9,10 @@ use App\Domain\Expenses\Models\Expense;
 use App\Domain\Grants\Models\Donor;
 use App\Domain\Grants\Models\DonorReport;
 use App\Domain\Grants\Models\Grant;
+use App\Domain\Operations\Models\Asset;
+use App\Domain\Operations\Models\Document;
+use App\Domain\Operations\Models\Employee;
+use App\Domain\Operations\Models\PurchaseRequest;
 use App\Domain\Organizations\Models\Membership;
 use App\Domain\Organizations\Models\Organization;
 use App\Domain\Projects\Models\Project;
@@ -45,6 +49,10 @@ class AppServiceProvider extends ServiceProvider
             'expense' => Expense::class,
             'activity' => ProjectActivity::class,
             'donor_report' => DonorReport::class,
+            'purchase_request' => PurchaseRequest::class,
+            'employee' => Employee::class,
+            'asset' => Asset::class,
+            'document' => Document::class,
         ]);
 
         // Every Permission value is a Gate ability, answered by the current membership.

@@ -8,6 +8,10 @@ use App\Domain\Budgets\Models\BudgetLine;
 use App\Domain\Grants\Enums\DonorType;
 use App\Domain\Grants\Models\Donor;
 use App\Domain\Grants\Models\Grant;
+use App\Domain\Operations\Models\Asset;
+use App\Domain\Operations\Models\Document;
+use App\Domain\Operations\Models\Employee;
+use App\Domain\Operations\Models\PurchaseRequest;
 use App\Domain\Organizations\Actions\CreateOrganization;
 use App\Domain\Organizations\Enums\MembershipStatus;
 use App\Domain\Organizations\Models\Membership;
@@ -205,6 +209,8 @@ class DemoSeeder extends Seeder
         $chain->submitted($projects['EDU']['model'], $this->lines($lines['EDU'], [[1, 100]]), 'صيانة مدرسة الحي الجديد', 150_000, '2026-10-20', 'مؤسسة البناء الحديث');
         $chain->reviewed($projects['HLT']['model'], $this->lines($lines['HLT'], [[1, 100]]), 'شراء ثلاجة لقاحات', 120_000, '2026-10-18', 'شركة المعدات الطبية');
         $chain->submitted($projects['WMN']['model'], $this->lines($lines['WMN'], [[2, 100]]), 'إيجار مقر التدريب', 70_000, '2026-10-21', 'عقارات الرمال');
+        $this->seedOperations($projects, $coordinator, $director);
+
         $chain->rejected($projects['HLT']['model'], $this->lines($lines['HLT'], [[2, 100]]), 'إطعام المشاركين في الحملة', 35_000, '2026-10-10', 'الفاتورة غير مختومة من المورد.');
     }
 
@@ -238,6 +244,64 @@ class DemoSeeder extends Seeder
             ['توزيع البذور والأدوات', '2026-06-30', null],
         ],
     ];
+
+    /** @param  array<string, array<int|string, mixed>>  $projects */
+    private function seedOperations(array $projects, int $coordinator, int $director): void
+    {
+        $id = fn (string $code): int => $projects[$code]['model']->id;
+
+        foreach ([
+            ['EDU', 'رفوف ومكتبات لـ 6 مدارس', 'مؤسسة البناء الحديث', 450_000, 'received', true],
+            ['HLT', 'ثلاجة لقاحات تعمل بالطاقة الشمسية', 'شركة المعدات الطبية', 380_000, 'ordered', true],
+            ['WMN', '15 ماكينة خياطة', 'متجر الوفاء', 525_000, 'approved', true],
+            ['HLT', 'حقائب إسعافات أولية للعاملين الصحيين', null, 90_000, 'requested', false],
+        ] as $i => [$code, $title, $supplier, $amount, $status, $approved]) {
+            PurchaseRequest::query()->create([
+                'sequence' => $i + 1, 'project_id' => $id($code), 'title' => $title, 'supplier' => $supplier,
+                'estimated_amount' => $amount * 100, 'status' => $status, 'needed_by' => '2026-11-30',
+                'requested_by' => $coordinator, ...($approved ? ['approved_by' => $director, 'approved_at' => '2026-10-02 10:00:00'] : []),
+            ]);
+        }
+
+        foreach ([
+            ['أحمد ولد سيدي', 'معلم متعاقد', 'EDU', 'fixed_term', '2025-09-01', '2026-12-31', 35_000],
+            ['خديجة بنت محمد', 'معلمة متعاقدة', 'EDU', 'fixed_term', '2025-09-01', '2026-12-31', 35_000],
+            ['أمينة سالم', 'ممرضة', 'HLT', 'fixed_term', '2026-01-15', '2027-06-30', 40_000],
+            ['محمد عبد الرحمن', 'سائق', null, 'permanent', '2023-03-01', null, 28_000],
+            ['زينب الشيخ', 'مدرّبة خياطة', 'WMN', 'consultant', '2026-04-01', '2026-12-31', 30_000],
+            ['عائشة أحمد', 'متطوعة توعية صحية', 'HLT', 'volunteer', '2026-06-01', null, null],
+        ] as [$name, $position, $code, $contract, $start, $end, $salary]) {
+            Employee::query()->create([
+                'full_name' => $name, 'position' => $position, 'project_id' => $code ? $id($code) : null, 'contract_type' => $contract,
+                'starts_on' => $start, 'ends_on' => $end, 'monthly_salary' => $salary === null ? null : $salary * 100,
+            ]);
+        }
+
+        foreach ([
+            ['تويوتا هايلكس 4×4', 'vehicle', 'VEH-01', null, 'نواكشوط', 'محمد عبد الرحمن', 3_200_000, 'good'],
+            ['دراجة نارية', 'vehicle', 'VEH-02', 'HLT', 'نواذيبو', 'أمينة سالم', 180_000, 'fair'],
+            ['حاسوب محمول Dell', 'it', 'IT-07', 'EDU', 'كيفة', 'فاطمة بنت أحمد', 85_000, 'good'],
+            ['طابعة ليزر', 'it', 'IT-08', null, 'نواكشوط', null, 40_000, 'broken'],
+            ['مولد كهربائي', 'equipment', 'EQ-03', 'WMN', 'روصو', null, 260_000, 'good'],
+        ] as [$name, $category, $tag, $code, $location, $holder, $value, $condition]) {
+            Asset::query()->create([
+                'name' => $name, 'category' => $category, 'tag' => $tag, 'project_id' => $code ? $id($code) : null,
+                'location' => $location, 'holder' => $holder, 'acquired_on' => '2025-06-01', 'value' => $value * 100, 'condition' => $condition,
+            ]);
+        }
+
+        foreach ([
+            ['اتفاقية التمويل مع الاتحاد الأوروبي', 'contract', 'incoming', 'EU/EDU/2025-14', '2025-08-20', 'EDU'],
+            ['التقرير المرحلي الثاني لمشروع التعليم', 'report', 'outgoing', 'AMAL/RPT/2026-05', '2026-05-12', 'EDU'],
+            ['رسالة شكر من بلدية أطار', 'letter', 'incoming', 'ATAR/2026/88', '2026-07-02', 'WSH'],
+            ['محضر اجتماع مجلس الإدارة', 'other', 'internal', 'AMAL/CA/2026-03', '2026-09-15', null],
+        ] as [$title, $category, $direction, $reference, $date, $code]) {
+            Document::query()->create([
+                'title' => $title, 'category' => $category, 'direction' => $direction, 'reference' => $reference,
+                'dated_on' => $date, 'project_id' => $code ? $id($code) : null,
+            ]);
+        }
+    }
 
     private const HISTORY = ['مصاريف التشغيل الشهرية', 'رواتب الفريق وأنشطة الميدان', 'تنفيذ أنشطة المشروع'];
 

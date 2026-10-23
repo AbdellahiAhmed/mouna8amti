@@ -26,6 +26,11 @@ enum Permission: string
     case ExpensesPay = 'expenses.pay';
     case ExpensesVoid = 'expenses.void';
 
+    case ProcurementManage = 'procurement.manage';
+    case HrManage = 'hr.manage';
+    case AssetsManage = 'assets.manage';
+    case DocumentsManage = 'documents.manage';
+
     /** @return list<string> */
     public static function values(): array
     {

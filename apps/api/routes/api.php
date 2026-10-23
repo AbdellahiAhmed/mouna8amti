@@ -12,6 +12,10 @@ use App\Http\Controllers\Expenses\ExpenseDecisionController;
 use App\Http\Controllers\Grants\DonorController;
 use App\Http\Controllers\Grants\DonorReportController;
 use App\Http\Controllers\Grants\GrantController;
+use App\Http\Controllers\Operations\AssetController;
+use App\Http\Controllers\Operations\DocumentController;
+use App\Http\Controllers\Operations\EmployeeController;
+use App\Http\Controllers\Operations\PurchaseRequestController;
 use App\Http\Controllers\Organizations\AuditLogController;
 use App\Http\Controllers\Organizations\MemberController;
 use App\Http\Controllers\Organizations\OrganizationController;
@@ -64,6 +68,13 @@ Route::middleware(['auth:sanctum', ActAsDatabaseUser::class])->group(function ()
         Route::post('expenses/{expense}/review', [ExpenseDecisionController::class, 'review']);
         Route::post('expenses/{expense}/approve', [ExpenseDecisionController::class, 'approve']);
         Route::post('expenses/{expense}/reject', [ExpenseDecisionController::class, 'reject']);
+
+        Route::apiResource('purchase-requests', PurchaseRequestController::class)->only(['index', 'store', 'update']);
+        Route::post('purchase-requests/{purchaseRequest}/status', [PurchaseRequestController::class, 'status']);
+        Route::apiResource('employees', EmployeeController::class)->except('show');
+        Route::apiResource('assets', AssetController::class)->except('show');
+        Route::apiResource('documents', DocumentController::class)->except('show');
+        Route::get('documents/{document}/file', [DocumentController::class, 'file']);
 
         Route::get('dashboard', [ReportController::class, 'dashboard']);
         Route::get('reports/monthly', [ReportController::class, 'monthly']);

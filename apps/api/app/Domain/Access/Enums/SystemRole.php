@@ -38,13 +38,13 @@ enum SystemRole: string
         return match ($this) {
             self::Admin => P::cases(),
             self::Director => [P::MembersView, P::AuditView, P::ProjectsView, P::ProjectsManage, P::DonorsManage, P::GrantsManage,
-                P::BudgetsManage, P::ExpensesCreate, P::ExpensesApprove, P::ExpensesVoid],
+                P::BudgetsManage, P::ExpensesCreate, P::ExpensesApprove, P::ExpensesVoid, P::DocumentsManage],
             // Approval chain: the accountant reviews the invoice, the director gives the final approval.
             self::Accountant => [P::MembersView, P::ProjectsView, P::GrantsManage, P::BudgetsManage, P::ExpensesCreate,
-                P::ExpensesReview, P::ExpensesPay],
-            self::ProjectCoordinator => [P::MembersView, P::ProjectsView, P::ProjectsManage, P::ExpensesCreate],
-            self::HrOfficer => [P::MembersView, P::ProjectsView, P::ExpensesCreate],
-            self::Logistician => [P::ProjectsView, P::ExpensesCreate],
+                P::ExpensesReview, P::ExpensesPay, P::ProcurementManage, P::DocumentsManage],
+            self::ProjectCoordinator => [P::MembersView, P::ProjectsView, P::ProjectsManage, P::ExpensesCreate, P::ProcurementManage, P::DocumentsManage],
+            self::HrOfficer => [P::MembersView, P::ProjectsView, P::ExpensesCreate, P::HrManage, P::DocumentsManage],
+            self::Logistician => [P::MembersView, P::ProjectsView, P::ExpensesCreate, P::ProcurementManage, P::AssetsManage],
             self::DonorViewer => [P::ProjectsView],
         };
     }

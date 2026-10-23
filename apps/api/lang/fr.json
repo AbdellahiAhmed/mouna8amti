@@ -242,5 +242,8 @@
     "Choose my password": "Choisir mon mot de passe",
     "This link is valid for 7 days.": "Ce lien est valable 7 jours.",
     "This invitation link is invalid or has expired.": "Ce lien d'invitation est invalide ou a expiré.",
-    ":organization invited you to join its team on MNT.": ":organization vous invite à rejoindre son équipe sur MNT."
+    ":organization invited you to join its team on MNT.": ":organization vous invite à rejoindre son équipe sur MNT.",
+    "Only a request that is not yet approved can be edited.": "Seule une demande non encore approuvée peut être modifiée.",
+    "This request cannot move to that step.": "Cette demande ne peut pas passer à cette étape.",
+    "You cannot approve a request you made.": "Vous ne pouvez pas approuver une demande que vous avez faite."
 }
