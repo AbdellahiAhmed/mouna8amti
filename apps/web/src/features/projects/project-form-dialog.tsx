@@ -75,7 +75,12 @@ function ProjectForm({ project, onDone }: { project?: Project; onDone: () => voi
       </div>
 
       <Field label={t("manager")} error={fieldError("manager_membership_id")}>
-        <Select name="manager_membership_id" defaultValue={project?.manager?.membership_id ?? ""}>
+        {/* Remounted once members load: an uncontrolled default must match an option that exists. */}
+        <Select
+          key={members.data ? "members-loaded" : "members-loading"}
+          name="manager_membership_id"
+          defaultValue={project?.manager?.membership_id ?? ""}
+        >
           <option value="">{t("noManager")}</option>
           {members.data?.data.map((member) => (
             <option key={member.id} value={member.id}>
