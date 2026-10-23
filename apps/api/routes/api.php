@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\CurrentUserController;
 use App\Http\Controllers\Auth\InvitationController;
 use App\Http\Controllers\Auth\MembershipInvitationController;
+use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Controllers\Auth\RegistrationController;
 use App\Http\Controllers\Auth\SessionController;
 use App\Http\Controllers\Budgets\BudgetLineController;
@@ -29,6 +30,8 @@ Route::prefix('auth')->group(function () {
 
     Route::middleware('auth:sanctum')->group(function () {
         Route::post('logout', [SessionController::class, 'destroy']);
+        Route::put('profile', [ProfileController::class, 'update']);
+        Route::put('password', [ProfileController::class, 'password'])->middleware('throttle:6,1');
         Route::get('me', [CurrentUserController::class, 'show'])->middleware(ActAsDatabaseUser::class);
         Route::post('invitations/{membership}/accept', [MembershipInvitationController::class, 'accept'])->whereNumber('membership')->middleware(ActAsDatabaseUser::class);
         Route::post('invitations/{membership}/decline', [MembershipInvitationController::class, 'decline'])->whereNumber('membership')->middleware(ActAsDatabaseUser::class);
@@ -40,6 +43,7 @@ Route::middleware(['auth:sanctum', ActAsDatabaseUser::class])->group(function ()
 
     Route::prefix('orgs/{organization}')->middleware(ResolveOrganization::class)->group(function () {
         Route::get('/', [OrganizationController::class, 'show']);
+        Route::put('/', [OrganizationController::class, 'update']);
         Route::get('members', [MemberController::class, 'index']);
         Route::post('members', [MemberController::class, 'store'])->middleware('throttle:30,1');
         Route::get('roles', [RoleController::class, 'index']);

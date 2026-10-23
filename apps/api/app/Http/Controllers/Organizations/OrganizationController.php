@@ -6,6 +6,7 @@ use App\Domain\Organizations\Actions\CreateOrganization;
 use App\Domain\Tenancy\TenantContext;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Organizations\StoreOrganizationRequest;
+use App\Http\Requests\Organizations\UpdateOrganizationRequest;
 use App\Http\Resources\OrganizationResource;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
@@ -28,5 +29,13 @@ class OrganizationController extends Controller
     public function show(TenantContext $tenant): OrganizationResource
     {
         return new OrganizationResource($tenant->organization());
+    }
+
+    public function update(UpdateOrganizationRequest $request, TenantContext $tenant): OrganizationResource
+    {
+        $organization = $tenant->organization() ?? throw new \LogicException('No tenant.');
+        $organization->update($request->validated());
+
+        return new OrganizationResource($organization);
     }
 }

@@ -38,4 +38,5 @@ return [
     'reason' => 'السبب',
     'role_id' => 'الدور',
     'token' => 'الرابط',
+    'current_password' => 'كلمة المرور الحالية',
 ];

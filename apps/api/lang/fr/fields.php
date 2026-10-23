@@ -38,4 +38,5 @@ return [
     'reason' => 'motif',
     'role_id' => 'rôle',
     'token' => 'lien',
+    'current_password' => 'mot de passe actuel',
 ];

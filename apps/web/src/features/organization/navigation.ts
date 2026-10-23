@@ -29,7 +29,7 @@ export const PRIMARY_NAV: NavItem[] = [
   { key: "expenses", href: "/expenses", icon: ReceiptText, permission: "projects.view" },
   { key: "reports", href: "/reports", icon: BarChart3, permission: "projects.view" },
   { key: "members", href: "/members", icon: Users, permission: "members.view" },
-  { key: "settings", href: "/settings", icon: Settings, soon: true },
+  { key: "settings", href: "/settings", icon: Settings },
 ];
 
 export const ADMIN_NAV: NavItem[] = [

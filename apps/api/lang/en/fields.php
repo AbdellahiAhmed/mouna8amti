@@ -38,4 +38,5 @@ return [
     'reason' => 'reason',
     'role_id' => 'role',
     'token' => 'link',
+    'current_password' => 'current password',
 ];
