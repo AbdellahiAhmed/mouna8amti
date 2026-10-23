@@ -72,7 +72,10 @@ export async function api<T>(path: string, init: RequestInit & { json?: unknown 
   if (response.status === 204) return undefined as T;
 
   // 419: the XSRF cookie outlived its session (expiry, server restart). Refresh it and try once more.
-  if (response.status === 419 && !retried) return api<T>(path, init, true);
+  // 401 on a sign-in/sign-up call: the old session was just invalidated server-side (its password hash
+  // no longer matches, e.g. after a password change elsewhere), so the same call succeeds on a fresh one.
+  const staleSession = response.status === 401 && path.startsWith("/auth/") && path !== "/auth/me" && method === "POST";
+  if ((response.status === 419 || staleSession) && !retried) return api<T>(path, init, true);
 
   const payload = await response.json().catch(() => null);
 

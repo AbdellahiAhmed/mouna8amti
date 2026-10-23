@@ -77,7 +77,12 @@
       "reports": "Reports",
       "settings": "Settings",
       "admin": "Administration",
-      "more": "More"
+      "more": "More",
+      "operations": "Operations",
+      "purchases": "Purchasing",
+      "staff": "Staff",
+      "assets": "Assets",
+      "archive": "Archive"
     },
     "members": {
       "title": "Team",
@@ -187,7 +192,12 @@
     "expenses_approve": "Approve expenses",
     "expenses_pay": "Pay expenses",
     "expenses_void": "Void approved expenses",
-    "expenses_review": "Review expenses"
+    "expenses_review": "Review expenses",
+    "operations_view": "View operations",
+    "procurement_manage": "Manage purchasing",
+    "hr_manage": "HR and salaries",
+    "assets_manage": "Manage assets",
+    "documents_manage": "Manage the archive"
   },
   "shell": {
     "menu": "Menu",
@@ -607,6 +617,140 @@
       "reportTitle": "Report title",
       "titleHint": "e.g. Second interim report",
       "deadline": "Deadline",
+      "cancel": "Cancel",
+      "save": "Save"
+    }
+  },
+  "ops": {
+    "purchaseStatus": {
+      "requested": "Requested",
+      "approved": "Approved",
+      "ordered": "Ordered",
+      "received": "Received",
+      "cancelled": "Cancelled"
+    },
+    "purchases": {
+      "title": "Purchasing",
+      "subtitle": "Purchase requests: who asked, who approved, and where each one stands.",
+      "new": "Purchase request",
+      "empty": "No purchase requests",
+      "filter": "Filter by status",
+      "all": "All",
+      "by": "requested by {name}",
+      "approvedBy": "approved by {name}",
+      "neededBy": "needed by {date}",
+      "edit": "Edit",
+      "to": {
+        "approved": "Approve",
+        "ordered": "Mark ordered",
+        "received": "Mark received",
+        "cancelled": "Cancel"
+      },
+      "hint": "The director approves it, then it is ordered and received.",
+      "what": "What do we need to buy?",
+      "project": "Project",
+      "supplier": "Suggested supplier",
+      "amount": "Estimated amount",
+      "neededByLabel": "Needed by",
+      "details": "Details",
+      "cancel": "Cancel",
+      "save": "Save"
+    },
+    "contract": {
+      "permanent": "Permanent",
+      "fixed_term": "Fixed term",
+      "consultant": "Consultant",
+      "volunteer": "Volunteer"
+    },
+    "staff": {
+      "title": "Staff",
+      "subtitle": "{count, plural, =0 {No staff yet} one {# person} other {# people}}: contracts and projects.",
+      "new": "New staff member",
+      "empty": "No staff recorded yet",
+      "edit": "Edit",
+      "payroll": "Monthly payroll",
+      "period": "{from} to {to}",
+      "since": "since {from}",
+      "salary": "Salary: {amount} {unit} a month",
+      "name": "Full name",
+      "position": "Position",
+      "contract": "Contract",
+      "project": "Project",
+      "noProject": "None (head office)",
+      "startsOn": "Contract start",
+      "endsOn": "Contract end",
+      "salaryLabel": "Monthly salary",
+      "phone": "Phone",
+      "email": "E-mail",
+      "cancel": "Cancel",
+      "save": "Save"
+    },
+    "assetCategory": {
+      "vehicle": "Vehicles",
+      "it": "IT",
+      "furniture": "Furniture",
+      "equipment": "Equipment",
+      "other": "Other"
+    },
+    "assetCondition": {
+      "good": "Good",
+      "fair": "Fair",
+      "broken": "Broken",
+      "disposed": "Disposed"
+    },
+    "assets": {
+      "title": "Assets",
+      "subtitle": "{count, plural, =0 {No assets} one {# asset} other {# assets}} worth {value} {unit}: where they are and who has them.",
+      "new": "New asset",
+      "empty": "No assets recorded yet",
+      "filter": "Filter by category",
+      "all": "All",
+      "heldBy": "with {name}",
+      "edit": "Edit",
+      "name": "Name",
+      "tag": "Inventory tag",
+      "category": "Category",
+      "condition": "Condition",
+      "project": "Project",
+      "noProject": "None",
+      "location": "Location",
+      "holder": "Holder",
+      "acquiredOn": "Acquired on",
+      "value": "Value",
+      "cancel": "Cancel",
+      "save": "Save"
+    },
+    "documentCategory": {
+      "contract": "Contract",
+      "report": "Report",
+      "letter": "Letter",
+      "invoice": "Invoice",
+      "other": "Other"
+    },
+    "direction": {
+      "incoming": "Incoming",
+      "outgoing": "Outgoing",
+      "internal": "Internal"
+    },
+    "archive": {
+      "title": "Archive",
+      "subtitle": "Contracts, reports and letters, with their scans, in one place.",
+      "new": "New document",
+      "empty": "No documents",
+      "filter": "Filter by type",
+      "all": "All",
+      "search": "Search title or reference",
+      "open": "Open file",
+      "edit": "Edit",
+      "titleLabel": "Title",
+      "category": "Type",
+      "directionLabel": "Incoming or outgoing",
+      "date": "Date",
+      "reference": "Reference",
+      "project": "Project",
+      "noProject": "None",
+      "file": "File",
+      "fileHint": "Attach a photo, PDF or Word/Excel file",
       "cancel": "Cancel",
       "save": "Save"
     }

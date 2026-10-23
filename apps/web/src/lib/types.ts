@@ -203,3 +203,66 @@ export interface DonorReport {
   donor?: { id: number; name: string } | null;
   project?: { id: number; name: string } | null;
 }
+
+export type PurchaseStatus = "requested" | "approved" | "ordered" | "received" | "cancelled";
+
+export interface PurchaseRequest {
+  id: number;
+  number: string;
+  title: string;
+  details: string | null;
+  supplier: string | null;
+  estimated_amount: number;
+  needed_by: string | null;
+  status: PurchaseStatus;
+  next: PurchaseStatus[];
+  project?: { id: number; name: string };
+  requested?: { membership_id: number; name: string | null; at: string | null };
+  approved?: { membership_id: number; name: string | null; at: string | null } | null;
+}
+
+export type ContractType = "permanent" | "fixed_term" | "consultant" | "volunteer";
+
+export interface Employee {
+  id: number;
+  full_name: string;
+  position: string;
+  contract_type: ContractType;
+  starts_on: string;
+  ends_on: string | null;
+  /** Only present for HR managers. */
+  monthly_salary?: number | null;
+  phone: string | null;
+  email: string | null;
+  project?: { id: number; name: string } | null;
+}
+
+export type AssetCategory = "vehicle" | "it" | "furniture" | "equipment" | "other";
+export type AssetCondition = "good" | "fair" | "broken" | "disposed";
+
+export interface Asset {
+  id: number;
+  name: string;
+  category: AssetCategory;
+  tag: string | null;
+  location: string | null;
+  holder: string | null;
+  acquired_on: string | null;
+  value: number | null;
+  condition: AssetCondition;
+  project?: { id: number; name: string } | null;
+}
+
+export type DocumentCategory = "contract" | "report" | "letter" | "invoice" | "other";
+export type DocumentDirection = "incoming" | "outgoing" | "internal";
+
+export interface ArchiveDocument {
+  id: number;
+  title: string;
+  category: DocumentCategory;
+  direction: DocumentDirection;
+  reference: string | null;
+  dated_on: string;
+  file: { name: string } | null;
+  project?: { id: number; name: string } | null;
+}

@@ -77,7 +77,12 @@
       "reports": "Rapports",
       "settings": "Paramètres",
       "admin": "Administration",
-      "more": "Plus"
+      "more": "Plus",
+      "operations": "Opérations",
+      "purchases": "Achats",
+      "staff": "Personnel",
+      "assets": "Biens",
+      "archive": "Archives"
     },
     "members": {
       "title": "Équipe",
@@ -187,7 +192,12 @@
     "expenses_approve": "Approuver des dépenses",
     "expenses_pay": "Payer des dépenses",
     "expenses_void": "Annuler des dépenses approuvées",
-    "expenses_review": "Vérifier les dépenses"
+    "expenses_review": "Vérifier les dépenses",
+    "operations_view": "Consulter les opérations",
+    "procurement_manage": "Gérer les achats",
+    "hr_manage": "RH et salaires",
+    "assets_manage": "Gérer les biens",
+    "documents_manage": "Gérer les archives"
   },
   "shell": {
     "menu": "Menu",
@@ -607,6 +617,140 @@
       "reportTitle": "Titre du rapport",
       "titleHint": "Ex. : deuxième rapport intermédiaire",
       "deadline": "Échéance",
+      "cancel": "Annuler",
+      "save": "Enregistrer"
+    }
+  },
+  "ops": {
+    "purchaseStatus": {
+      "requested": "Demandé",
+      "approved": "Approuvé",
+      "ordered": "Commandé",
+      "received": "Reçu",
+      "cancelled": "Annulé"
+    },
+    "purchases": {
+      "title": "Achats",
+      "subtitle": "Les demandes d'achat : qui demande, qui approuve, où en est chacune.",
+      "new": "Demande d'achat",
+      "empty": "Aucune demande d'achat",
+      "filter": "Filtrer par statut",
+      "all": "Toutes",
+      "by": "demandé par {name}",
+      "approvedBy": "approuvé par {name}",
+      "neededBy": "pour le {date}",
+      "edit": "Modifier",
+      "to": {
+        "approved": "Approuver",
+        "ordered": "Commandé",
+        "received": "Reçu",
+        "cancelled": "Annuler"
+      },
+      "hint": "Le directeur l'approuve, puis elle est commandée et réceptionnée.",
+      "what": "Que faut-il acheter ?",
+      "project": "Projet",
+      "supplier": "Fournisseur pressenti",
+      "amount": "Montant estimé",
+      "neededByLabel": "Nécessaire avant",
+      "details": "Détails",
+      "cancel": "Annuler",
+      "save": "Enregistrer"
+    },
+    "contract": {
+      "permanent": "CDI",
+      "fixed_term": "CDD",
+      "consultant": "Consultant",
+      "volunteer": "Bénévole"
+    },
+    "staff": {
+      "title": "Personnel",
+      "subtitle": "{count, plural, =0 {Aucun employé} one {# employé} other {# employés}} : contrats et projets.",
+      "new": "Nouvel employé",
+      "empty": "Aucun employé enregistré",
+      "edit": "Modifier",
+      "payroll": "Masse salariale mensuelle",
+      "period": "du {from} au {to}",
+      "since": "depuis le {from}",
+      "salary": "Salaire : {amount} {unit} par mois",
+      "name": "Nom complet",
+      "position": "Poste",
+      "contract": "Contrat",
+      "project": "Projet",
+      "noProject": "Aucun (siège)",
+      "startsOn": "Début du contrat",
+      "endsOn": "Fin du contrat",
+      "salaryLabel": "Salaire mensuel",
+      "phone": "Téléphone",
+      "email": "E-mail",
+      "cancel": "Annuler",
+      "save": "Enregistrer"
+    },
+    "assetCategory": {
+      "vehicle": "Véhicules",
+      "it": "Informatique",
+      "furniture": "Mobilier",
+      "equipment": "Équipement",
+      "other": "Autre"
+    },
+    "assetCondition": {
+      "good": "Bon",
+      "fair": "Moyen",
+      "broken": "En panne",
+      "disposed": "Réformé"
+    },
+    "assets": {
+      "title": "Biens",
+      "subtitle": "{count, plural, =0 {Aucun bien} one {# bien} other {# biens}} pour {value} {unit} : où ils sont et qui les détient.",
+      "new": "Nouveau bien",
+      "empty": "Aucun bien enregistré",
+      "filter": "Filtrer par catégorie",
+      "all": "Tous",
+      "heldBy": "chez {name}",
+      "edit": "Modifier",
+      "name": "Nom",
+      "tag": "N° d'inventaire",
+      "category": "Catégorie",
+      "condition": "État",
+      "project": "Projet",
+      "noProject": "Aucun",
+      "location": "Lieu",
+      "holder": "Détenteur",
+      "acquiredOn": "Acquis le",
+      "value": "Valeur",
+      "cancel": "Annuler",
+      "save": "Enregistrer"
+    },
+    "documentCategory": {
+      "contract": "Contrat",
+      "report": "Rapport",
+      "letter": "Courrier",
+      "invoice": "Facture",
+      "other": "Autre"
+    },
+    "direction": {
+      "incoming": "Arrivée",
+      "outgoing": "Départ",
+      "internal": "Interne"
+    },
+    "archive": {
+      "title": "Archives",
+      "subtitle": "Contrats, rapports et courriers, avec leurs scans, au même endroit.",
+      "new": "Nouveau document",
+      "empty": "Aucun document",
+      "filter": "Filtrer par type",
+      "all": "Tous",
+      "search": "Chercher par titre ou référence",
+      "open": "Ouvrir",
+      "edit": "Modifier",
+      "titleLabel": "Titre",
+      "category": "Type",
+      "directionLabel": "Arrivée ou départ",
+      "date": "Date",
+      "reference": "Référence",
+      "project": "Projet",
+      "noProject": "Aucun",
+      "file": "Fichier",
+      "fileHint": "Joindre une photo, un PDF ou un fichier Word/Excel",
       "cancel": "Annuler",
       "save": "Enregistrer"
     }

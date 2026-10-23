@@ -12,7 +12,7 @@ import { useLogout } from "@/features/auth/queries";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/cn";
 import type { Locale } from "@/lib/types";
-import { ADMIN_NAV, PRIMARY_NAV, type NavItem } from "./navigation";
+import { ADMIN_NAV, OPERATIONS_NAV, PRIMARY_NAV, type NavItem } from "./navigation";
 import { useOrganization } from "./organization-context";
 
 const ease = [0.2, 0, 0, 1] as const;
@@ -59,7 +59,7 @@ export function AppShell({ children }: { children: ReactNode }) {
 function useVisibleNav() {
   const { can } = useOrganization();
   const visible = (item: NavItem) => !item.permission || can(item.permission);
-  return { primary: PRIMARY_NAV.filter(visible), admin: ADMIN_NAV.filter(visible) };
+  return { primary: PRIMARY_NAV.filter(visible), operations: OPERATIONS_NAV.filter(visible), admin: ADMIN_NAV.filter(visible) };
 }
 
 function useIsActive() {
@@ -71,7 +71,7 @@ function useIsActive() {
 
 function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
   const t = useTranslations("app.nav");
-  const { primary, admin } = useVisibleNav();
+  const { primary, operations, admin } = useVisibleNav();
 
   return (
     <>
@@ -81,6 +81,12 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
       <OrganizationSwitcher />
       <nav className="flex flex-col gap-5">
         <NavGroup items={primary} onNavigate={onNavigate} />
+        {operations.length > 0 && (
+          <div className="flex flex-col gap-1.5">
+            <p className="px-3.5 text-caption font-medium text-steel">{t("operations")}</p>
+            <NavGroup items={operations} onNavigate={onNavigate} />
+          </div>
+        )}
         {admin.length > 0 && (
           <div className="flex flex-col gap-1.5">
             <p className="px-3.5 text-caption font-medium text-steel">{t("admin")}</p>

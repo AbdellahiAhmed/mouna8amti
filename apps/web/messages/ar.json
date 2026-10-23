@@ -77,7 +77,12 @@
       "reports": "التقارير",
       "settings": "الإعدادات",
       "admin": "الإدارة",
-      "more": "المزيد"
+      "more": "المزيد",
+      "operations": "العمليات",
+      "purchases": "المشتريات",
+      "staff": "الموظفون",
+      "assets": "الأصول",
+      "archive": "الأرشيف"
     },
     "members": {
       "title": "الفريق",
@@ -187,7 +192,12 @@
     "expenses_approve": "اعتماد المصروفات",
     "expenses_pay": "صرف المدفوعات",
     "expenses_void": "إلغاء المصروفات المعتمدة",
-    "expenses_review": "مراجعة المصروفات"
+    "expenses_review": "مراجعة المصروفات",
+    "operations_view": "الاطلاع على العمليات",
+    "procurement_manage": "إدارة المشتريات",
+    "hr_manage": "الموارد البشرية والرواتب",
+    "assets_manage": "إدارة الأصول",
+    "documents_manage": "إدارة الأرشيف"
   },
   "shell": {
     "menu": "القائمة",
@@ -607,6 +617,140 @@
       "reportTitle": "عنوان التقرير",
       "titleHint": "مثال: التقرير المرحلي الثاني",
       "deadline": "آخر موعد",
+      "cancel": "إلغاء",
+      "save": "حفظ"
+    }
+  },
+  "ops": {
+    "purchaseStatus": {
+      "requested": "طلب جديد",
+      "approved": "تمت الموافقة",
+      "ordered": "طُلب من المورد",
+      "received": "تم الاستلام",
+      "cancelled": "ملغى"
+    },
+    "purchases": {
+      "title": "المشتريات",
+      "subtitle": "طلبات الشراء: من طلب، من وافق، وأين وصل كل طلب.",
+      "new": "طلب شراء",
+      "empty": "لا توجد طلبات شراء",
+      "filter": "تصفية حسب الحالة",
+      "all": "الكل",
+      "by": "طلبه {name}",
+      "approvedBy": "وافق {name}",
+      "neededBy": "مطلوب قبل {date}",
+      "edit": "تعديل",
+      "to": {
+        "approved": "موافقة",
+        "ordered": "تم الطلب من المورد",
+        "received": "تم الاستلام",
+        "cancelled": "إلغاء"
+      },
+      "hint": "يوافق عليه المدير، ثم يُطلب من المورد ويُستلم.",
+      "what": "ماذا نحتاج أن نشتري؟",
+      "project": "المشروع",
+      "supplier": "المورد المقترح",
+      "amount": "المبلغ التقديري",
+      "neededByLabel": "نحتاجه قبل",
+      "details": "تفاصيل",
+      "cancel": "إلغاء",
+      "save": "حفظ"
+    },
+    "contract": {
+      "permanent": "عقد دائم",
+      "fixed_term": "عقد محدد المدة",
+      "consultant": "استشاري",
+      "volunteer": "متطوع"
+    },
+    "staff": {
+      "title": "الموظفون",
+      "subtitle": "{count, plural, =0 {لا موظفين بعد} one {موظف واحد} two {موظفان} few {# موظفين} other {# موظفًا}}: عقودهم ومشاريعهم.",
+      "new": "موظف جديد",
+      "empty": "لم يُسجَّل أي موظف بعد",
+      "edit": "تعديل",
+      "payroll": "مجموع الرواتب الشهرية",
+      "period": "من {from} إلى {to}",
+      "since": "منذ {from}",
+      "salary": "الراتب: {amount} {unit} شهريًا",
+      "name": "الاسم الكامل",
+      "position": "الوظيفة",
+      "contract": "نوع العقد",
+      "project": "المشروع",
+      "noProject": "بدون مشروع (المقر)",
+      "startsOn": "بداية العقد",
+      "endsOn": "نهاية العقد",
+      "salaryLabel": "الراتب الشهري",
+      "phone": "الهاتف",
+      "email": "البريد الإلكتروني",
+      "cancel": "إلغاء",
+      "save": "حفظ"
+    },
+    "assetCategory": {
+      "vehicle": "مركبات",
+      "it": "معلوماتية",
+      "furniture": "أثاث",
+      "equipment": "معدات",
+      "other": "أخرى"
+    },
+    "assetCondition": {
+      "good": "جيدة",
+      "fair": "متوسطة",
+      "broken": "معطلة",
+      "disposed": "مستبعدة"
+    },
+    "assets": {
+      "title": "الأصول",
+      "subtitle": "{count, plural, =0 {لا أصول} one {أصل واحد} two {أصلان} few {# أصول} other {# أصلًا}} بقيمة {value} {unit}: أين هي ومع من.",
+      "new": "أصل جديد",
+      "empty": "لم يُسجَّل أي أصل بعد",
+      "filter": "تصفية حسب الفئة",
+      "all": "الكل",
+      "heldBy": "مع {name}",
+      "edit": "تعديل",
+      "name": "الاسم",
+      "tag": "رقم الجرد",
+      "category": "الفئة",
+      "condition": "الحالة",
+      "project": "المشروع",
+      "noProject": "بدون مشروع",
+      "location": "المكان",
+      "holder": "المستلم",
+      "acquiredOn": "تاريخ الاقتناء",
+      "value": "القيمة",
+      "cancel": "إلغاء",
+      "save": "حفظ"
+    },
+    "documentCategory": {
+      "contract": "عقد",
+      "report": "تقرير",
+      "letter": "مراسلة",
+      "invoice": "فاتورة",
+      "other": "أخرى"
+    },
+    "direction": {
+      "incoming": "وارد",
+      "outgoing": "صادر",
+      "internal": "داخلي"
+    },
+    "archive": {
+      "title": "الأرشيف",
+      "subtitle": "العقود والتقارير والمراسلات، مع صورها، في مكان واحد.",
+      "new": "وثيقة جديدة",
+      "empty": "لا توجد وثائق",
+      "filter": "تصفية حسب النوع",
+      "all": "الكل",
+      "search": "ابحث بالعنوان أو المرجع",
+      "open": "فتح الملف",
+      "edit": "تعديل",
+      "titleLabel": "عنوان الوثيقة",
+      "category": "النوع",
+      "directionLabel": "وارد أو صادر",
+      "date": "التاريخ",
+      "reference": "المرجع",
+      "project": "المشروع",
+      "noProject": "بدون مشروع",
+      "file": "الملف",
+      "fileHint": "أرفق صورة أو PDF أو ملف Word/Excel",
       "cancel": "إلغاء",
       "save": "حفظ"
     }

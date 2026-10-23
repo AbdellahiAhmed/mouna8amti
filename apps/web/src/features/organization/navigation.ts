@@ -1,5 +1,9 @@
 import {
+  Archive,
   BarChart3,
+  IdCard,
+  Package,
+  ShoppingCart,
   FolderKanban,
   HandCoins,
   History,
@@ -12,7 +16,9 @@ import {
 } from "lucide-react";
 
 export type NavItem = {
-  key: "dashboard" | "projects" | "donors" | "expenses" | "reports" | "members" | "settings" | "roles" | "audit";
+  key:
+    | "dashboard" | "projects" | "donors" | "expenses" | "reports" | "members" | "settings"
+    | "purchases" | "staff" | "assets" | "archive" | "roles" | "audit";
   href: string;
   icon: LucideIcon;
   /** Hidden when the viewer lacks it. */
@@ -30,6 +36,13 @@ export const PRIMARY_NAV: NavItem[] = [
   { key: "reports", href: "/reports", icon: BarChart3, permission: "projects.view" },
   { key: "members", href: "/members", icon: Users, permission: "members.view" },
   { key: "settings", href: "/settings", icon: Settings },
+];
+
+export const OPERATIONS_NAV: NavItem[] = [
+  { key: "purchases", href: "/purchases", icon: ShoppingCart, permission: "operations.view" },
+  { key: "staff", href: "/staff", icon: IdCard, permission: "members.view" },
+  { key: "assets", href: "/assets", icon: Package, permission: "operations.view" },
+  { key: "archive", href: "/archive", icon: Archive, permission: "operations.view" },
 ];
 
 export const ADMIN_NAV: NavItem[] = [
