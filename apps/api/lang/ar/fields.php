@@ -36,4 +36,6 @@ return [
     'allocations.*.percent' => 'النسبة',
     'attachment' => 'الفاتورة',
     'reason' => 'السبب',
+    'role_id' => 'الدور',
+    'token' => 'الرابط',
 ];

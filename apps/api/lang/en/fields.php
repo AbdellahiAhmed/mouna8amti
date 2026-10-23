@@ -36,4 +36,6 @@ return [
     'allocations.*.percent' => 'percentage',
     'attachment' => 'invoice',
     'reason' => 'reason',
+    'role_id' => 'role',
+    'token' => 'link',
 ];

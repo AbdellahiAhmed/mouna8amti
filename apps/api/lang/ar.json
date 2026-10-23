@@ -234,5 +234,13 @@
     "The budget line shares must add up to 100%.": "يجب أن يكون مجموع حصص بنود الميزانية 100%.",
     "Every budget line must belong to the selected project.": "يجب أن تتبع كل بنود الميزانية المشروع المختار.",
     "This budget line already carries expenses and cannot be deleted.": "هذا البند عليه مصروفات ولا يمكن حذفه.",
-    "This expense can no longer be changed.": "لم يعد بالإمكان تعديل هذا المصروف."
+    "This expense can no longer be changed.": "لم يعد بالإمكان تعديل هذا المصروف.",
+    "This person is already a member of the organisation.": "هذا الشخص عضو في المنظمة بالفعل.",
+    "You have been invited to :organization": "دعوة للانضمام إلى :organization",
+    "Hello :name,": "مرحبًا :name،",
+    ":organization added you to its team on MNT.": "أضافتك :organization إلى فريقها على منصة منظمتي.",
+    "Sign in": "تسجيل الدخول",
+    "Choose my password": "اختيار كلمة المرور",
+    "This link is valid for 7 days.": "هذا الرابط صالح لمدة 7 أيام.",
+    "This invitation link is invalid or has expired.": "رابط الدعوة غير صالح أو انتهت صلاحيته."
 }
