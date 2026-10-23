@@ -70,17 +70,6 @@
       "admin": "Administration",
       "more": "Plus"
     },
-    "dashboard": {
-      "greeting": "Bonjour {name}",
-      "subtitle": "Voici le point de départ de {organization}.",
-      "checklistTitle": "Premiers pas",
-      "stepOrg": "Créer l'organisation",
-      "stepTeam": "Inviter l'équipe",
-      "stepProject": "Créer un premier projet",
-      "stepBudget": "Préparer un premier budget",
-      "done": "Fait",
-      "next": "Ensuite"
-    },
     "members": {
       "title": "Équipe",
       "subtitle": "Les personnes qui travaillent dans l'organisation et leurs rôles.",
@@ -248,6 +237,54 @@
       "government": "Gouvernemental",
       "private": "Privé",
       "other": "Autre"
+    }
+  },
+  "finance": {
+    "projectStatus": {
+      "active": "En cours",
+      "closed": "Terminé",
+      "on_hold": "Suspendu",
+      "draft": "Brouillon"
+    },
+    "expenseStatus": {
+      "yours": "Attend votre accord",
+      "submitted": "À vérifier",
+      "reviewed": "À approuver",
+      "approved": "Approuvée",
+      "rejected": "Refusée"
+    },
+    "dashboard": {
+      "title": "Tableau de bord",
+      "subtitle": "Un coup d'œil sur l'argent de l'association et ses projets.",
+      "morning": "Bonjour {name}",
+      "evening": "Bonsoir {name}",
+      "story": "Nous avons {active, plural, =0 {aucun projet} one {un projet} other {# projets}} en cours. Nous avons reçu <b>{received}</b> {unit}, dépensé <b>{spent}</b>, et il reste <b>{balance}</b> {unit} en caisse.",
+      "spentShare": "{percent} % de ce que nous avons reçu est dépensé",
+      "leftShare": "reste {percent} %",
+      "received": "Fonds reçus",
+      "receivedNote": "sur {promised} promis",
+      "spent": "Dépensé",
+      "spentNote": "{percent} % des fonds reçus",
+      "balance": "Solde disponible",
+      "balanceNote": "Prêt à financer les projets",
+      "activeProjects": "Projets en cours",
+      "ofProjects": "sur {count} projets",
+      "projectsNote": "{closed, plural, =0 {aucun terminé} one {un terminé} other {# terminés}}, {onHold, plural, =0 {aucun suspendu} one {un suspendu} other {# suspendus}}",
+      "attention": "À traiter",
+      "waitingForYou": "{count, plural, one {Une dépense attend votre décision} other {# dépenses attendent votre décision}}",
+      "waitingDetail": "{count} en attente pour {amount} {unit}",
+      "reviewNow": "Les examiner",
+      "budgetHigh": "Le budget de {project} atteint {percent} %",
+      "budgetHighDetail": "{spent} dépensés sur {budget} {unit}",
+      "openProject": "Voir le projet",
+      "projectsTitle": "Avancement des projets",
+      "allProjects": "Tous les projets",
+      "projectSpent": "{percent} % du budget dépensé",
+      "projectClosed": "Projet terminé — budget entièrement dépensé",
+      "projectOnHold": "Suspendu — {percent} % du budget dépensé",
+      "recentTitle": "Dernières dépenses",
+      "allExpenses": "Toutes les dépenses",
+      "noExpenses": "Aucune dépense enregistrée pour l'instant."
     }
   }
 }

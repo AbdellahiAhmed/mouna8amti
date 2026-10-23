@@ -78,11 +78,16 @@ export interface Project {
   code: string;
   name: string;
   description: string | null;
+  location: string | null;
   status: ProjectStatus;
   progress: number;
   starts_on: string;
   ends_on: string;
   manager?: { membership_id: number; name: string } | null;
+  /** Present on list, detail and dashboard payloads. */
+  budget?: number;
+  spent?: number;
+  grants?: Grant[];
 }
 
 export type DonorType = "multilateral" | "bilateral" | "foundation" | "government" | "private" | "other";
@@ -94,4 +99,86 @@ export interface Donor {
   country: string | null;
   contact_name: string | null;
   contact_email: string | null;
+  promised?: number;
+  received?: number;
+  grants?: Grant[];
+}
+
+// Amounts are integers in the organisation currency's minor unit (see lib/money.ts).
+
+export interface GrantTranche {
+  id: number;
+  amount: number;
+  expected_on: string;
+  received_on: string | null;
+}
+
+export interface Grant {
+  id: number;
+  reference: string | null;
+  amount: number;
+  received: number;
+  signed_on: string | null;
+  donor?: { id: number; name: string };
+  project?: { id: number; code: string; name: string };
+  tranches?: GrantTranche[];
+}
+
+export interface BudgetLine {
+  id: number;
+  project_id: number;
+  name: string;
+  amount: number;
+  spent: number;
+}
+
+export type ExpenseStatus = "submitted" | "reviewed" | "approved" | "rejected";
+export type ExpenseAction = "edit" | "delete" | "review" | "approve" | "reject";
+
+export interface ExpenseStep {
+  membership_id: number;
+  name: string | null;
+  at: string | null;
+}
+
+export interface Expense {
+  id: number;
+  number: string;
+  description: string;
+  payee: string | null;
+  amount: number;
+  spent_on: string;
+  status: ExpenseStatus;
+  project?: { id: number; code: string; name: string };
+  attachment: { name: string } | null;
+  allocations?: { budget_line_id: number; name: string | null; percent: number }[];
+  submitted: ExpenseStep | null;
+  reviewed: ExpenseStep | null;
+  approved: ExpenseStep | null;
+  rejected: ExpenseStep | null;
+  rejection_reason: string | null;
+  actions: ExpenseAction[];
+}
+
+export interface Dashboard {
+  totals: {
+    promised: number;
+    received: number;
+    spent: number;
+    balance: number;
+    pending: { count: number; amount: number };
+  };
+  awaiting_me: { review: number; approve: number };
+  projects: Project[];
+  recent_expenses: Expense[];
+}
+
+export interface MonthlyReport {
+  month: string;
+  received: { total: number; by_donor: { donor: string; amount: number }[] };
+  spent: { total: number; count: number; by_project: { project: { id: number; code: string; name: string }; amount: number; count: number }[] };
+  pending: { count: number; amount: number };
+  rejected_count: number;
+  balance_at_end: number;
+  series: { month: string; received: number; spent: number }[];
 }

@@ -70,17 +70,6 @@
       "admin": "Administration",
       "more": "More"
     },
-    "dashboard": {
-      "greeting": "Hello {name}",
-      "subtitle": "This is where {organization} starts.",
-      "checklistTitle": "Getting started",
-      "stepOrg": "Create the organisation",
-      "stepTeam": "Invite your team",
-      "stepProject": "Create a first project",
-      "stepBudget": "Prepare a first budget",
-      "done": "Done",
-      "next": "Next"
-    },
     "members": {
       "title": "Team",
       "subtitle": "The people working inside the organisation and their roles.",
@@ -248,6 +237,54 @@
       "government": "Government",
       "private": "Private",
       "other": "Other"
+    }
+  },
+  "finance": {
+    "projectStatus": {
+      "active": "In progress",
+      "closed": "Completed",
+      "on_hold": "On hold",
+      "draft": "Draft"
+    },
+    "expenseStatus": {
+      "yours": "Waiting for you",
+      "submitted": "To review",
+      "reviewed": "To approve",
+      "approved": "Approved",
+      "rejected": "Rejected"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "subtitle": "A quick look at the organisation's money and projects.",
+      "morning": "Good morning, {name}",
+      "evening": "Good evening, {name}",
+      "story": "We have {active, plural, =0 {no projects} one {one project} other {# projects}} in progress. We received <b>{received}</b> {unit}, spent <b>{spent}</b>, and <b>{balance}</b> {unit} remain in the balance.",
+      "spentShare": "We spent {percent}% of what we received",
+      "leftShare": "{percent}% left",
+      "received": "Funds received",
+      "receivedNote": "of {promised} promised",
+      "spent": "Spent",
+      "spentNote": "{percent}% of funds received",
+      "balance": "Available balance",
+      "balanceNote": "Ready to fund the projects",
+      "activeProjects": "Projects in progress",
+      "ofProjects": "of {count} projects",
+      "projectsNote": "{closed, plural, =0 {none completed} one {one completed} other {# completed}}, {onHold, plural, =0 {none on hold} one {one on hold} other {# on hold}}",
+      "attention": "Needs your attention",
+      "waitingForYou": "{count, plural, one {One expense waits for your decision} other {# expenses wait for your decision}}",
+      "waitingDetail": "{count} pending, worth {amount} {unit}",
+      "reviewNow": "Review them",
+      "budgetHigh": "{project} has used {percent}% of its budget",
+      "budgetHighDetail": "{spent} spent of {budget} {unit}",
+      "openProject": "Open the project",
+      "projectsTitle": "Project progress",
+      "allProjects": "All projects",
+      "projectSpent": "{percent}% of the budget spent",
+      "projectClosed": "Project completed — full budget spent",
+      "projectOnHold": "On hold — {percent}% of the budget spent",
+      "recentTitle": "Latest expenses",
+      "allExpenses": "All expenses",
+      "noExpenses": "No expenses recorded yet."
     }
   }
 }

@@ -70,17 +70,6 @@
       "admin": "الإدارة",
       "more": "المزيد"
     },
-    "dashboard": {
-      "greeting": "أهلًا {name}",
-      "subtitle": "هذه نقطة انطلاق {organization}.",
-      "checklistTitle": "خطوات البداية",
-      "stepOrg": "إنشاء المنظمة",
-      "stepTeam": "دعوة فريق العمل",
-      "stepProject": "إنشاء أول مشروع",
-      "stepBudget": "إعداد أول ميزانية",
-      "done": "تم",
-      "next": "التالي"
-    },
     "members": {
       "title": "الفريق",
       "subtitle": "الأشخاص الذين يعملون داخل المنظمة وأدوارهم.",
@@ -248,6 +237,54 @@
       "government": "حكومية",
       "private": "قطاع خاص",
       "other": "أخرى"
+    }
+  },
+  "finance": {
+    "projectStatus": {
+      "active": "قيد التنفيذ",
+      "closed": "مكتمل",
+      "on_hold": "متوقف",
+      "draft": "مسودة"
+    },
+    "expenseStatus": {
+      "yours": "بانتظار موافقتك",
+      "submitted": "بانتظار المراجعة",
+      "reviewed": "بانتظار الموافقة",
+      "approved": "معتمدة",
+      "rejected": "مرفوضة"
+    },
+    "dashboard": {
+      "title": "لوحة القيادة",
+      "subtitle": "نظرة سريعة على أموال الجمعية ومشاريعها.",
+      "morning": "صباح الخير، {name}",
+      "evening": "مساء الخير، {name}",
+      "story": "لدينا {active, plural, =0 {لا مشاريع} one {مشروع واحد} two {مشروعان} few {# مشاريع} many {# مشروعًا} other {# مشروع}} قيد التنفيذ. استلمنا <b>{received}</b> {unit}، صرفنا منها <b>{spent}</b>، وبقي في الرصيد <b>{balance}</b> {unit}.",
+      "spentShare": "صرفنا {percent}% مما استلمناه",
+      "leftShare": "بقي {percent}%",
+      "received": "الأموال المستلمة",
+      "receivedNote": "من أصل {promised} موعودة",
+      "spent": "المصروف",
+      "spentNote": "{percent}% مما استلمناه",
+      "balance": "الرصيد المتوفر",
+      "balanceNote": "جاهز للصرف على المشاريع",
+      "activeProjects": "مشاريع قيد التنفيذ",
+      "ofProjects": "من {count} مشاريع",
+      "projectsNote": "{closed, plural, =0 {لا مشروع مكتمل} one {مشروع مكتمل} other {# مشاريع مكتملة}} و{onHold, plural, =0 {لا مشروع متوقف} one {مشروع متوقف} other {# مشاريع متوقفة}}",
+      "attention": "يحتاج انتباهك",
+      "waitingForYou": "{count, plural, one {مصروف واحد بانتظار قرارك} two {مصروفان بانتظار قرارك} few {# مصروفات بانتظار قرارك} other {# مصروفًا بانتظار قرارك}}",
+      "waitingDetail": "{count} في الانتظار بقيمة {amount} {unit}",
+      "reviewNow": "راجِعها الآن",
+      "budgetHigh": "ميزانية {project} وصلت {percent}%",
+      "budgetHighDetail": "صُرف {spent} من {budget} {unit}",
+      "openProject": "اطّلع على المشروع",
+      "projectsTitle": "تقدّم المشاريع",
+      "allProjects": "كل المشاريع",
+      "projectSpent": "صُرف {percent}% من الميزانية",
+      "projectClosed": "اكتمل المشروع — صُرفت الميزانية كاملة",
+      "projectOnHold": "متوقف حاليًا — صُرف {percent}% من الميزانية",
+      "recentTitle": "آخر المصروفات",
+      "allExpenses": "كل المصروفات",
+      "noExpenses": "لم تُسجَّل أي مصروفات بعد."
     }
   }
 }

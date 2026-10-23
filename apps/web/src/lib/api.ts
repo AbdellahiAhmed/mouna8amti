@@ -38,20 +38,20 @@ function readXsrfToken(): string | undefined {
   return match ? decodeURIComponent(match[1]) : undefined;
 }
 
-async function ensureCsrfCookie(): Promise<void> {
-  if (!readXsrfToken()) {
+async function ensureCsrfCookie(force = false): Promise<void> {
+  if (force || !readXsrfToken()) {
     await fetch("/sanctum/csrf-cookie", { credentials: "include" });
   }
 }
 
-export async function api<T>(path: string, init: RequestInit & { json?: unknown } = {}): Promise<T> {
+export async function api<T>(path: string, init: RequestInit & { json?: unknown } = {}, retried = false): Promise<T> {
   const method = (init.method ?? "GET").toUpperCase();
   const headers = new Headers(init.headers);
   headers.set("Accept", "application/json");
   headers.set("Accept-Language", document.documentElement.lang || "ar");
 
   if (MUTATING.has(method)) {
-    await ensureCsrfCookie();
+    await ensureCsrfCookie(retried);
     const token = readXsrfToken();
     if (token) headers.set("X-XSRF-TOKEN", token);
   }
@@ -70,6 +70,9 @@ export async function api<T>(path: string, init: RequestInit & { json?: unknown 
   }
 
   if (response.status === 204) return undefined as T;
+
+  // 419: the XSRF cookie outlived its session (expiry, server restart). Refresh it and try once more.
+  if (response.status === 419 && !retried) return api<T>(path, init, true);
 
   const payload = await response.json().catch(() => null);
 
