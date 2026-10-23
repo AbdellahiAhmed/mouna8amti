@@ -47,7 +47,9 @@ export interface User {
   invitations?: { id: number; title: string | null; organization: { name: string; slug: string } }[];
 }
 
-export type AuditSubjectType = "organization" | "membership" | "role" | "project" | "donor";
+export type AuditSubjectType =
+  | "organization" | "membership" | "role" | "project" | "donor" | "grant" | "budget_line" | "expense"
+  | "activity" | "donor_report" | "purchase_request" | "employee" | "asset" | "document";
 
 export interface AuditChange {
   field: string;

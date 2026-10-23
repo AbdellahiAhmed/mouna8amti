@@ -1,5 +1,6 @@
 import { useFormatter, useLocale, useTranslations } from "next-intl";
 import { monthName, regionName } from "@/features/onboarding/options";
+import { useMoney } from "@/lib/money";
 import type { AuditChange, AuditSubjectType, Locale } from "@/lib/types";
 
 const LANGUAGES: Record<string, string> = { ar: "العربية", fr: "Français", en: "English" };
@@ -33,6 +34,7 @@ function ChangeValue({ field, value, subject }: { field: string; value: unknown;
   const t = useTranslations();
   const format = useFormatter();
   const locale = useLocale() as Locale;
+  const money = useMoney();
 
   if (value === null || value === undefined || value === "") return <>{t("app.audit.empty_value")}</>;
 
@@ -41,14 +43,28 @@ function ChangeValue({ field, value, subject }: { field: string; value: unknown;
     case "status":
       if (subject === "project") return <>{t(`projects.statuses.${text}` as Parameters<typeof t>[0])}</>;
       if (subject === "membership") return <>{t(`app.status.${text}` as Parameters<typeof t>[0])}</>;
+      if (subject === "expense") return <>{t(`finance.expenseStatus.${text}` as Parameters<typeof t>[0])}</>;
+      if (subject === "purchase_request") return <>{t(`ops.purchaseStatus.${text}` as Parameters<typeof t>[0])}</>;
       break;
     case "type":
       if (subject === "donor") return <>{t(`donors.types.${text}` as Parameters<typeof t>[0])}</>;
       break;
     case "progress":
       return <>{format.number(Number(value) / 100, { style: "percent" })}</>;
+    case "amount":
+    case "estimated_amount":
+    case "value":
+      return <>{`${money.amount(Number(value))} ${money.unit}`}</>;
     case "starts_on":
     case "ends_on":
+    case "spent_on":
+    case "signed_on":
+    case "due_on":
+    case "done_on":
+    case "submitted_on":
+    case "needed_by":
+    case "dated_on":
+    case "acquired_on":
       return <>{format.dateTime(new Date(text), { dateStyle: "medium" })}</>;
     case "country":
       return <>{regionName(locale, text)}</>;

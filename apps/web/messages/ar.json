@@ -117,7 +117,16 @@
         "donor": "المانحون",
         "membership": "الفريق",
         "role": "الأدوار",
-        "organization": "المنظمة"
+        "organization": "المنظمة",
+        "grant": "المنح",
+        "budget_line": "الميزانيات",
+        "expense": "المصروفات",
+        "activity": "الأنشطة",
+        "donor_report": "تقارير المانحين",
+        "purchase_request": "المشتريات",
+        "employee": "الموظفون",
+        "asset": "الأصول",
+        "document": "الأرشيف"
       },
       "sentences": {
         "organization": {
@@ -144,6 +153,51 @@
           "created": "تمت إضافة الجهة المانحة <b>{label}</b> بواسطة <b>{actor}</b>",
           "updated": "تم تعديل الجهة المانحة <b>{label}</b> بواسطة <b>{actor}</b>",
           "deleted": "تم حذف الجهة المانحة <b>{label}</b> بواسطة <b>{actor}</b>"
+        },
+        "grant": {
+          "created": "<b>{actor}</b> أضاف المنحة <b>{label}</b>",
+          "updated": "<b>{actor}</b> عدّل المنحة <b>{label}</b>",
+          "deleted": "<b>{actor}</b> حذف المنحة <b>{label}</b>"
+        },
+        "budget_line": {
+          "created": "<b>{actor}</b> أضاف بند الميزانية <b>{label}</b>",
+          "updated": "<b>{actor}</b> عدّل بند الميزانية <b>{label}</b>",
+          "deleted": "<b>{actor}</b> حذف بند الميزانية <b>{label}</b>"
+        },
+        "expense": {
+          "created": "<b>{actor}</b> أضاف المصروف <b>{label}</b>",
+          "updated": "<b>{actor}</b> عدّل المصروف <b>{label}</b>",
+          "deleted": "<b>{actor}</b> حذف المصروف <b>{label}</b>"
+        },
+        "activity": {
+          "created": "<b>{actor}</b> أضاف النشاط <b>{label}</b>",
+          "updated": "<b>{actor}</b> عدّل النشاط <b>{label}</b>",
+          "deleted": "<b>{actor}</b> حذف النشاط <b>{label}</b>"
+        },
+        "donor_report": {
+          "created": "<b>{actor}</b> أضاف تقرير المانح <b>{label}</b>",
+          "updated": "<b>{actor}</b> عدّل تقرير المانح <b>{label}</b>",
+          "deleted": "<b>{actor}</b> حذف تقرير المانح <b>{label}</b>"
+        },
+        "purchase_request": {
+          "created": "<b>{actor}</b> أضاف طلب الشراء <b>{label}</b>",
+          "updated": "<b>{actor}</b> عدّل طلب الشراء <b>{label}</b>",
+          "deleted": "<b>{actor}</b> حذف طلب الشراء <b>{label}</b>"
+        },
+        "employee": {
+          "created": "<b>{actor}</b> أضاف ملف الموظف <b>{label}</b>",
+          "updated": "<b>{actor}</b> عدّل ملف الموظف <b>{label}</b>",
+          "deleted": "<b>{actor}</b> حذف ملف الموظف <b>{label}</b>"
+        },
+        "asset": {
+          "created": "<b>{actor}</b> أضاف الأصل <b>{label}</b>",
+          "updated": "<b>{actor}</b> عدّل الأصل <b>{label}</b>",
+          "deleted": "<b>{actor}</b> حذف الأصل <b>{label}</b>"
+        },
+        "document": {
+          "created": "<b>{actor}</b> أضاف الوثيقة <b>{label}</b>",
+          "updated": "<b>{actor}</b> عدّل الوثيقة <b>{label}</b>",
+          "deleted": "<b>{actor}</b> حذف الوثيقة <b>{label}</b>"
         }
       },
       "fields": {
@@ -159,13 +213,37 @@
         "country": "البلد",
         "contact_name": "جهة الاتصال",
         "contact_email": "البريد الإلكتروني",
-        "title": "المسمى الوظيفي",
+        "title": "العنوان",
         "permissions": "الصلاحيات",
         "legal_name": "الاسم القانوني",
         "currency": "العملة",
         "locale": "اللغة",
         "fiscal_year_start_month": "بداية السنة المالية",
-        "logo_path": "الشعار"
+        "logo_path": "الشعار",
+        "amount": "المبلغ",
+        "spent_on": "تاريخ الصرف",
+        "payee": "المستفيد",
+        "reference": "المرجع",
+        "signed_on": "تاريخ التوقيع",
+        "due_on": "الموعد",
+        "done_on": "تاريخ الإنجاز",
+        "submitted_on": "تاريخ الإرسال",
+        "location": "المكان",
+        "estimated_amount": "المبلغ التقديري",
+        "supplier": "المورد",
+        "needed_by": "مطلوب قبل",
+        "position": "الوظيفة",
+        "full_name": "الاسم",
+        "contract_type": "العقد",
+        "category": "الفئة",
+        "condition": "الحالة",
+        "holder": "المستلم",
+        "value": "القيمة",
+        "dated_on": "التاريخ",
+        "direction": "الاتجاه",
+        "rejection_reason": "سبب الرفض",
+        "attachment_name": "الفاتورة",
+        "file_name": "الملف"
       },
       "granted": "منح",
       "revoked": "سحب",

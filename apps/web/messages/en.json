@@ -117,7 +117,16 @@
         "donor": "Donors",
         "membership": "Team",
         "role": "Roles",
-        "organization": "Organisation"
+        "organization": "Organisation",
+        "grant": "Grants",
+        "budget_line": "Budgets",
+        "expense": "Expenses",
+        "activity": "Activities",
+        "donor_report": "Donor reports",
+        "purchase_request": "Purchasing",
+        "employee": "Staff",
+        "asset": "Assets",
+        "document": "Archive"
       },
       "sentences": {
         "organization": {
@@ -144,6 +153,51 @@
           "created": "<b>{actor}</b> added the donor <b>{label}</b>",
           "updated": "<b>{actor}</b> updated the donor <b>{label}</b>",
           "deleted": "<b>{actor}</b> deleted the donor <b>{label}</b>"
+        },
+        "grant": {
+          "created": "<b>{actor}</b> added the grant <b>{label}</b>",
+          "updated": "<b>{actor}</b> changed the grant <b>{label}</b>",
+          "deleted": "<b>{actor}</b> deleted the grant <b>{label}</b>"
+        },
+        "budget_line": {
+          "created": "<b>{actor}</b> added the budget line <b>{label}</b>",
+          "updated": "<b>{actor}</b> changed the budget line <b>{label}</b>",
+          "deleted": "<b>{actor}</b> deleted the budget line <b>{label}</b>"
+        },
+        "expense": {
+          "created": "<b>{actor}</b> added the expense <b>{label}</b>",
+          "updated": "<b>{actor}</b> changed the expense <b>{label}</b>",
+          "deleted": "<b>{actor}</b> deleted the expense <b>{label}</b>"
+        },
+        "activity": {
+          "created": "<b>{actor}</b> added the activity <b>{label}</b>",
+          "updated": "<b>{actor}</b> changed the activity <b>{label}</b>",
+          "deleted": "<b>{actor}</b> deleted the activity <b>{label}</b>"
+        },
+        "donor_report": {
+          "created": "<b>{actor}</b> added the donor report <b>{label}</b>",
+          "updated": "<b>{actor}</b> changed the donor report <b>{label}</b>",
+          "deleted": "<b>{actor}</b> deleted the donor report <b>{label}</b>"
+        },
+        "purchase_request": {
+          "created": "<b>{actor}</b> added the purchase request <b>{label}</b>",
+          "updated": "<b>{actor}</b> changed the purchase request <b>{label}</b>",
+          "deleted": "<b>{actor}</b> deleted the purchase request <b>{label}</b>"
+        },
+        "employee": {
+          "created": "<b>{actor}</b> added the staff record of <b>{label}</b>",
+          "updated": "<b>{actor}</b> changed the staff record of <b>{label}</b>",
+          "deleted": "<b>{actor}</b> deleted the staff record of <b>{label}</b>"
+        },
+        "asset": {
+          "created": "<b>{actor}</b> added the asset <b>{label}</b>",
+          "updated": "<b>{actor}</b> changed the asset <b>{label}</b>",
+          "deleted": "<b>{actor}</b> deleted the asset <b>{label}</b>"
+        },
+        "document": {
+          "created": "<b>{actor}</b> added the document <b>{label}</b>",
+          "updated": "<b>{actor}</b> changed the document <b>{label}</b>",
+          "deleted": "<b>{actor}</b> deleted the document <b>{label}</b>"
         }
       },
       "fields": {
@@ -159,13 +213,37 @@
         "country": "Country",
         "contact_name": "Contact",
         "contact_email": "Email",
-        "title": "Job title",
+        "title": "Title",
         "permissions": "Permissions",
         "legal_name": "Legal name",
         "currency": "Currency",
         "locale": "Language",
         "fiscal_year_start_month": "Fiscal year start",
-        "logo_path": "Logo"
+        "logo_path": "Logo",
+        "amount": "Amount",
+        "spent_on": "Spent on",
+        "payee": "Payee",
+        "reference": "Reference",
+        "signed_on": "Signed on",
+        "due_on": "Due",
+        "done_on": "Done on",
+        "submitted_on": "Sent on",
+        "location": "Location",
+        "estimated_amount": "Estimated amount",
+        "supplier": "Supplier",
+        "needed_by": "Needed by",
+        "position": "Position",
+        "full_name": "Name",
+        "contract_type": "Contract",
+        "category": "Category",
+        "condition": "Condition",
+        "holder": "Holder",
+        "value": "Value",
+        "dated_on": "Date",
+        "direction": "Direction",
+        "rejection_reason": "Rejection reason",
+        "attachment_name": "Invoice",
+        "file_name": "File"
       },
       "granted": "Granted",
       "revoked": "Revoked",

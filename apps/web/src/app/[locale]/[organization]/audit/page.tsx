@@ -14,7 +14,7 @@ import { ApiError } from "@/lib/api";
 import { cn } from "@/lib/cn";
 import type { AuditLog, AuditSubjectType } from "@/lib/types";
 
-const FILTERS: (AuditSubjectType | undefined)[] = [undefined, "project", "donor", "membership", "role", "organization"];
+const FILTERS: (AuditSubjectType | undefined)[] = [undefined, "expense", "project", "grant", "donor", "purchase_request", "membership", "role", "organization"];
 
 const EVENT_STYLE = {
   created: { icon: Plus, className: "bg-success text-white" },

@@ -117,7 +117,16 @@
         "donor": "Bailleurs",
         "membership": "Équipe",
         "role": "Rôles",
-        "organization": "Organisation"
+        "organization": "Organisation",
+        "grant": "Subventions",
+        "budget_line": "Budgets",
+        "expense": "Dépenses",
+        "activity": "Activités",
+        "donor_report": "Rapports",
+        "purchase_request": "Achats",
+        "employee": "Personnel",
+        "asset": "Biens",
+        "document": "Archives"
       },
       "sentences": {
         "organization": {
@@ -144,6 +153,51 @@
           "created": "<b>{actor}</b> a ajouté le bailleur <b>{label}</b>",
           "updated": "<b>{actor}</b> a modifié le bailleur <b>{label}</b>",
           "deleted": "<b>{actor}</b> a supprimé le bailleur <b>{label}</b>"
+        },
+        "grant": {
+          "created": "<b>{actor}</b> a ajouté la subvention <b>{label}</b>",
+          "updated": "<b>{actor}</b> a modifié la subvention <b>{label}</b>",
+          "deleted": "<b>{actor}</b> a supprimé la subvention <b>{label}</b>"
+        },
+        "budget_line": {
+          "created": "<b>{actor}</b> a ajouté la ligne budgétaire <b>{label}</b>",
+          "updated": "<b>{actor}</b> a modifié la ligne budgétaire <b>{label}</b>",
+          "deleted": "<b>{actor}</b> a supprimé la ligne budgétaire <b>{label}</b>"
+        },
+        "expense": {
+          "created": "<b>{actor}</b> a ajouté la dépense <b>{label}</b>",
+          "updated": "<b>{actor}</b> a modifié la dépense <b>{label}</b>",
+          "deleted": "<b>{actor}</b> a supprimé la dépense <b>{label}</b>"
+        },
+        "activity": {
+          "created": "<b>{actor}</b> a ajouté l'activité <b>{label}</b>",
+          "updated": "<b>{actor}</b> a modifié l'activité <b>{label}</b>",
+          "deleted": "<b>{actor}</b> a supprimé l'activité <b>{label}</b>"
+        },
+        "donor_report": {
+          "created": "<b>{actor}</b> a ajouté le rapport au bailleur <b>{label}</b>",
+          "updated": "<b>{actor}</b> a modifié le rapport au bailleur <b>{label}</b>",
+          "deleted": "<b>{actor}</b> a supprimé le rapport au bailleur <b>{label}</b>"
+        },
+        "purchase_request": {
+          "created": "<b>{actor}</b> a ajouté la demande d'achat <b>{label}</b>",
+          "updated": "<b>{actor}</b> a modifié la demande d'achat <b>{label}</b>",
+          "deleted": "<b>{actor}</b> a supprimé la demande d'achat <b>{label}</b>"
+        },
+        "employee": {
+          "created": "<b>{actor}</b> a ajouté la fiche de <b>{label}</b>",
+          "updated": "<b>{actor}</b> a modifié la fiche de <b>{label}</b>",
+          "deleted": "<b>{actor}</b> a supprimé la fiche de <b>{label}</b>"
+        },
+        "asset": {
+          "created": "<b>{actor}</b> a ajouté le bien <b>{label}</b>",
+          "updated": "<b>{actor}</b> a modifié le bien <b>{label}</b>",
+          "deleted": "<b>{actor}</b> a supprimé le bien <b>{label}</b>"
+        },
+        "document": {
+          "created": "<b>{actor}</b> a ajouté le document <b>{label}</b>",
+          "updated": "<b>{actor}</b> a modifié le document <b>{label}</b>",
+          "deleted": "<b>{actor}</b> a supprimé le document <b>{label}</b>"
         }
       },
       "fields": {
@@ -159,13 +213,37 @@
         "country": "Pays",
         "contact_name": "Contact",
         "contact_email": "E-mail",
-        "title": "Fonction",
+        "title": "Titre",
         "permissions": "Permissions",
         "legal_name": "Raison sociale",
         "currency": "Devise",
         "locale": "Langue",
         "fiscal_year_start_month": "Début d'exercice",
-        "logo_path": "Logo"
+        "logo_path": "Logo",
+        "amount": "Montant",
+        "spent_on": "Date",
+        "payee": "Bénéficiaire",
+        "reference": "Référence",
+        "signed_on": "Signature",
+        "due_on": "Échéance",
+        "done_on": "Réalisée le",
+        "submitted_on": "Envoyé le",
+        "location": "Lieu",
+        "estimated_amount": "Montant estimé",
+        "supplier": "Fournisseur",
+        "needed_by": "Pour le",
+        "position": "Poste",
+        "full_name": "Nom",
+        "contract_type": "Contrat",
+        "category": "Catégorie",
+        "condition": "État",
+        "holder": "Détenteur",
+        "value": "Valeur",
+        "dated_on": "Date",
+        "direction": "Sens",
+        "rejection_reason": "Motif du refus",
+        "attachment_name": "Facture",
+        "file_name": "Fichier"
       },
       "granted": "Accordé",
       "revoked": "Retiré",
