@@ -17,11 +17,6 @@
     "tooMany": "Trop de tentatives. Patientez une minute puis réessayez."
   },
   "auth": {
-    "panelEyebrow": "La plateforme des organisations et projets financés",
-    "panelTitle": "Chaque ouguiya de financement, à sa juste place.",
-    "panelBody": "Projets, bailleurs, budgets et dépenses au même endroit, avec un circuit d'approbation clair et un journal d'audit inaltérable.",
-    "panelCardLabel": "Reste à consommer",
-    "panelCardProject": "Projet Éducation de base",
     "loginTitle": "Bon retour",
     "loginSubtitle": "Connectez-vous pour suivre l'activité de votre organisation.",
     "registerTitle": "Créez votre compte",
@@ -39,7 +34,8 @@
     "noAccount": "Pas encore de compte ?",
     "haveAccount": "Déjà un compte ?",
     "registerLink": "Créer un compte",
-    "loginLink": "Se connecter"
+    "loginLink": "Se connecter",
+    "tagline": "Une plateforme simple pour gérer projets, financements et dépenses"
   },
   "onboarding": {
     "title": "Configurons votre organisation",
@@ -64,12 +60,15 @@
       "dashboard": "Tableau de bord",
       "projects": "Projets",
       "donors": "Bailleurs & financements",
-      "budgets": "Budgets",
       "expenses": "Dépenses",
       "members": "Équipe",
       "roles": "Rôles & permissions",
       "audit": "Journal d'audit",
-      "soon": "Bientôt"
+      "soon": "Bientôt",
+      "reports": "Rapports",
+      "settings": "Paramètres",
+      "admin": "Administration",
+      "more": "Plus"
     },
     "dashboard": {
       "greeting": "Bonjour {name}",
@@ -196,7 +195,8 @@
     "account": "Compte",
     "switchOrg": "Organisations",
     "notMember": "Cette organisation n'existe pas ou vous n'y avez pas accès.",
-    "backHome": "Retour à l'accueil"
+    "backHome": "Retour à l'accueil",
+    "newOrganization": "Nouvelle organisation"
   },
   "projects": {
     "title": "Projets",

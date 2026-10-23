@@ -17,11 +17,6 @@
     "tooMany": "Too many attempts. Wait a minute and try again."
   },
   "auth": {
-    "panelEyebrow": "The platform for NGOs and funded programmes",
-    "panelTitle": "Every unit of funding, exactly where it belongs.",
-    "panelBody": "Projects, donors, budgets and expenses in one place, with a clear approval path and an audit trail that can't be erased.",
-    "panelCardLabel": "Budget remaining",
-    "panelCardProject": "Basic Education Project",
     "loginTitle": "Welcome back",
     "loginSubtitle": "Sign in to follow your organisation's work.",
     "registerTitle": "Create your account",
@@ -39,7 +34,8 @@
     "noAccount": "No account yet?",
     "haveAccount": "Already have an account?",
     "registerLink": "Create one",
-    "loginLink": "Sign in"
+    "loginLink": "Sign in",
+    "tagline": "One simple place for projects, funding and expenses"
   },
   "onboarding": {
     "title": "Let's set up your organisation",
@@ -64,12 +60,15 @@
       "dashboard": "Dashboard",
       "projects": "Projects",
       "donors": "Donors & grants",
-      "budgets": "Budgets",
       "expenses": "Expenses",
       "members": "Team",
       "roles": "Roles & permissions",
       "audit": "Audit trail",
-      "soon": "Soon"
+      "soon": "Soon",
+      "reports": "Reports",
+      "settings": "Settings",
+      "admin": "Administration",
+      "more": "More"
     },
     "dashboard": {
       "greeting": "Hello {name}",
@@ -196,7 +195,8 @@
     "account": "Account",
     "switchOrg": "Organisations",
     "notMember": "This organisation doesn't exist or you don't have access to it.",
-    "backHome": "Back to start"
+    "backHome": "Back to start",
+    "newOrganization": "New organisation"
   },
   "projects": {
     "title": "Projects",
