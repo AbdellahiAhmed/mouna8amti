@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Organizations;
 
 use App\Domain\Access\Enums\Permission;
 use App\Domain\Audit\Models\AuditLog;
+use App\Domain\Grants\Models\Grant;
 use App\Domain\Organizations\Models\Membership;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\AuditLogResource;
@@ -24,7 +25,7 @@ class AuditLogController extends Controller
         $logs = AuditLog::query()
             ->with([
                 'actor',
-                'auditable' => fn (MorphTo $morph) => $morph->morphWith([Membership::class => ['user']]),
+                'auditable' => fn (MorphTo $morph) => $morph->morphWith([Membership::class => ['user'], Grant::class => ['donor']]),
             ])
             ->when(Relation::getMorphedModel($subject) !== null, fn ($query) => $query->where('auditable_type', $subject))
             ->latest('created_at')

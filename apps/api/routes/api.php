@@ -3,12 +3,17 @@
 use App\Http\Controllers\Auth\CurrentUserController;
 use App\Http\Controllers\Auth\RegistrationController;
 use App\Http\Controllers\Auth\SessionController;
+use App\Http\Controllers\Budgets\BudgetLineController;
+use App\Http\Controllers\Expenses\ExpenseController;
+use App\Http\Controllers\Expenses\ExpenseDecisionController;
 use App\Http\Controllers\Grants\DonorController;
+use App\Http\Controllers\Grants\GrantController;
 use App\Http\Controllers\Organizations\AuditLogController;
 use App\Http\Controllers\Organizations\MemberController;
 use App\Http\Controllers\Organizations\OrganizationController;
 use App\Http\Controllers\Organizations\RoleController;
 use App\Http\Controllers\Projects\ProjectController;
+use App\Http\Controllers\Reports\ReportController;
 use App\Http\Middleware\ActAsDatabaseUser;
 use App\Http\Middleware\ResolveOrganization;
 use Illuminate\Support\Facades\Route;
@@ -36,5 +41,16 @@ Route::middleware(['auth:sanctum', ActAsDatabaseUser::class])->group(function ()
 
         Route::apiResource('donors', DonorController::class)->except('show');
         Route::apiResource('projects', ProjectController::class);
+        Route::apiResource('grants', GrantController::class)->except('show');
+        Route::apiResource('projects.budget-lines', BudgetLineController::class)->shallow()->except('show');
+
+        Route::apiResource('expenses', ExpenseController::class);
+        Route::get('expenses/{expense}/attachment', [ExpenseController::class, 'attachment']);
+        Route::post('expenses/{expense}/review', [ExpenseDecisionController::class, 'review']);
+        Route::post('expenses/{expense}/approve', [ExpenseDecisionController::class, 'approve']);
+        Route::post('expenses/{expense}/reject', [ExpenseDecisionController::class, 'reject']);
+
+        Route::get('dashboard', [ReportController::class, 'dashboard']);
+        Route::get('reports/monthly', [ReportController::class, 'monthly']);
     });
 });

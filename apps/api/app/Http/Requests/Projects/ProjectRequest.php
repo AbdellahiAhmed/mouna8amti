@@ -36,6 +36,7 @@ class ProjectRequest extends FormRequest
             ],
             'name' => ['required', 'string', 'max:200'],
             'description' => ['nullable', 'string', 'max:5000'],
+            'location' => ['nullable', 'string', 'max:120'],
             // Scoped explicitly: RLS lets a user see their own memberships in *other* organisations.
             'manager_membership_id' => [
                 'nullable', 'integer',

@@ -21,6 +21,7 @@ enum Permission: string
     case BudgetsManage = 'budgets.manage';
 
     case ExpensesCreate = 'expenses.create';
+    case ExpensesReview = 'expenses.review';
     case ExpensesApprove = 'expenses.approve';
     case ExpensesPay = 'expenses.pay';
     case ExpensesVoid = 'expenses.void';

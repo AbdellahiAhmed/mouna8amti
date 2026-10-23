@@ -19,6 +19,9 @@ class DonorResource extends JsonResource
             'country' => $this->country,
             'contact_name' => $this->contact_name,
             'contact_email' => $this->contact_email,
+            'promised' => $this->when(array_key_exists('promised', $this->getAttributes()), fn () => (int) $this->promised),
+            'received' => $this->when(array_key_exists('received', $this->getAttributes()), fn () => (int) $this->received),
+            'grants' => GrantResource::collection($this->whenLoaded('grants')),
         ];
     }
 }

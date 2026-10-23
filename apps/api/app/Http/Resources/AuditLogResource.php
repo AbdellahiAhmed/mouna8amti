@@ -4,6 +4,8 @@ namespace App\Http\Resources;
 
 use App\Domain\Access\Models\Role;
 use App\Domain\Audit\Models\AuditLog;
+use App\Domain\Expenses\Models\Expense;
+use App\Domain\Grants\Models\Grant;
 use App\Domain\Organizations\Models\Membership;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -46,6 +48,8 @@ class AuditLogResource extends JsonResource
         return match (true) {
             $subject instanceof Membership => $subject->user?->name,
             $subject instanceof Role => $this->localized($subject->name),
+            $subject instanceof Expense => $subject->number(),
+            $subject instanceof Grant => $subject->reference ?? $subject->donor->name,
             $subject !== null => $this->stringOrNull($subject->getAttribute('name')),
             // Hard- or soft-deleted subjects: fall back to the name captured in the trail.
             default => $this->localized($this->old_values['name'] ?? $this->new_values['name'] ?? null),

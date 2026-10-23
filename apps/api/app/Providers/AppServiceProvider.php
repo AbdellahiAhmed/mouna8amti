@@ -4,7 +4,10 @@ namespace App\Providers;
 
 use App\Domain\Access\Enums\Permission;
 use App\Domain\Access\Models\Role;
+use App\Domain\Budgets\Models\BudgetLine;
+use App\Domain\Expenses\Models\Expense;
 use App\Domain\Grants\Models\Donor;
+use App\Domain\Grants\Models\Grant;
 use App\Domain\Organizations\Models\Membership;
 use App\Domain\Organizations\Models\Organization;
 use App\Domain\Projects\Models\Project;
@@ -35,6 +38,9 @@ class AppServiceProvider extends ServiceProvider
             'role' => Role::class,
             'donor' => Donor::class,
             'project' => Project::class,
+            'grant' => Grant::class,
+            'budget_line' => BudgetLine::class,
+            'expense' => Expense::class,
         ]);
 
         // Every Permission value is a Gate ability, answered by the current membership.

@@ -25,6 +25,7 @@ class ProjectController extends Controller
 
         $projects = Project::query()
             ->with('manager.user')
+            ->withFinancials()
             ->when($status, fn ($query, ProjectStatus $status) => $query->where('status', $status))
             ->when($search, fn ($query, string $search) => $query->where(
                 fn ($q) => $q->whereLike('name', "%{$search}%")->orWhereLike('code', "%{$search}%"),
@@ -47,7 +48,7 @@ class ProjectController extends Controller
     {
         Gate::authorize(Permission::ProjectsView->value);
 
-        return new ProjectResource($project->load('manager.user'));
+        return new ProjectResource(Project::query()->with('manager.user')->withFinancials()->findOrFail($project->id));
     }
 
     public function update(ProjectRequest $request, string $organization, Project $project): ProjectResource

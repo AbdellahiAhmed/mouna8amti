@@ -39,9 +39,10 @@ enum SystemRole: string
             self::Admin => P::cases(),
             self::Director => [P::MembersView, P::AuditView, P::ProjectsView, P::ProjectsManage, P::DonorsManage, P::GrantsManage,
                 P::BudgetsManage, P::ExpensesCreate, P::ExpensesApprove, P::ExpensesVoid],
+            // Approval chain: the accountant reviews the invoice, the director gives the final approval.
             self::Accountant => [P::MembersView, P::ProjectsView, P::GrantsManage, P::BudgetsManage, P::ExpensesCreate,
-                P::ExpensesApprove, P::ExpensesPay],
-            self::ProjectCoordinator => [P::MembersView, P::ProjectsView, P::ProjectsManage, P::ExpensesCreate, P::ExpensesApprove],
+                P::ExpensesReview, P::ExpensesPay],
+            self::ProjectCoordinator => [P::MembersView, P::ProjectsView, P::ProjectsManage, P::ExpensesCreate],
             self::HrOfficer => [P::MembersView, P::ProjectsView, P::ExpensesCreate],
             self::Logistician => [P::ProjectsView, P::ExpensesCreate],
             self::DonorViewer => [P::ProjectsView],

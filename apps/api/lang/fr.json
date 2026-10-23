@@ -225,5 +225,13 @@
     "Web Server is Down": "Le serveur Web est en panne",
     "Whoops!": "Oups !",
     "Yes": "Oui",
-    "You are receiving this email because we received a password reset request for your account.": "Vous recevez cet e-mail car nous avons reçu une demande de réinitialisation de mot de passe pour votre compte."
+    "You are receiving this email because we received a password reset request for your account.": "Vous recevez cet e-mail car nous avons reçu une demande de réinitialisation de mot de passe pour votre compte.",
+    "Attach the invoice before reviewing this expense.": "Joignez la facture avant de vérifier cette dépense.",
+    "The final approval must come from someone other than the reviewer.": "L'approbation finale doit venir d'une autre personne que le vérificateur.",
+    "This expense is not waiting for this decision.": "Cette dépense n'attend pas cette décision.",
+    "You cannot decide on an expense you submitted.": "Vous ne pouvez pas décider d'une dépense que vous avez soumise.",
+    "The tranches add up to more than the grant amount.": "La somme des tranches dépasse le montant de la subvention.",
+    "The budget line shares must add up to 100%.": "La répartition entre lignes budgétaires doit totaliser 100 %.",
+    "Every budget line must belong to the selected project.": "Chaque ligne budgétaire doit appartenir au projet choisi.",
+    "This budget line already carries expenses and cannot be deleted.": "Cette ligne porte déjà des dépenses et ne peut pas être supprimée."
 }

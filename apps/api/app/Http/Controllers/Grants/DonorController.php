@@ -20,6 +20,9 @@ class DonorController extends Controller
         Gate::authorize(Permission::ProjectsView->value);
 
         $donors = Donor::query()
+            ->withSum('grants as promised', 'amount')
+            ->withSum(['tranches as received' => fn ($query) => $query->whereNotNull('grant_tranches.received_on')], 'grant_tranches.amount')
+            ->with(['grants' => fn ($query) => $query->with(['project', 'tranches'])])
             ->when($request->string('search')->trim()->value(), fn ($query, string $search) => $query->whereLike('name', "%{$search}%"))
             ->orderBy('name')
             ->paginate(50);
