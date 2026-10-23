@@ -24,7 +24,7 @@ class PurchaseRequestController extends Controller
 
     public function index(Request $request): AnonymousResourceCollection
     {
-        Gate::authorize(Permission::ProjectsView->value);
+        Gate::authorize(Permission::OperationsView->value);
 
         $requests = PurchaseRequest::query()
             ->with(self::RELATIONS)

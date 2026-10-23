@@ -24,7 +24,7 @@ class DocumentController extends Controller
 
     public function index(Request $request): AnonymousResourceCollection
     {
-        Gate::authorize(Permission::ProjectsView->value);
+        Gate::authorize(Permission::OperationsView->value);
         $search = $request->string('search')->trim()->value();
 
         $documents = Document::query()
@@ -50,14 +50,9 @@ class DocumentController extends Controller
     public function update(Request $request, TenantContext $tenant, string $organization, Document $document): DocumentResource
     {
         Gate::authorize(Permission::DocumentsManage->value);
-        $previous = $document->file_path;
+        // A replaced scan is kept on disk: the trail must still be able to show what was filed before.
         $data = $this->validated($request, $tenant);
-        $file = $this->storeFile($request, $tenant);
-        $document->update([...$data, ...$file]);
-
-        if ($file !== [] && $previous !== null) {
-            Storage::disk(self::DISK)->delete($previous);
-        }
+        $document->update([...$data, ...$this->storeFile($request, $tenant)]);
 
         return new DocumentResource($document->load('project'));
     }
@@ -72,7 +67,7 @@ class DocumentController extends Controller
 
     public function file(string $organization, Document $document): StreamedResponse
     {
-        Gate::authorize(Permission::ProjectsView->value);
+        Gate::authorize(Permission::OperationsView->value);
         abort_if($document->file_path === null, 404);
 
         return Storage::disk(self::DISK)->download($document->file_path, $document->file_name);

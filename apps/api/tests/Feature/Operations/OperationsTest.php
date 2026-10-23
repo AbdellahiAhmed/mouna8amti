@@ -79,3 +79,20 @@ it('archives documents with a private scan', function () {
     $this->actingAs($admin)->get("{$base}/{$id}/file")->assertOk()->assertDownload('convention.pdf');
     $this->actingAs(founderOf($other))->getJson("/api/orgs/{$other->slug}/documents/{$id}/file")->assertNotFound();
 });
+
+it('keeps internal operations away from donor viewers and salaries out of the trail', function () {
+    $organization = createOrganization();
+    $donor = addMember($organization, SystemRole::DonorViewer);
+    $hr = addMember($organization, SystemRole::HrOfficer);
+
+    foreach (['purchase-requests', 'assets', 'documents', 'employees'] as $resource) {
+        $this->actingAs($donor)->getJson("/api/orgs/{$organization->slug}/{$resource}")->assertForbidden();
+    }
+
+    $this->actingAs($hr)->postJson("/api/orgs/{$organization->slug}/employees", [
+        'full_name' => 'x', 'position' => 'y', 'contract_type' => 'permanent', 'starts_on' => '2026-01-01', 'monthly_salary' => 50_000_00,
+    ])->assertCreated();
+
+    $this->actingAs(founderOf($organization))->getJson("/api/orgs/{$organization->slug}/audit-logs?subject=employee")
+        ->assertOk()->assertDontSee('5000000');
+});

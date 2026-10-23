@@ -34,6 +34,9 @@ class Employee extends Model
 
     protected $fillable = ['full_name', 'position', 'project_id', 'contract_type', 'starts_on', 'ends_on', 'monthly_salary', 'phone', 'email'];
 
+    /** Kept out of the audit trail: pay is for HR eyes only. */
+    protected $hidden = ['monthly_salary'];
+
     protected function casts(): array
     {
         return [
