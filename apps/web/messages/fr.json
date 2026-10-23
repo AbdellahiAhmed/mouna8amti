@@ -440,6 +440,31 @@
       "submit": "Envoyer pour vérification",
       "save": "Enregistrer",
       "saving": "Envoi…"
+    },
+    "reports": {
+      "title": "Rapports",
+      "subtitle": "Le rapport du mois, écrit simplement, prêt à être envoyé aux bailleurs tel quel.",
+      "previousMonth": "Mois précédent",
+      "nextMonth": "Mois suivant",
+      "print": "Télécharger en PDF",
+      "eyebrow": "{organization} · rapport de {month}",
+      "received": "En {month}, nous avons reçu un soutien de <b>{amount} {unit}</b> de la part de {donors}.",
+      "receivedNone": "En {month}, nous n'avons reçu aucun nouveau versement des bailleurs.",
+      "spent": "Nous avons dépensé <b>{amount} {unit}</b> en {count, plural, one {une opération approuvée} other {# opérations approuvées}} : {detail}.",
+      "forProject": "{amount} pour {project}",
+      "spentNone": "Aucune dépense n'a été approuvée ce mois-ci.",
+      "pending": "{count, plural, one {Une dépense} other {# dépenses}} de <b>{amount} {unit}</b> {count, plural, one {attend} other {attendent}} encore une approbation.",
+      "balance": "Solde de l'association en fin de mois : <b>{amount} {unit}</b>.",
+      "figReceived": "Reçu",
+      "figSpent": "Dépensé",
+      "figNetUp": "Le solde a augmenté de",
+      "figNetDown": "Le solde a baissé de",
+      "sixMonths": "Les 6 derniers mois",
+      "legendReceived": "Reçu",
+      "legendSpent": "Dépensé",
+      "chartNote": "En {month}, nous avons reçu {received} et dépensé {spent} ; le solde est de {balance}.",
+      "tableView": "Voir les chiffres en tableau",
+      "month": "Mois"
     }
   }
 }

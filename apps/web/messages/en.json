@@ -440,6 +440,31 @@
       "submit": "Send for review",
       "save": "Save",
       "saving": "Sending…"
+    },
+    "reports": {
+      "title": "Reports",
+      "subtitle": "The monthly report in plain words, ready to send to donors as it is.",
+      "previousMonth": "Previous month",
+      "nextMonth": "Next month",
+      "print": "Download PDF",
+      "eyebrow": "{organization} · {month} report",
+      "received": "In {month} we received <b>{amount} {unit}</b> in support from {donors}.",
+      "receivedNone": "In {month} we received no new payment from donors.",
+      "spent": "We spent <b>{amount} {unit}</b> in {count, plural, one {one approved expense} other {# approved expenses}}: {detail}.",
+      "forProject": "{amount} for {project}",
+      "spentNone": "No expense was approved this month.",
+      "pending": "{count, plural, one {One expense} other {# expenses}} worth <b>{amount} {unit}</b> {count, plural, one {is} other {are}} still waiting for approval.",
+      "balance": "The organisation's balance at the end of the month: <b>{amount} {unit}</b>.",
+      "figReceived": "Received",
+      "figSpent": "Spent",
+      "figNetUp": "Balance went up by",
+      "figNetDown": "Balance went down by",
+      "sixMonths": "Last 6 months",
+      "legendReceived": "Received",
+      "legendSpent": "Spent",
+      "chartNote": "In {month} we received {received} and spent {spent}; the balance is now {balance}.",
+      "tableView": "Show the figures as a table",
+      "month": "Month"
     }
   }
 }

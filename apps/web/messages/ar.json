@@ -440,6 +440,31 @@
       "submit": "إرسال للمراجعة",
       "save": "حفظ",
       "saving": "جارٍ الإرسال…"
+    },
+    "reports": {
+      "title": "التقارير",
+      "subtitle": "تقرير الشهر مكتوب بلغة واضحة، جاهز للإرسال إلى المانحين كما هو.",
+      "previousMonth": "الشهر السابق",
+      "nextMonth": "الشهر التالي",
+      "print": "تحميل PDF",
+      "eyebrow": "{organization} · تقرير {month}",
+      "received": "خلال {month} استلمنا دعمًا بقيمة <b>{amount} {unit}</b> من {donors}.",
+      "receivedNone": "خلال {month} لم نستلم أي دفعة جديدة من المانحين.",
+      "spent": "صرفنا <b>{amount} {unit}</b> في {count, plural, one {عملية واحدة} two {عمليتين} few {# عمليات} other {# عملية}} معتمدة: {detail}.",
+      "forProject": "{amount} لـ{project}",
+      "spentNone": "لم تُعتمد أي مصروفات هذا الشهر.",
+      "pending": "وما زال {count, plural, one {مصروف واحد} two {مصروفان} few {# مصروفات} other {# مصروفًا}} بقيمة <b>{amount} {unit}</b> بانتظار الموافقة.",
+      "balance": "رصيد الجمعية في نهاية الشهر: <b>{amount} {unit}</b>.",
+      "figReceived": "استلمنا",
+      "figSpent": "صرفنا",
+      "figNetUp": "زاد الرصيد بـ",
+      "figNetDown": "نقص الرصيد بـ",
+      "sixMonths": "آخر 6 أشهر",
+      "legendReceived": "المستلم",
+      "legendSpent": "المصروف",
+      "chartNote": "في {month} استلمنا {received} وصرفنا {spent}، وأصبح الرصيد {balance}.",
+      "tableView": "عرض الأرقام في جدول",
+      "month": "الشهر"
     }
   }
 }

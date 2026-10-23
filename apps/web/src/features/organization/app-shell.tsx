@@ -26,8 +26,8 @@ export function AppShell({ children }: { children: ReactNode }) {
   const isRtl = useLocale() === "ar";
 
   return (
-    <div className="min-h-dvh lg:grid lg:grid-cols-[17rem_minmax(0,1fr)]">
-      <aside className="sticky top-0 hidden h-dvh flex-col gap-7 overflow-y-auto border-e border-hairline bg-canvas px-5 pb-6 pt-7 lg:flex">
+    <div className="min-h-dvh lg:grid lg:grid-cols-[17rem_minmax(0,1fr)] print:block">
+      <aside className="sticky top-0 hidden h-dvh print:!hidden flex-col gap-7 overflow-y-auto border-e border-hairline bg-canvas px-5 pb-6 pt-7 lg:flex">
         <SidebarContent />
       </aside>
 
@@ -247,7 +247,7 @@ function UserBlock() {
 
 function MobileTopbar() {
   return (
-    <header className="sticky top-0 z-20 flex h-16 items-center border-b border-hairline bg-canvas px-4 lg:hidden">
+    <header className="sticky top-0 z-20 flex h-16 items-center border-b border-hairline bg-canvas px-4 lg:hidden print:hidden">
       <Logo className="[&_svg]:size-8 [&>span:last-child]:text-[1.2rem]" />
     </header>
   );
@@ -265,7 +265,7 @@ function MobileTabs() {
   const tabClass = "flex flex-1 flex-col items-center justify-center gap-1 text-[0.75rem] font-medium";
 
   return (
-    <nav className="fixed inset-x-0 bottom-0 z-30 flex h-[4.5rem] border-t border-hairline bg-canvas px-2 pb-[env(safe-area-inset-bottom)] lg:hidden">
+    <nav className="fixed inset-x-0 bottom-0 z-30 flex h-[4.5rem] print:hidden border-t border-hairline bg-canvas px-2 pb-[env(safe-area-inset-bottom)] lg:hidden">
       {tabs.map((item) => {
         const active = isActive(item);
         const Icon = item.icon;
