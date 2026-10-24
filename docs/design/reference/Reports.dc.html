@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>منظمتي — التقارير</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Readex+Pro:wght@400;500;600;700&display=swap">
+<style>
+body{margin:0;background:#F6F5F1}
+*{box-sizing:border-box}
+a{color:#0E5A44;text-decoration:none}
+a:hover{color:#0A3D2F}
+.app{display:flex;flex-wrap:wrap;min-height:100vh;background:#F6F5F1;color:#1B1D1A;font-family:'IBM Plex Sans Arabic',system-ui,sans-serif;font-size:16px;line-height:1.7}
+.app h1,.app h2,.app h3,.app p{margin:0}
+.num,.h1,.h2,.word{font-family:'Readex Pro','IBM Plex Sans Arabic',system-ui,sans-serif}
+.num{font-variant-numeric:tabular-nums}
+.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.side{flex:1 0 272px;display:flex;flex-direction:column;gap:28px;padding:28px 20px 24px;background:#FFFFFF;border-inline-end:1px solid #E8E5DE}
+.brand{display:flex;align-items:center;gap:12px;padding:0 8px}
+.mk-t{fill:#0E5A44}
+.mk{fill:none;stroke:#FFFFFF;stroke-width:2.6;stroke-linecap:square;stroke-linejoin:miter}
+.word{font-size:24px;font-weight:600;color:#0A3D2F;line-height:1.2}
+.org{display:flex;align-items:center;gap:12px;width:100%;padding:12px;border:1px solid #E8E5DE;border-radius:12px;background:#FAF9F6;font:inherit;color:inherit;text-align:start;cursor:pointer}
+.org-b{width:38px;height:38px;border-radius:10px;background:#E6F2EC;color:#0E5A44;display:inline-flex;align-items:center;justify-content:center;font-family:'Readex Pro',system-ui,sans-serif;font-weight:600;flex:none}
+.org-t{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.5}
+.org-n{font-size:15px;font-weight:600}
+.org-s{font-size:14px;color:#6B675E}
+.nav{display:flex;flex-direction:column;gap:4px}
+.nav a{display:flex;align-items:center;gap:14px;min-height:48px;padding:0 14px;border-radius:10px;color:#3D3F3A;font-size:16px;font-weight:500}
+.nav a:hover{background:#F4F3EF;color:#1B1D1A}
+.nav a.on{background:#E6F2EC;color:#0A3D2F;font-weight:600}
+.me{margin-top:auto;display:flex;align-items:center;gap:12px;padding:18px 8px 0;border-top:1px solid #EEECE6}
+.av{width:42px;height:42px;border-radius:50%;background:#0E5A44;color:#FFFFFF;display:inline-flex;align-items:center;justify-content:center;font-family:'Readex Pro',system-ui,sans-serif;font-weight:600;flex:none}
+.me-t{display:flex;flex-direction:column;line-height:1.5}
+.me-n{font-size:15px;font-weight:600}
+.me-r{font-size:14px;color:#6B675E}
+.main{flex:999 1 560px;min-width:0;padding:40px 48px 72px}
+.wrap{max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:24px}
+.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px}
+.h1{font-size:32px;font-weight:600;line-height:1.3;color:#0A3D2F}
+.sub{font-size:17px;color:#6B675E;margin-top:4px}
+.card{background:#FFFFFF;border:1px solid #E8E5DE;border-radius:18px;padding:28px}
+.h2{font-size:20px;font-weight:600;line-height:1.4}
+.btn-g{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border:1px solid #DEDBD3;border-radius:12px;background:#FFFFFF;color:#1B1D1A;font:inherit;font-size:15px;font-weight:500;cursor:pointer;white-space:nowrap}
+.btn-g:hover{border-color:#9CC9B6;color:#0A3D2F}
+.btn-p{background:#0E5A44;border-color:#0E5A44;color:#FFFFFF}
+.btn-p:hover{background:#0A3D2F;color:#FFFFFF}
+.mon{display:flex;flex-direction:column;gap:24px;padding:40px 44px}
+.mon-h{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:500;color:#0E5A44}
+.prose{font-family:'Readex Pro',system-ui,sans-serif;font-size:24px;font-weight:400;line-height:2;color:#1B1D1A;max-width:900px;text-wrap:pretty}
+.prose b{font-weight:600;color:#0A3D2F}
+.mf{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:16px;padding-top:24px;border-top:1px solid #EEECE6}
+.mf-c{display:flex;flex-direction:column;gap:4px}
+.mf-l{display:flex;align-items:center;gap:8px;font-size:15px;color:#6B675E}
+.mf-v{font-family:'Readex Pro',system-ui,sans-serif;font-size:26px;font-weight:600}
+.sw{width:12px;height:12px;border-radius:3px;flex:none}
+.c-r{background:#5AA88A}
+.c-s{background:#0A3D2F}
+.c-b{background:#CFE5DA}
+.ch-h{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-bottom:28px}
+.lg{display:flex;flex-wrap:wrap;gap:20px;font-size:15px;color:#3D3F3A}
+.lg span{display:inline-flex;align-items:center;gap:8px}
+.plot{display:flex;gap:16px}
+.yax{display:flex;flex-direction:column;justify-content:space-between;height:220px;font-size:14px;color:#6B675E;text-align:end;padding-bottom:0;margin-top:-10px;margin-bottom:10px;min-width:56px}
+.area{position:relative;flex:1;height:220px}
+.gl{position:absolute;inset-inline:0;height:1px;background:#EEECE6}
+.bars{position:absolute;inset:0;display:flex;justify-content:space-around;align-items:flex-end}
+.m{display:flex;align-items:flex-end;gap:5px;height:100%}
+.b{width:22px;border-radius:5px 5px 0 0}
+.xax{display:flex;justify-content:space-around;margin-inline-start:72px;margin-top:12px;font-size:15px;color:#3D3F3A}
+.xax span{width:76px;text-align:center}
+.xax .now{font-weight:600;color:#0A3D2F}
+.ch-n{margin-top:20px;padding:14px 16px;border-radius:12px;background:#F6F5F1;font-size:16px;color:#3D3F3A}
+.rl{display:flex;flex-direction:column}
+.rr{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;padding:18px 0;border-top:1px solid #EEECE6}
+.rr:first-child{border-top:0;padding-top:4px}
+.rr-i{width:48px;height:48px;border-radius:14px;background:#EEF6F2;color:#0E5A44;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.rr-t{flex:1 1 260px;min-width:0;display:flex;flex-direction:column;line-height:1.55}
+.rr-n{font-size:17px;font-weight:600}
+.rr-d{font-size:15px;color:#6B675E}
+/* tailles compactes */
+.app{font-size:15px;line-height:1.65}
+.side{flex-basis:248px;gap:22px;padding:22px 16px 20px}
+.word{font-size:21px}
+.nav a{min-height:44px;font-size:15px}
+.main{padding:28px 36px 56px}
+.wrap{gap:20px}
+.h1{font-size:26px}
+.sub{font-size:15px}
+.card{padding:22px}
+.h2{font-size:18px}
+.mon{padding:28px 32px;gap:18px}
+.eyebrow{font-size:14px}
+.prose{font-size:19px;line-height:1.9}
+.mf{padding-top:18px}
+.mf-l{font-size:14px}
+.mf-v{font-size:21px}
+.ch-h{margin-bottom:20px}
+.lg{font-size:14px}
+.xax{font-size:14px}
+.ch-n{font-size:15px;margin-top:16px}
+.rr{padding:14px 0}
+.rr-i{width:42px;height:42px}
+.rr-n{font-size:16px}
+.rr-d{font-size:14px}
+.btn-g{min-height:42px;font-size:14px}
+</style>
+</helmet>
+<div class="app" dir="rtl">
+
+  <aside class="side">
+    <div class="brand">
+      <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><rect class="mk-t" width="36" height="36" rx="10"></rect><path class="mk" d="M8 26V10l5 7 5-7v16M18 10l7 16V10M21.5 10h7"></path></svg>
+      <span class="word">منظمتي</span>
+    </div>
+    <button class="org" type="button" aria-label="تغيير المنظمة">
+      <span class="org-b"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M16 9h2a2 2 0 0 1 2 2v10M2.5 21h19M8 7h4M8 11h4M8 15h4"></path></svg></span>
+      <span class="org-t"><span class="org-n">جمعية الأمل للتنمية</span><span class="org-s">نواكشوط · 2026</span></span>
+      <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+    </button>
+    <nav class="nav" aria-label="القائمة الرئيسية">
+      <a href="Dashboard.dc.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"></rect><rect x="14" y="3" width="7" height="5" rx="1.5"></rect><rect x="14" y="12" width="7" height="9" rx="1.5"></rect><rect x="3" y="16" width="7" height="5" rx="1.5"></rect></svg><span>لوحة القيادة</span></a>
+      <a href="Projects.dc.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"></path></svg><span>المشاريع</span></a>
+      <a href="Donors.dc.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 18v-7M9.5 18v-7M14.5 18v-7M19 18v-7M12 3l9 5H3Z"></path></svg><span>المانحون والتمويل</span></a>
+      <a href="Expenses.dc.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3v18l2.3-1.5L9.7 21l2.3-1.5 2.3 1.5 2.4-1.5L19 21V3l-2.3 1.5L14.3 3 12 4.5 9.7 3 7.3 4.5Z"></path><path d="M9 9h6M9 13h6"></path></svg><span>المصروفات</span></a>
+      <a class="on" href="Reports.dc.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"></path><path d="M14 3v5h5M9 13h6M9 17h4"></path></svg><span>التقارير</span></a>
+      <a href="Team.dc.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path></svg><span>الفريق</span></a>
+      <a href="Settings.dc.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"></path></svg><span>الإعدادات</span></a>
+    </nav>
+    <div class="me">
+      <span class="av"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4.5 21a7.5 7.5 0 0 1 15 0"></path></svg></span>
+      <span class="me-t"><span class="me-n">محمد الأمين</span><span class="me-r">المدير التنفيذي</span></span>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="wrap">
+
+      <header class="top">
+        <div>
+          <h1 class="h1">التقارير</h1>
+          <p class="sub">تقارير جاهزة، مكتوبة بلغة واضحة، تُرسل للمانحين كما هي.</p>
+        </div>
+      </header>
+
+      <article class="card mon" aria-label="تقرير الشهر">
+        <div class="mon-h">
+          <span class="eyebrow"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px"><rect x="3.5" y="5" width="17" height="15" rx="2"></rect><path d="M3.5 10h17M8 3v4M16 3v4"></path></svg>تقرير الشهر · أكتوبر 2026</span>
+          <a class="btn-g" href="#"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"></path></svg>تحميل PDF</a>
+        </div>
+        <p class="prose">خلال شهر أكتوبر 2026: استلمنا دعمًا بقيمة <b>2,000,000 أوقية</b> من اليونيسف (الدفعة الثانية لمشروع الصحة المجتمعية). صرفنا منها <b>1,250,000 أوقية</b>: 600,000 للرواتب، 450,000 للأدوية والمستلزمات الطبية، و200,000 للنقل. وبقي من هذه الدفعة <b>750,000 أوقية</b>.</p>
+        <div class="mf">
+          <div class="mf-c"><span class="mf-l"><span class="sw c-r"></span>استلمنا</span><span class="mf-v">2,000,000</span></div>
+          <div class="mf-c"><span class="mf-l"><span class="sw c-s"></span>صرفنا</span><span class="mf-v">1,250,000</span></div>
+          <div class="mf-c"><span class="mf-l"><span class="sw c-b"></span>بقي من الدفعة</span><span class="mf-v">750,000</span></div>
+        </div>
+      </article>
+
+      <section class="card" aria-label="آخر 6 أشهر">
+        <div class="ch-h">
+          <h2 class="h2">آخر 6 أشهر</h2>
+          <div class="lg"><span><span class="sw c-r"></span>المستلم</span><span><span class="sw c-s"></span>المصروف</span><span><span class="sw c-b"></span>الرصيد في نهاية الشهر</span></div>
+        </div>
+        <div class="plot" role="img" aria-label="رسم بياني للمستلم والمصروف والرصيد من مايو إلى أكتوبر 2026">
+          <div class="yax" aria-hidden="true"><span>3 مليون</span><span>2 مليون</span><span>1 مليون</span><span>0</span></div>
+          <div class="area">
+            <span class="gl" style="bottom: 0; background: #D9D5CC"></span>
+            <span class="gl" style="bottom: 73px"></span>
+            <span class="gl" style="bottom: 146px"></span>
+            <span class="gl" style="bottom: 219px"></span>
+            <div class="bars">
+              <div class="m"><span class="b c-r" style="height: 183px"></span><span class="b c-s" style="height: 117px"></span><span class="b c-b" style="height: 146px"></span></div>
+              <div class="m"><span class="b c-r" style="height: 110px"></span><span class="b c-s" style="height: 139px"></span><span class="b c-b" style="height: 117px"></span></div>
+              <div class="m"><span class="b c-r" style="height: 219px"></span><span class="b c-s" style="height: 124px"></span><span class="b c-b" style="height: 212px"></span></div>
+              <div class="m"><span class="b c-r" style="height: 2px"></span><span class="b c-s" style="height: 102px"></span><span class="b c-b" style="height: 110px"></span></div>
+              <div class="m"><span class="b c-r" style="height: 110px"></span><span class="b c-s" style="height: 95px"></span><span class="b c-b" style="height: 124px"></span></div>
+              <div class="m"><span class="b c-r" style="height: 146px"></span><span class="b c-s" style="height: 91px"></span><span class="b c-b" style="height: 179px"></span></div>
+            </div>
+          </div>
+        </div>
+        <div class="xax" aria-hidden="true"><span>مايو</span><span>يونيو</span><span>يوليو</span><span>أغسطس</span><span>سبتمبر</span><span class="now">أكتوبر</span></div>
+        <p class="ch-n">في أكتوبر استلمنا 2 مليون وصرفنا 1.25 مليون، فارتفع الرصيد إلى 2.45 مليون أوقية.</p>
+      </section>
+
+      <section class="card" aria-label="التقارير المتاحة">
+        <div style="margin-bottom: 8px"><h2 class="h2">التقارير المتاحة</h2></div>
+        <div class="rl">
+          <div class="rr">
+            <span class="rr-i"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"></path></svg></span>
+            <span class="rr-t"><span class="rr-n">تقرير المشاريع</span><span class="rr-d">تقدّم المشاريع الخمسة وأنشطتها</span></span>
+            <a class="btn-g" href="#"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"></path></svg>تحميل PDF</a>
+          </div>
+          <div class="rr">
+            <span class="rr-i"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 18v-7M9.5 18v-7M14.5 18v-7M19 18v-7M12 3l9 5H3Z"></path></svg></span>
+            <span class="rr-t"><span class="rr-n">تقرير المانحين</span><span class="rr-d">ما وعد به كل مانح وما وصل منه</span></span>
+            <a class="btn-g" href="#"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"></path></svg>تحميل PDF</a>
+          </div>
+          <div class="rr">
+            <span class="rr-i"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3v18l2.3-1.5L9.7 21l2.3-1.5 2.3 1.5 2.4-1.5L19 21V3l-2.3 1.5L14.3 3 12 4.5 9.7 3 7.3 4.5Z"></path><path d="M9 9h6M9 13h6"></path></svg></span>
+            <span class="rr-t"><span class="rr-n">تقرير المصروفات</span><span class="rr-d">كل المصروفات مع من وافق عليها</span></span>
+            <a class="btn-g" href="#"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"></path></svg>تحميل PDF</a>
+          </div>
+          <div class="rr">
+            <span class="rr-i"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7a2 2 0 0 1 2-2h12v4"></path><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M16 13.5h2"></path></svg></span>
+            <span class="rr-t"><span class="rr-n">تقرير الميزانية</span><span class="rr-d">الميزانية والمصروف والمتبقي لكل مشروع</span></span>
+            <a class="btn-g" href="#"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"></path></svg>تحميل PDF</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1500}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

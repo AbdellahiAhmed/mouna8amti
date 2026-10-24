@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>منظمتي — المانحون والتمويل</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Readex+Pro:wght@400;500;600;700&display=swap">
+<style>
+body{margin:0;background:#F6F5F1}
+*{box-sizing:border-box}
+a{color:#0E5A44;text-decoration:none}
+a:hover{color:#0A3D2F}
+.app{display:flex;flex-wrap:wrap;min-height:100vh;background:#F6F5F1;color:#1B1D1A;font-family:'IBM Plex Sans Arabic',system-ui,sans-serif;font-size:16px;line-height:1.7}
+.app h1,.app h2,.app h3,.app p{margin:0}
+.num,.h1,.h2,.word{font-family:'Readex Pro','IBM Plex Sans Arabic',system-ui,sans-serif}
+.num{font-variant-numeric:tabular-nums}
+.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.side{flex:1 0 272px;display:flex;flex-direction:column;gap:28px;padding:28px 20px 24px;background:#FFFFFF;border-inline-end:1px solid #E8E5DE}
+.brand{display:flex;align-items:center;gap:12px;padding:0 8px}
+.mk-t{fill:#0E5A44}
+.mk{fill:none;stroke:#FFFFFF;stroke-width:2.6;stroke-linecap:square;stroke-linejoin:miter}
+.word{font-size:24px;font-weight:600;color:#0A3D2F;line-height:1.2}
+.org{display:flex;align-items:center;gap:12px;width:100%;padding:12px;border:1px solid #E8E5DE;border-radius:12px;background:#FAF9F6;font:inherit;color:inherit;text-align:start;cursor:pointer}
+.org-b{width:38px;height:38px;border-radius:10px;background:#E6F2EC;color:#0E5A44;display:inline-flex;align-items:center;justify-content:center;font-family:'Readex Pro',system-ui,sans-serif;font-weight:600;flex:none}
+.org-t{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.5}
+.org-n{font-size:15px;font-weight:600}
+.org-s{font-size:14px;color:#6B675E}
+.nav{display:flex;flex-direction:column;gap:4px}
+.nav a{display:flex;align-items:center;gap:14px;min-height:48px;padding:0 14px;border-radius:10px;color:#3D3F3A;font-size:16px;font-weight:500}
+.nav a:hover{background:#F4F3EF;color:#1B1D1A}
+.nav a.on{background:#E6F2EC;color:#0A3D2F;font-weight:600}
+.me{margin-top:auto;display:flex;align-items:center;gap:12px;padding:18px 8px 0;border-top:1px solid #EEECE6}
+.av{width:42px;height:42px;border-radius:50%;background:#0E5A44;color:#FFFFFF;display:inline-flex;align-items:center;justify-content:center;font-family:'Readex Pro',system-ui,sans-serif;font-weight:600;flex:none}
+.me-t{display:flex;flex-direction:column;line-height:1.5}
+.me-n{font-size:15px;font-weight:600}
+.me-r{font-size:14px;color:#6B675E}
+.main{flex:999 1 560px;min-width:0;padding:40px 48px 72px}
+.wrap{max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:24px}
+.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px}
+.h1{font-size:32px;font-weight:600;line-height:1.3;color:#0A3D2F}
+.sub{font-size:17px;color:#6B675E;margin-top:4px}
+.card{background:#FFFFFF;border:1px solid #E8E5DE;border-radius:18px;padding:28px}
+.bar{height:10px;border-radius:99px;background:#E6F2EC;overflow:hidden}
+.bar>span{display:block;height:100%;border-radius:99px;background:#157A5C}
+.sum{display:flex;flex-wrap:wrap;align-items:center;gap:24px 48px;background:#0A3D2F;border-color:#0A3D2F;color:#FFFFFF;padding:32px 36px}
+.sum-t{flex:2 1 420px;display:flex;flex-direction:column;gap:14px}
+.sum-p{font-family:'Readex Pro',system-ui,sans-serif;font-size:22px;font-weight:500;line-height:1.8}
+.sum .bar{background:rgba(255,255,255,.16)}
+.sum .bar>span{background:#FFFFFF}
+.sum-k{display:flex;justify-content:space-between;font-size:15px;opacity:.8}
+.sum-f{flex:1 1 260px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.sf{display:flex;flex-direction:column;gap:2px}
+.sf-l{font-size:14px;opacity:.75}
+.sf-v{font-family:'Readex Pro',system-ui,sans-serif;font-size:21px;font-weight:600}
+.dg{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(440px,100%),1fr));gap:20px}
+.dc{display:flex;flex-direction:column;gap:20px}
+.dh{display:flex;align-items:center;gap:14px}
+.dl{width:52px;height:52px;border-radius:14px;background:#EEF6F2;color:#0A3D2F;display:inline-flex;align-items:center;justify-content:center;font-family:'Readex Pro',system-ui,sans-serif;font-weight:600;font-size:15px;flex:none;box-shadow:inset 0 0 0 1px #CFE5DA}
+.dn{font-family:'Readex Pro',system-ui,sans-serif;font-size:21px;font-weight:600;line-height:1.4}
+.dsub{font-size:15px;color:#6B675E}
+.dline{font-size:17px}
+.dline b{font-family:'Readex Pro',system-ui,sans-serif;font-weight:600}
+.df{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:16px 0;border-top:1px solid #EEECE6;border-bottom:1px solid #EEECE6}
+.df-c{display:flex;flex-direction:column;gap:2px}
+.df-l{font-size:14px;color:#6B675E}
+.df-v{font-family:'Readex Pro',system-ui,sans-serif;font-size:19px;font-weight:600}
+.dp{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.dp-l{font-size:15px;color:#6B675E}
+.tag{display:inline-flex;align-items:center;gap:8px;padding:4px 12px;border-radius:10px;background:#F6F5F1;font-size:15px;font-weight:500;color:#1B1D1A}
+.next{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:14px;background:#F3F9F6}
+.next-i{width:40px;height:40px;border-radius:12px;background:#FFFFFF;color:#0E5A44;display:inline-flex;align-items:center;justify-content:center;flex:none;box-shadow:inset 0 0 0 1px #CFE5DA}
+.next-t{display:flex;flex-direction:column;line-height:1.5}
+.next-l{font-size:14px;color:#6B675E}
+.next-v{font-size:16px;font-weight:600}
+.minor{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;padding:20px 24px;font-size:16px;color:#3D3F3A}
+/* tailles compactes */
+.app{font-size:15px;line-height:1.65}
+.side{flex-basis:248px;gap:22px;padding:22px 16px 20px}
+.word{font-size:21px}
+.nav a{min-height:44px;font-size:15px}
+.main{padding:28px 36px 56px}
+.wrap{gap:20px}
+.h1{font-size:26px}
+.sub{font-size:15px}
+.card{padding:22px}
+.sum{padding:24px 28px;gap:20px 40px}
+.sum-p{font-size:18px;line-height:1.75}
+.sum-k{font-size:14px}
+.sf-v{font-size:18px}
+.dg{gap:16px}
+.dc{gap:16px}
+.dl{width:44px;height:44px;font-size:14px}
+.dn{font-size:18px}
+.dsub{font-size:14px}
+.dline{font-size:15px}
+.df{padding:12px 0}
+.df-v{font-size:16px}
+.dp-l,.tag{font-size:14px}
+.next{padding:12px 14px}
+.next-i{width:36px;height:36px}
+.next-v{font-size:15px}
+.minor{padding:16px 22px;font-size:15px}
+</style>
+</helmet>
+<div class="app" dir="rtl">
+
+  <aside class="side">
+    <div class="brand">
+      <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><rect class="mk-t" width="36" height="36" rx="10"></rect><path class="mk" d="M8 26V10l5 7 5-7v16M18 10l7 16V10M21.5 10h7"></path></svg>
+      <span class="word">منظمتي</span>
+    </div>
+    <button class="org" type="button" aria-label="تغيير المنظمة">
+      <span class="org-b"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M16 9h2a2 2 0 0 1 2 2v10M2.5 21h19M8 7h4M8 11h4M8 15h4"></path></svg></span>
+      <span class="org-t"><span class="org-n">جمعية الأمل للتنمية</span><span class="org-s">نواكشوط · 2026</span></span>
+      <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+    </button>
+    <nav class="nav" aria-label="القائمة الرئيسية">
+      <a href="Dashboard.dc.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"></rect><rect x="14" y="3" width="7" height="5" rx="1.5"></rect><rect x="14" y="12" width="7" height="9" rx="1.5"></rect><rect x="3" y="16" width="7" height="5" rx="1.5"></rect></svg><span>لوحة القيادة</span></a>
+      <a href="Projects.dc.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"></path></svg><span>المشاريع</span></a>
+      <a class="on" href="Donors.dc.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 18v-7M9.5 18v-7M14.5 18v-7M19 18v-7M12 3l9 5H3Z"></path></svg><span>المانحون والتمويل</span></a>
+      <a href="Expenses.dc.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3v18l2.3-1.5L9.7 21l2.3-1.5 2.3 1.5 2.4-1.5L19 21V3l-2.3 1.5L14.3 3 12 4.5 9.7 3 7.3 4.5Z"></path><path d="M9 9h6M9 13h6"></path></svg><span>المصروفات</span></a>
+      <a href="Reports.dc.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"></path><path d="M14 3v5h5M9 13h6M9 17h4"></path></svg><span>التقارير</span></a>
+      <a href="Team.dc.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path></svg><span>الفريق</span></a>
+      <a href="Settings.dc.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"></path></svg><span>الإعدادات</span></a>
+    </nav>
+    <div class="me">
+      <span class="av"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4.5 21a7.5 7.5 0 0 1 15 0"></path></svg></span>
+      <span class="me-t"><span class="me-n">محمد الأمين</span><span class="me-r">المدير التنفيذي</span></span>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="wrap">
+
+      <header class="top">
+        <div>
+          <h1 class="h1">المانحون والتمويل</h1>
+          <p class="sub">من وعدنا بالمال، كم وصل، وما الذي ننتظره.</p>
+        </div>
+      </header>
+
+      <section class="card sum" aria-label="ملخص التمويل">
+        <div class="sum-t">
+          <p class="sum-p">وعدنا المانحون بـ 16,000,000 أوقية لهذا العام. وصلنا منها 13,000,000، وننتظر 3,000,000.</p>
+          <div class="bar"><span style="width: 81%"></span></div>
+          <div class="sum-k"><span>وصل 81% من التمويل</span><span>الدفعة القادمة: 30 نوفمبر</span></div>
+        </div>
+        <div class="sum-f">
+          <div class="sf"><span class="sf-l">الموعود</span><span class="sf-v">16 مليون</span></div>
+          <div class="sf"><span class="sf-l">المستلم</span><span class="sf-v">13 مليون</span></div>
+          <div class="sf"><span class="sf-l">المتبقي</span><span class="sf-v">3 مليون</span></div>
+        </div>
+      </section>
+
+      <section class="dg" aria-label="المانحون">
+
+        <article class="card dc">
+          <div class="dh"><span class="dl"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="width: 22px; height: 22px"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg></span><span style="display: flex; flex-direction: column"><span class="dn">الاتحاد الأوروبي</span><span class="dsub">يموّل مشروعًا واحدًا</span></span></div>
+          <div style="display: flex; flex-direction: column; gap: 10px">
+            <p class="dline">استلمنا <b>4,500,000</b> من 5,000,000</p>
+            <div class="bar"><span style="width: 90%"></span></div>
+          </div>
+          <div class="df">
+            <div class="df-c"><span class="df-l">الموعود</span><span class="df-v">5,000,000</span></div>
+            <div class="df-c"><span class="df-l">المستلم</span><span class="df-v">4,500,000</span></div>
+            <div class="df-c"><span class="df-l">المتبقي</span><span class="df-v">500,000</span></div>
+          </div>
+          <div class="dp"><span class="dp-l">المشاريع:</span><a class="tag" href="Project.dc.html">مشروع التعليم الأساسي — كيفة</a></div>
+          <div class="next"><span class="next-i"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"></rect><path d="M3.5 10h17M8 3v4M16 3v4"></path></svg></span><span class="next-t"><span class="next-l">الدفعة القادمة</span><span class="next-v">500,000 أوقية — بعد تقرير 15 نوفمبر</span></span></div>
+        </article>
+
+        <article class="card dc">
+          <div class="dh"><span class="dl"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="width: 22px; height: 22px"><path d="M12 20s-7.5-4.4-7.5-10A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 7.5 3c0 5.6-7.5 10-7.5 10Z"></path></svg></span><span style="display: flex; flex-direction: column"><span class="dn">اليونيسف</span><span class="dsub">يموّل مشروعًا واحدًا</span></span></div>
+          <div style="display: flex; flex-direction: column; gap: 10px">
+            <p class="dline">استلمنا <b>3,000,000</b> من 3,500,000</p>
+            <div class="bar"><span style="width: 86%"></span></div>
+          </div>
+          <div class="df">
+            <div class="df-c"><span class="df-l">الموعود</span><span class="df-v">3,500,000</span></div>
+            <div class="df-c"><span class="df-l">المستلم</span><span class="df-v">3,000,000</span></div>
+            <div class="df-c"><span class="df-l">المتبقي</span><span class="df-v">500,000</span></div>
+          </div>
+          <div class="dp"><span class="dp-l">المشاريع:</span><span class="tag">مشروع الصحة المجتمعية — نواذيبو</span></div>
+          <div class="next"><span class="next-i"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"></rect><path d="M3.5 10h17M8 3v4M16 3v4"></path></svg></span><span class="next-t"><span class="next-l">الدفعة القادمة</span><span class="next-v">500,000 أوقية — يناير 2027</span></span></div>
+        </article>
+
+        <article class="card dc">
+          <div class="dh"><span class="dl"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="width: 22px; height: 22px"><path d="M3 21h18M5 18v-7M9.5 18v-7M14.5 18v-7M19 18v-7M12 3l9 5H3Z"></path></svg></span><span style="display: flex; flex-direction: column"><span class="dn">البنك الدولي</span><span class="dsub">يموّل مشروعًا واحدًا</span></span></div>
+          <div style="display: flex; flex-direction: column; gap: 10px">
+            <p class="dline">استلمنا <b>4,000,000</b> من 4,000,000</p>
+            <div class="bar"><span style="width: 100%; background: #0A3D2F"></span></div>
+          </div>
+          <div class="df">
+            <div class="df-c"><span class="df-l">الموعود</span><span class="df-v">4,000,000</span></div>
+            <div class="df-c"><span class="df-l">المستلم</span><span class="df-v">4,000,000</span></div>
+            <div class="df-c"><span class="df-l">المتبقي</span><span class="df-v">0</span></div>
+          </div>
+          <div class="dp"><span class="dp-l">المشاريع:</span><span class="tag">مشروع المياه الريفية — أطار</span></div>
+          <div class="next"><span class="next-i"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span><span class="next-t"><span class="next-l">الدفعة القادمة</span><span class="next-v">لا شيء — استلمنا المبلغ كاملًا</span></span></div>
+        </article>
+
+        <article class="card dc">
+          <div class="dh"><span class="dl"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="width: 22px; height: 22px"><path d="M12 21v-9M12 12C12 7.5 8.5 5 4 5c0 4.5 3.5 7 8 7ZM12 14c0-3.5 2.8-6 7-6 0 3.5-2.8 6-7 6Z"></path></svg></span><span style="display: flex; flex-direction: column"><span class="dn">الوكالة الفرنسية للتنمية</span><span class="dsub">تموّل مشروعًا واحدًا</span></span></div>
+          <div style="display: flex; flex-direction: column; gap: 10px">
+            <p class="dline">استلمنا <b>1,000,000</b> من 2,000,000</p>
+            <div class="bar"><span style="width: 50%"></span></div>
+          </div>
+          <div class="df">
+            <div class="df-c"><span class="df-l">الموعود</span><span class="df-v">2,000,000</span></div>
+            <div class="df-c"><span class="df-l">المستلم</span><span class="df-v">1,000,000</span></div>
+            <div class="df-c"><span class="df-l">المتبقي</span><span class="df-v">1,000,000</span></div>
+          </div>
+          <div class="dp"><span class="dp-l">المشاريع:</span><span class="tag">مشروع تمكين المرأة — روصو</span></div>
+          <div class="next"><span class="next-i"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"></rect><path d="M3.5 10h17M8 3v4M16 3v4"></path></svg></span><span class="next-t"><span class="next-l">الدفعة القادمة</span><span class="next-v">500,000 أوقية — 30 نوفمبر 2026</span></span></div>
+        </article>
+
+      </section>
+
+      <section class="card minor" aria-label="تمويل آخر">
+        <span style="font-weight: 600; color: #1B1D1A">منحة محلية</span>
+        <span>موعودة 1,500,000 · وصل 500,000 · بقي 1,000,000</span>
+        <span style="color: #6B675E">الدفعات متوقفة مع توقف مشروع الزراعة المستدامة</span>
+      </section>
+
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1300}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

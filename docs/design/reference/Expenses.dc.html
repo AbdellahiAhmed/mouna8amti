@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>منظمتي — المصروفات</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Readex+Pro:wght@400;500;600;700&display=swap">
+<style>
+body{margin:0;background:#F6F5F1}
+*{box-sizing:border-box}
+a{color:#0E5A44;text-decoration:none}
+a:hover{color:#0A3D2F}
+.app{display:flex;flex-wrap:wrap;min-height:100vh;background:#F6F5F1;color:#1B1D1A;font-family:'IBM Plex Sans Arabic',system-ui,sans-serif;font-size:16px;line-height:1.7}
+.app h1,.app h2,.app h3,.app p{margin:0}
+.num,.h1,.h2,.word{font-family:'Readex Pro','IBM Plex Sans Arabic',system-ui,sans-serif}
+.num{font-variant-numeric:tabular-nums}
+.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.side{flex:1 0 272px;display:flex;flex-direction:column;gap:28px;padding:28px 20px 24px;background:#FFFFFF;border-inline-end:1px solid #E8E5DE}
+.brand{display:flex;align-items:center;gap:12px;padding:0 8px}
+.mk-t{fill:#0E5A44}
+.mk{fill:none;stroke:#FFFFFF;stroke-width:2.6;stroke-linecap:square;stroke-linejoin:miter}
+.word{font-size:24px;font-weight:600;color:#0A3D2F;line-height:1.2}
+.org{display:flex;align-items:center;gap:12px;width:100%;padding:12px;border:1px solid #E8E5DE;border-radius:12px;background:#FAF9F6;font:inherit;color:inherit;text-align:start;cursor:pointer}
+.org-b{width:38px;height:38px;border-radius:10px;background:#E6F2EC;color:#0E5A44;display:inline-flex;align-items:center;justify-content:center;font-family:'Readex Pro',system-ui,sans-serif;font-weight:600;flex:none}
+.org-t{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.5}
+.org-n{font-size:15px;font-weight:600}
+.org-s{font-size:14px;color:#6B675E}
+.nav{display:flex;flex-direction:column;gap:4px}
+.nav a{display:flex;align-items:center;gap:14px;min-height:48px;padding:0 14px;border-radius:10px;color:#3D3F3A;font-size:16px;font-weight:500}
+.nav a:hover{background:#F4F3EF;color:#1B1D1A}
+.nav a.on{background:#E6F2EC;color:#0A3D2F;font-weight:600}
+.me{margin-top:auto;display:flex;align-items:center;gap:12px;padding:18px 8px 0;border-top:1px solid #EEECE6}
+.av{width:42px;height:42px;border-radius:50%;background:#0E5A44;color:#FFFFFF;display:inline-flex;align-items:center;justify-content:center;font-family:'Readex Pro',system-ui,sans-serif;font-weight:600;flex:none}
+.me-t{display:flex;flex-direction:column;line-height:1.5}
+.me-n{font-size:15px;font-weight:600}
+.me-r{font-size:14px;color:#6B675E}
+.main{flex:999 1 560px;min-width:0;padding:40px 48px 72px}
+.wrap{max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:24px}
+.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px}
+.h1{font-size:32px;font-weight:600;line-height:1.3;color:#0A3D2F}
+.sub{font-size:17px;color:#6B675E;margin-top:4px}
+.card{background:#FFFFFF;border:1px solid #E8E5DE;border-radius:18px;padding:28px}
+.h2{font-size:20px;font-weight:600;line-height:1.4}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:2px 12px;border-radius:99px;font-size:14px;font-weight:500;white-space:nowrap}
+.p-on{background:#E6F2EC;color:#0E5A44}
+.p-stop{background:#EFEDE8;color:#55524B}
+.p-wait{background:#FFFFFF;color:#0E5A44;box-shadow:inset 0 0 0 1px #9CC9B6}
+.btn-g{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border:1px solid #DEDBD3;border-radius:12px;background:#FFFFFF;color:#3D3F3A;font:inherit;font-size:15px;font-weight:500;cursor:pointer}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:16px}
+.st{display:flex;flex-direction:column;gap:6px;padding:24px}
+.st-l{display:flex;align-items:center;gap:10px;font-size:15px;color:#3D3F3A;font-weight:500}
+.st-v{font-size:32px;font-weight:600;line-height:1.2}
+.st-u{font-family:'IBM Plex Sans Arabic',system-ui,sans-serif;font-size:15px;font-weight:400;color:#6B675E;margin-inline-start:6px}
+.st-n{font-size:14px;color:#6B675E}
+.st-dark{background:#0A3D2F;border-color:#0A3D2F;color:#FFFFFF}
+.st-dark .st-l,.st-dark .st-u,.st-dark .st-n{color:#FFFFFF;opacity:.8}
+.cols{display:flex;flex-wrap:wrap;align-items:flex-start;gap:24px}
+.lst{flex:3 1 560px;min-width:0;padding:12px 12px 8px}
+.lst-h{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px 8px}
+.r{display:flex;align-items:center;gap:16px;padding:14px 16px;border-radius:14px;color:#1B1D1A}
+.r:hover{background:#F8F7F4;color:#1B1D1A}
+.r+.r{margin-top:2px}
+.r.sel{background:#EEF6F2;box-shadow:inset 0 0 0 1px #B9D9CB}
+.r-d{width:56px;flex:none;font-size:14px;color:#6B675E;line-height:1.4}
+.r-d b{display:block;font-family:'Readex Pro',system-ui,sans-serif;font-size:19px;font-weight:600;color:#1B1D1A}
+.r-t{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.55}
+.r-n{font-size:16px;font-weight:500}
+.r-m{font-size:14px;color:#6B675E}
+.r-a{font-family:'Readex Pro',system-ui,sans-serif;font-size:17px;font-weight:600;white-space:nowrap;min-width:84px;text-align:end}
+.r-s{min-width:128px;display:flex;justify-content:flex-end}
+.det{flex:2 1 360px;min-width:0;display:flex;flex-direction:column;gap:22px}
+.det-k{font-size:14px;color:#6B675E}
+.det-n{font-family:'Readex Pro',system-ui,sans-serif;font-size:22px;font-weight:600;line-height:1.45}
+.det-a{font-family:'Readex Pro',system-ui,sans-serif;font-size:36px;font-weight:600;color:#0A3D2F;line-height:1.2}
+.det-a span{font-family:'IBM Plex Sans Arabic',system-ui,sans-serif;font-size:16px;font-weight:400;color:#6B675E;margin-inline-start:6px}
+.kv{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding:16px 0;border-top:1px solid #EEECE6;border-bottom:1px solid #EEECE6}
+.kv-l{display:block;font-size:14px;color:#6B675E}
+.kv-v{display:block;font-size:16px;font-weight:500}
+.path-t{font-size:16px;font-weight:600;margin-bottom:14px}
+.steps{display:flex;align-items:flex-start}
+.step{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;position:relative}
+.step::after{content:"";position:absolute;top:17px;inset-inline-start:calc(50% + 24px);width:calc(100% - 48px);height:2px;background:#157A5C}
+.step:last-child::after{display:none}
+.step.next::after{background:#D6E8E0}
+.sn{width:36px;height:36px;border-radius:50%;background:#157A5C;color:#FFFFFF;display:inline-flex;align-items:center;justify-content:center;position:relative;z-index:1}
+.sn .i{width:17px;height:17px;stroke-width:2.4}
+.sn-w{background:#FFFFFF;color:#0E5A44;box-shadow:inset 0 0 0 2px #157A5C}
+.s-r{font-size:15px;font-weight:600;line-height:1.45}
+.s-p{font-size:14px;color:#6B675E;line-height:1.45}
+.path-s{margin-top:16px;padding:12px 14px;border-radius:12px;background:#F6F5F1;font-size:15px;color:#3D3F3A;text-align:center}
+.att{display:flex;align-items:center;gap:14px;padding:12px;border:1px solid #E8E5DE;border-radius:14px;color:#1B1D1A}
+.att:hover{border-color:#9CC9B6;color:#1B1D1A}
+.inv{width:64px;height:80px;flex:none;border-radius:8px;background:#FAF9F6;box-shadow:inset 0 0 0 1px #E3E0D8;padding:10px 9px;display:flex;flex-direction:column;gap:5px}
+.inv span{display:block;height:4px;border-radius:2px;background:#D9D5CC}
+.att-t{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.55}
+.acts{display:flex;gap:10px}
+.btn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;border-radius:12px;background:#0E5A44;color:#FFFFFF;border:0;font:inherit;font-size:16px;font-weight:600;cursor:pointer}
+.btn:hover{background:#0A3D2F}
+.btn-o{flex:0 0 auto;padding:0 22px;background:#FFFFFF;color:#3D3F3A;box-shadow:inset 0 0 0 1px #DEDBD3}
+.btn-o:hover{background:#F6F5F1}
+/* tailles compactes */
+.app{font-size:15px;line-height:1.65}
+.side{flex-basis:248px;gap:22px;padding:22px 16px 20px}
+.word{font-size:21px}
+.nav a{min-height:44px;font-size:15px}
+.main{padding:28px 36px 56px}
+.wrap{gap:20px}
+.h1{font-size:26px}
+.sub{font-size:15px}
+.card{padding:22px}
+.h2{font-size:18px}
+.st{padding:20px}
+.st-l{font-size:14px}
+.st-v{font-size:26px}
+.cols{gap:20px}
+.lst{padding:10px 10px 6px}
+.lst-h{padding:10px 14px 6px}
+.r{padding:10px 14px;gap:14px}
+.r-d b{font-size:17px}
+.r-n{font-size:15px}
+.r-a{font-size:16px}
+.r-s{min-width:118px}
+.det{gap:18px}
+.det-n{font-size:19px}
+.det-a{font-size:28px}
+.kv{padding:12px 0;gap:10px}
+.kv-v{font-size:15px}
+.path-t{font-size:15px;margin-bottom:10px}
+.s-r{font-size:14px}
+.path-s{font-size:14px;margin-top:12px}
+.btn{min-height:46px;font-size:15px}
+</style>
+</helmet>
+<div class="app" dir="rtl">
+
+  <aside class="side">
+    <div class="brand">
+      <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><rect class="mk-t" width="36" height="36" rx="10"></rect><path class="mk" d="M8 26V10l5 7 5-7v16M18 10l7 16V10M21.5 10h7"></path></svg>
+      <span class="word">منظمتي</span>
+    </div>
+    <button class="org" type="button" aria-label="تغيير المنظمة">
+      <span class="org-b"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M16 9h2a2 2 0 0 1 2 2v10M2.5 21h19M8 7h4M8 11h4M8 15h4"></path></svg></span>
+      <span class="org-t"><span class="org-n">جمعية الأمل للتنمية</span><span class="org-s">نواكشوط · 2026</span></span>
+      <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+    </button>
+    <nav class="nav" aria-label="القائمة الرئيسية">
+      <a href="Dashboard.dc.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"></rect><rect x="14" y="3" width="7" height="5" rx="1.5"></rect><rect x="14" y="12" width="7" height="9" rx="1.5"></rect><rect x="3" y="16" width="7" height="5" rx="1.5"></rect></svg><span>لوحة القيادة</span></a>
+      <a href="Projects.dc.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"></path></svg><span>المشاريع</span></a>
+      <a href="Donors.dc.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 18v-7M9.5 18v-7M14.5 18v-7M19 18v-7M12 3l9 5H3Z"></path></svg><span>المانحون والتمويل</span></a>
+      <a class="on" href="Expenses.dc.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3v18l2.3-1.5L9.7 21l2.3-1.5 2.3 1.5 2.4-1.5L19 21V3l-2.3 1.5L14.3 3 12 4.5 9.7 3 7.3 4.5Z"></path><path d="M9 9h6M9 13h6"></path></svg><span>المصروفات</span></a>
+      <a href="Reports.dc.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"></path><path d="M14 3v5h5M9 13h6M9 17h4"></path></svg><span>التقارير</span></a>
+      <a href="Team.dc.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path></svg><span>الفريق</span></a>
+      <a href="Settings.dc.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"></path></svg><span>الإعدادات</span></a>
+    </nav>
+    <div class="me">
+      <span class="av"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4.5 21a7.5 7.5 0 0 1 15 0"></path></svg></span>
+      <span class="me-t"><span class="me-n">محمد الأمين</span><span class="me-r">المدير التنفيذي</span></span>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="wrap">
+
+      <header class="top">
+        <div>
+          <h1 class="h1">المصروفات</h1>
+          <p class="sub">كل ما صُرف هذا الشهر، ومن وافق عليه.</p>
+        </div>
+        <button class="btn-g" type="button"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px"><rect x="3.5" y="5" width="17" height="15" rx="2"></rect><path d="M3.5 10h17M8 3v4M16 3v4"></path></svg>أكتوبر 2026<svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px"><path d="m6 9 6 6 6-6"></path></svg></button>
+      </header>
+
+      <section class="stats" aria-label="ملخص المصروفات">
+        <div class="card st st-dark"><span class="st-l">صُرف هذا الشهر</span><span class="st-v num">1,250,000<span class="st-u">أوقية</span></span><span class="st-n">14 عملية معتمدة من أصل 18</span></div>
+        <div class="card st"><span class="st-l"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="color: #0E5A44"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>بانتظار الموافقة</span><span class="st-v num">3</span><span class="st-n">بقيمة 340,000 أوقية</span></div>
+        <div class="card st"><span class="st-l"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="color: #0E5A44"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>معتمدة</span><span class="st-v num">14</span><span class="st-n">صُرفت فعلًا</span></div>
+        <div class="card st"><span class="st-l"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="color: #6B675E"><path d="M7 7l10 10M17 7 7 17"></path></svg>مرفوضة</span><span class="st-v num">1</span><span class="st-n">خارج بنود الميزانية</span></div>
+      </section>
+
+      <div class="cols">
+        <section class="card lst" aria-label="قائمة المصروفات">
+          <div class="lst-h"><h2 class="h2">مصروفات أكتوبر</h2><a href="#" style="font-size: 15px; font-weight: 500">عرض الكل (18)</a></div>
+
+          <a class="r sel" href="#"><span class="r-d"><b>22</b>أكتوبر</span><span class="r-t"><span class="r-n">مستلزمات طبية إضافية</span><span class="r-m">مشروع الصحة المجتمعية</span></span><span class="r-a">180,000</span><span class="r-s"><span class="pill p-wait">بانتظار موافقتك</span></span></a>
+          <a class="r" href="#"><span class="r-d"><b>21</b>أكتوبر</span><span class="r-t"><span class="r-n">تدريب النساء على الخياطة</span><span class="r-m">مشروع تمكين المرأة</span></span><span class="r-a">115,000</span><span class="r-s"><span class="pill p-wait">بانتظار موافقتك</span></span></a>
+          <a class="r" href="#"><span class="r-d"><b>20</b>أكتوبر</span><span class="r-t"><span class="r-n">اشتراك الإنترنت لمكتب روصو</span><span class="r-m">مشروع تمكين المرأة</span></span><span class="r-a">45,000</span><span class="r-s"><span class="pill p-wait">بانتظار موافقتك</span></span></a>
+          <a class="r" href="#"><span class="r-d"><b>17</b>أكتوبر</span><span class="r-t"><span class="r-n">نقل الفرق الطبية إلى القرى</span><span class="r-m">مشروع الصحة المجتمعية</span></span><span class="r-a">140,000</span><span class="r-s"><span class="pill p-on">معتمدة</span></span></a>
+          <a class="r" href="#"><span class="r-d"><b>15</b>أكتوبر</span><span class="r-t"><span class="r-n">رواتب فريق الصحة لشهر أكتوبر</span><span class="r-m">مشروع الصحة المجتمعية</span></span><span class="r-a">600,000</span><span class="r-s"><span class="pill p-on">معتمدة</span></span></a>
+          <a class="r" href="#"><span class="r-d"><b>13</b>أكتوبر</span><span class="r-t"><span class="r-n">أدوية للمراكز الصحية</span><span class="r-m">مشروع الصحة المجتمعية</span></span><span class="r-a">250,000</span><span class="r-s"><span class="pill p-on">معتمدة</span></span></a>
+          <a class="r" href="#"><span class="r-d"><b>9</b>أكتوبر</span><span class="r-t"><span class="r-n">شراء هاتف للمكتب</span><span class="r-m">مشروع الصحة المجتمعية</span></span><span class="r-a" style="color: #6B675E; text-decoration: line-through">95,000</span><span class="r-s"><span class="pill p-stop">مرفوضة</span></span></a>
+          <a class="r" href="#"><span class="r-d"><b>6</b>أكتوبر</span><span class="r-t"><span class="r-n">وقود سيارة المشروع</span><span class="r-m">مشروع الصحة المجتمعية</span></span><span class="r-a">60,000</span><span class="r-s"><span class="pill p-on">معتمدة</span></span></a>
+        </section>
+
+        <section class="card det" aria-label="تفاصيل المصروف">
+          <div style="display: flex; flex-direction: column; gap: 6px">
+            <span class="det-k">مصروف مفتوح</span>
+            <h2 class="det-n">مستلزمات طبية إضافية</h2>
+            <span class="det-a">180,000<span>أوقية</span></span>
+          </div>
+
+          <div class="kv">
+            <div><span class="kv-l">المشروع</span><span class="kv-v">الصحة المجتمعية</span></div>
+            <div><span class="kv-l">الممول</span><span class="kv-v">اليونيسف</span></div>
+            <div><span class="kv-l">البند</span><span class="kv-v">الأدوية والمستلزمات</span></div>
+            <div><span class="kv-l">التاريخ</span><span class="kv-v">22 أكتوبر 2026</span></div>
+          </div>
+
+          <div>
+            <h3 class="path-t">مسار الموافقة</h3>
+            <div class="steps">
+              <div class="step"><span class="sn"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span><span class="s-r">قدّمها</span><span class="s-p">فاطمة بنت أحمد<br>منسقة المشاريع · 21 أكتوبر</span></div>
+              <div class="step next"><span class="sn"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span><span class="s-r">وافق</span><span class="s-p">سيدي محمد<br>المحاسب · 22 أكتوبر</span></div>
+              <div class="step"><span class="sn sn-w"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7"></circle><path d="M12 8.5v3.5l2 1.5"></path></svg></span><span class="s-r" style="color: #0E5A44">بانتظار</span><span class="s-p">محمد الأمين<br>المدير التنفيذي</span></div>
+            </div>
+            <p class="path-s">قدّمها منسق المشروع ← وافق المحاسب ← بانتظار المدير</p>
+          </div>
+
+          <a class="att" href="#">
+            <span class="inv" aria-hidden="true"><span style="width: 60%; background: #157A5C"></span><span></span><span style="width: 80%"></span><span></span><span style="width: 70%"></span><span style="margin-top: auto; width: 50%; align-self: flex-end; background: #0E5A44"></span></span>
+            <span class="att-t"><span style="font-size: 16px; font-weight: 500">صورة الفاتورة</span><span style="font-size: 14px; color: #6B675E">مرفقة من فاطمة بنت أحمد</span></span>
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="color: #6B675E"><path d="M20 11.5 12 19.5a5 5 0 0 1-7-7l8.5-8.5a3.3 3.3 0 0 1 4.7 4.7L9.7 17.2a1.7 1.7 0 0 1-2.4-2.4l7.8-7.8"></path></svg>
+          </a>
+
+          <div class="acts">
+            <button class="btn" type="button"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>موافقة</button>
+            <button class="btn btn-o" type="button">رفض</button>
+          </div>
+        </section>
+      </div>
+
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1420}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

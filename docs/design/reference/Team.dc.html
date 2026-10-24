@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>منظمتي — الفريق</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Readex+Pro:wght@400;500;600;700&display=swap">
+<style>
+body{margin:0;background:#F6F5F1}
+*{box-sizing:border-box}
+a{color:#0E5A44;text-decoration:none}
+a:hover{color:#0A3D2F}
+.app{display:flex;flex-wrap:wrap;min-height:100vh;background:#F6F5F1;color:#1B1D1A;font-family:'IBM Plex Sans Arabic',system-ui,sans-serif;font-size:16px;line-height:1.7}
+.app h1,.app h2,.app h3,.app p{margin:0}
+.num,.h1,.h2,.word{font-family:'Readex Pro','IBM Plex Sans Arabic',system-ui,sans-serif}
+.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.side{flex:1 0 272px;display:flex;flex-direction:column;gap:28px;padding:28px 20px 24px;background:#FFFFFF;border-inline-end:1px solid #E8E5DE}
+.brand{display:flex;align-items:center;gap:12px;padding:0 8px}
+.mk-t{fill:#0E5A44}
+.mk{fill:none;stroke:#FFFFFF;stroke-width:2.6;stroke-linecap:square;stroke-linejoin:miter}
+.word{font-size:24px;font-weight:600;color:#0A3D2F;line-height:1.2}
+.org{display:flex;align-items:center;gap:12px;width:100%;padding:12px;border:1px solid #E8E5DE;border-radius:12px;background:#FAF9F6;font:inherit;color:inherit;text-align:start;cursor:pointer}
+.org-b{width:38px;height:38px;border-radius:10px;background:#E6F2EC;color:#0E5A44;display:inline-flex;align-items:center;justify-content:center;font-family:'Readex Pro',system-ui,sans-serif;font-weight:600;flex:none}
+.org-t{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.5}
+.org-n{font-size:15px;font-weight:600}
+.org-s{font-size:14px;color:#6B675E}
+.nav{display:flex;flex-direction:column;gap:4px}
+.nav a{display:flex;align-items:center;gap:14px;min-height:48px;padding:0 14px;border-radius:10px;color:#3D3F3A;font-size:16px;font-weight:500}
+.nav a:hover{background:#F4F3EF;color:#1B1D1A}
+.nav a.on{background:#E6F2EC;color:#0A3D2F;font-weight:600}
+.me{margin-top:auto;display:flex;align-items:center;gap:12px;padding:18px 8px 0;border-top:1px solid #EEECE6}
+.av{width:42px;height:42px;border-radius:50%;background:#0E5A44;color:#FFFFFF;display:inline-flex;align-items:center;justify-content:center;font-family:'Readex Pro',system-ui,sans-serif;font-weight:600;flex:none}
+.me-t{display:flex;flex-direction:column;line-height:1.5}
+.me-n{font-size:15px;font-weight:600}
+.me-r{font-size:14px;color:#6B675E}
+.main{flex:999 1 560px;min-width:0;padding:40px 48px 72px}
+.wrap{max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:24px}
+.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px}
+.h1{font-size:32px;font-weight:600;line-height:1.3;color:#0A3D2F}
+.sub{font-size:17px;color:#6B675E;margin-top:4px}
+.card{background:#FFFFFF;border:1px solid #E8E5DE;border-radius:18px;padding:28px}
+.h2{font-size:20px;font-weight:600;line-height:1.4}
+.btn-g{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border:1px solid #DEDBD3;border-radius:12px;background:#FFFFFF;color:#3D3F3A;font:inherit;font-size:15px;font-weight:500;cursor:pointer}
+.chain{display:flex;flex-wrap:wrap;align-items:center;gap:24px 40px;background:#0A3D2F;border-color:#0A3D2F;color:#FFFFFF;padding:32px 36px}
+.chain-t{flex:1 1 320px;display:flex;flex-direction:column;gap:8px}
+.chain-k{font-size:15px;opacity:.75}
+.chain-p{font-family:'Readex Pro',system-ui,sans-serif;font-size:22px;font-weight:500;line-height:1.8}
+.flow{flex:2 1 520px;display:flex;align-items:flex-start}
+.fs{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;position:relative}
+.fs::after{content:"";position:absolute;top:23px;inset-inline-start:calc(50% + 30px);width:calc(100% - 60px);height:2px;background:rgba(255,255,255,.28)}
+.fs:last-child::after{display:none}
+.fa{width:48px;height:48px;border-radius:50%;background:#FFFFFF;color:#0A3D2F;display:inline-flex;align-items:center;justify-content:center;font-family:'Readex Pro',system-ui,sans-serif;font-weight:600;font-size:17px}
+.fr{font-size:15px;font-weight:600;line-height:1.4}
+.fn{font-size:14px;opacity:.78;line-height:1.4}
+.tg{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(440px,100%),1fr));gap:20px}
+.mc{display:flex;flex-direction:column;gap:18px}
+.mh{display:flex;align-items:center;gap:16px}
+.ma{width:60px;height:60px;border-radius:50%;background:#EEF6F2;color:#0A3D2F;display:inline-flex;align-items:center;justify-content:center;font-family:'Readex Pro',system-ui,sans-serif;font-weight:600;font-size:22px;flex:none;box-shadow:inset 0 0 0 1px #CFE5DA}
+.ma-d{background:#0E5A44;color:#FFFFFF;box-shadow:none}
+.mn{font-family:'Readex Pro',system-ui,sans-serif;font-size:21px;font-weight:600;line-height:1.4}
+.mr{font-size:15px;color:#6B675E}
+.you{display:inline-flex;align-items:center;padding:1px 10px;border-radius:99px;background:#E6F2EC;color:#0E5A44;font-size:14px;font-weight:500;margin-inline-start:10px;vertical-align:middle}
+.md{font-size:17px;line-height:1.8;color:#1B1D1A}
+.cl{display:flex;flex-direction:column;gap:6px}
+.cl-l{font-size:14px;color:#6B675E}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:10px;background:#F6F5F1;font-size:15px;font-weight:500}
+.chip .i{width:16px;height:16px;color:#0E5A44;stroke-width:2.2}
+.mf{display:flex;align-items:center;gap:10px;padding-top:16px;border-top:1px solid #EEECE6;font-size:15px;color:#6B675E}
+/* tailles compactes */
+.app{font-size:15px;line-height:1.65}
+.side{flex-basis:248px;gap:22px;padding:22px 16px 20px}
+.word{font-size:21px}
+.nav a{min-height:44px;font-size:15px}
+.main{padding:28px 36px 56px}
+.wrap{gap:20px}
+.h1{font-size:26px}
+.sub{font-size:15px}
+.card{padding:22px}
+.chain{padding:24px 28px}
+.chain-k{font-size:14px}
+.chain-p{font-size:18px;line-height:1.75}
+.fa{width:42px;height:42px;font-size:15px}
+.fs::after{top:20px}
+.fr{font-size:14px}
+.tg{gap:16px}
+.mc{gap:14px}
+.ma{width:50px;height:50px;font-size:18px}
+.mn{font-size:18px}
+.mr{font-size:14px}
+.md{font-size:15px;line-height:1.75}
+.chip{font-size:14px}
+.mf{padding-top:12px;font-size:14px}
+</style>
+</helmet>
+<div class="app" dir="rtl">
+
+  <aside class="side">
+    <div class="brand">
+      <svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><rect class="mk-t" width="36" height="36" rx="10"></rect><path class="mk" d="M8 26V10l5 7 5-7v16M18 10l7 16V10M21.5 10h7"></path></svg>
+      <span class="word">منظمتي</span>
+    </div>
+    <button class="org" type="button" aria-label="تغيير المنظمة">
+      <span class="org-b"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M16 9h2a2 2 0 0 1 2 2v10M2.5 21h19M8 7h4M8 11h4M8 15h4"></path></svg></span>
+      <span class="org-t"><span class="org-n">جمعية الأمل للتنمية</span><span class="org-s">نواكشوط · 2026</span></span>
+      <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+    </button>
+    <nav class="nav" aria-label="القائمة الرئيسية">
+      <a href="Dashboard.dc.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="9" rx="1.5"></rect><rect x="14" y="3" width="7" height="5" rx="1.5"></rect><rect x="14" y="12" width="7" height="9" rx="1.5"></rect><rect x="3" y="16" width="7" height="5" rx="1.5"></rect></svg><span>لوحة القيادة</span></a>
+      <a href="Projects.dc.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"></path></svg><span>المشاريع</span></a>
+      <a href="Donors.dc.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 18v-7M9.5 18v-7M14.5 18v-7M19 18v-7M12 3l9 5H3Z"></path></svg><span>المانحون والتمويل</span></a>
+      <a href="Expenses.dc.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3v18l2.3-1.5L9.7 21l2.3-1.5 2.3 1.5 2.4-1.5L19 21V3l-2.3 1.5L14.3 3 12 4.5 9.7 3 7.3 4.5Z"></path><path d="M9 9h6M9 13h6"></path></svg><span>المصروفات</span></a>
+      <a href="Reports.dc.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"></path><path d="M14 3v5h5M9 13h6M9 17h4"></path></svg><span>التقارير</span></a>
+      <a class="on" href="Team.dc.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"></path></svg><span>الفريق</span></a>
+      <a href="Settings.dc.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"></path></svg><span>الإعدادات</span></a>
+    </nav>
+    <div class="me">
+      <span class="av"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4.5 21a7.5 7.5 0 0 1 15 0"></path></svg></span>
+      <span class="me-t"><span class="me-n">محمد الأمين</span><span class="me-r">المدير التنفيذي</span></span>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="wrap">
+
+      <header class="top">
+        <div>
+          <h1 class="h1">الفريق</h1>
+          <p class="sub">4 أشخاص يعملون على منظمتي، ولكل واحد دور واضح.</p>
+        </div>
+        <button class="btn-g" type="button"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px"><path d="M12 5v14M5 12h14"></path></svg>دعوة عضو</button>
+      </header>
+
+      <section class="card chain" aria-label="مسار الموافقة">
+        <div class="chain-t">
+          <span class="chain-k">كيف تُعتمد المصروفات</span>
+          <p class="chain-p">كل مصروف يمرّ بثلاثة أشخاص قبل أن يُصرف. لا يُصرف شيء دون موافقة المدير.</p>
+        </div>
+        <div class="flow">
+          <div class="fs"><span class="fa"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="14" height="17.5" rx="2"></rect><path d="M9 4a1.5 1.5 0 0 1 1.5-1.5h3A1.5 1.5 0 0 1 15 4v1.5H9ZM9 11h6M9 15h4"></path></svg></span><span class="fr">تقدّم المصروف</span><span class="fn">فاطمة بنت أحمد</span></div>
+          <div class="fs"><span class="fa"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2.5" width="14" height="19" rx="2"></rect><path d="M8.5 6.5h7M8.5 11h.01M12 11h.01M15.5 11h.01M8.5 14.5h.01M12 14.5h.01M15.5 14.5h.01M8.5 18h.01M12 18h.01M15.5 18h.01"></path></svg></span><span class="fr">يراجع الفاتورة</span><span class="fn">سيدي محمد</span></div>
+          <div class="fs"><span class="fa"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M8.5 7V5a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v2M3 13h18"></path></svg></span><span class="fr">يوافق نهائيًا</span><span class="fn">محمد الأمين</span></div>
+        </div>
+      </section>
+
+      <section class="tg" aria-label="أعضاء الفريق">
+
+        <article class="card mc">
+          <div class="mh"><span class="ma ma-d"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="width: 24px; height: 24px"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M8.5 7V5a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v2M3 13h18"></path></svg></span><span style="display: flex; flex-direction: column"><span class="mn">محمد الأمين<span class="you">أنت</span></span><span class="mr">المدير التنفيذي</span></span></div>
+          <p class="md">يرى كل شيء في المنظمة، ويعطي الموافقة الأخيرة على المصروفات.</p>
+          <div class="cl"><span class="cl-l">ما يستطيع فعله</span>
+            <div class="chips">
+              <span class="chip"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>الموافقة النهائية</span>
+              <span class="chip"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>كل المشاريع</span>
+              <span class="chip"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>إدارة الفريق</span>
+            </div>
+          </div>
+          <div class="mf"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>ينتظره 3 مصروفات للموافقة</div>
+        </article>
+
+        <article class="card mc">
+          <div class="mh"><span class="ma"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="width: 24px; height: 24px"><rect x="5" y="2.5" width="14" height="19" rx="2"></rect><path d="M8.5 6.5h7M8.5 11h.01M12 11h.01M15.5 11h.01M8.5 14.5h.01M12 14.5h.01M15.5 14.5h.01M8.5 18h.01M12 18h.01M15.5 18h.01"></path></svg></span><span style="display: flex; flex-direction: column"><span class="mn">سيدي محمد</span><span class="mr">المحاسب</span></span></div>
+          <p class="md">يراجع كل مصروف ويتأكد من فاتورته قبل أن يصل إلى المدير.</p>
+          <div class="cl"><span class="cl-l">ما يستطيع فعله</span>
+            <div class="chips">
+              <span class="chip"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>مراجعة المصروفات</span>
+              <span class="chip"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>الميزانيات</span>
+              <span class="chip"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>التقارير المالية</span>
+            </div>
+          </div>
+          <div class="mf"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>راجع آخر مصروف في 22 أكتوبر</div>
+        </article>
+
+        <article class="card mc">
+          <div class="mh"><span class="ma"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="width: 24px; height: 24px"><rect x="5" y="4" width="14" height="17.5" rx="2"></rect><path d="M9 4a1.5 1.5 0 0 1 1.5-1.5h3A1.5 1.5 0 0 1 15 4v1.5H9ZM9 11h6M9 15h4"></path></svg></span><span style="display: flex; flex-direction: column"><span class="mn">فاطمة بنت أحمد</span><span class="mr">منسقة المشاريع</span></span></div>
+          <p class="md">تتابع الأنشطة في الميدان، وتقدّم المصروفات مع صور الفواتير.</p>
+          <div class="cl"><span class="cl-l">ما تستطيع فعله</span>
+            <div class="chips">
+              <span class="chip"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>تقديم المصروفات</span>
+              <span class="chip"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>متابعة الأنشطة</span>
+            </div>
+          </div>
+          <div class="mf"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"></path></svg>تتابع 3 مشاريع قيد التنفيذ</div>
+        </article>
+
+        <article class="card mc">
+          <div class="mh"><span class="ma"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="width: 24px; height: 24px"><rect x="2.5" y="5" width="19" height="14" rx="2"></rect><circle cx="8.5" cy="11" r="2"></circle><path d="M5.5 16a3 3 0 0 1 6 0M14 10h4.5M14 13.5h3"></path></svg></span><span style="display: flex; flex-direction: column"><span class="mn">مريم عبد الله</span><span class="mr">الموارد البشرية</span></span></div>
+          <p class="md">تدير ملفات الموظفين، وتحضّر الرواتب كل شهر.</p>
+          <div class="cl"><span class="cl-l">ما تستطيع فعله</span>
+            <div class="chips">
+              <span class="chip"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>الرواتب</span>
+              <span class="chip"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>ملفات الموظفين</span>
+            </div>
+          </div>
+          <div class="mf"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="width: 18px; height: 18px"><rect x="3.5" y="5" width="17" height="15" rx="2"></rect><path d="M3.5 10h17M8 3v4M16 3v4"></path></svg>حضّرت رواتب أكتوبر في 15 أكتوبر</div>
+        </article>
+
+      </section>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1150}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>
